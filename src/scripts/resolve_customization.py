@@ -23,15 +23,39 @@ except ModuleNotFoundError as error:
 
 _MISSING = object()
 
+# `_bmad/` marks an install, and nothing else does. A `.git` entry used to count
+# as a root marker too, which let a repository nearer than the install — a
+# vendored checkout, a submodule, a nested documents repository — end the walk
+# at a directory holding no `_bmad/`. That resolved to shipped defaults with
+# exit 0 and no warning. A root without `_bmad/` resolves identically to no
+# root at all, so `.git` never contributed anything but that failure.
+_INSTALL_MARKER = "_bmad"
+
 
 def find_project_root(start: Path) -> Path | None:
+    """Walk up from `start` to the nearest directory containing `_bmad/`."""
     current = start.resolve()
     while True:
-        if (current / "_bmad").exists() or (current / ".git").exists():
+        if (current / _INSTALL_MARKER).exists():
             return current
         if current.parent == current:
             return None
         current = current.parent
+
+
+def locate_project_root(
+    skill_dir: Path, cwd: Path, script_path: Path = Path(__file__)
+) -> Path | None:
+    """Find the install root for an invocation that passed no `--project-root`.
+
+    The installed script lives at `<root>/_bmad/scripts/`, so its own location
+    names the root outright whenever that layout holds. The walks are the
+    fallback for a script run from elsewhere, such as the source tree.
+    """
+    script_dir = script_path.resolve().parent
+    if script_dir.parent.name == _INSTALL_MARKER:
+        return script_dir.parent.parent
+    return find_project_root(skill_dir) or find_project_root(cwd)
 
 
 def extract_key(data, dotted_key: str):
@@ -76,8 +100,14 @@ def main() -> int:
     project_root = (
         Path(args.project_root).resolve()
         if args.project_root
-        else find_project_root(skill_dir) or find_project_root(Path.cwd())
+        else locate_project_root(skill_dir, Path.cwd())
     )
+    if project_root is None:
+        sys.stderr.write(
+            "warning: no _bmad/ install found from the skill directory or the "
+            "working directory; resolving shipped defaults only. "
+            "Pass --project-root to name the install.\n"
+        )
     try:
         merged = load_customization(project_root, skill_dir)
     except ConfigError as error:
