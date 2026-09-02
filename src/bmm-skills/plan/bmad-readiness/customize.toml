@@ -1,0 +1,35 @@
+# DO NOT EDIT -- overwritten on every update.
+#
+# Workflow customization surface for bmad-readiness.
+#
+# Override files (not edited here):
+#   {project-root}/_bmad/custom/bmad-readiness.toml        (team)
+#   {project-root}/_bmad/custom/bmad-readiness.user.toml   (personal)
+
+[workflow]
+
+# --- Configurable below. Overrides merge per BMad structural rules: ---
+#   scalars: override wins • arrays: append
+
+# Steps to run before the standard activation (config load, greet).
+activation_steps_prepend = []
+
+# Steps to run after greet but before the gate runs.
+activation_steps_append = []
+
+# Persistent facts the gate keeps in mind for the whole run
+# (a definition of ready, compliance decisions every story must record).
+# Each entry is either a literal sentence, a skill prefixed with `skill:`,
+# or a `file:`-prefixed path/glob whose contents are loaded as facts.
+# Empty by default. Repo-wide context belongs in AGENTS.md (see bmad-project-context),
+# which every skill already sees; use this for context only this skill needs, loaded on
+# demand rather than carried as constant memory. Add a `file:` entry in team/user TOML to
+# opt in (e.g. `file:{project-root}/docs/definition-of-ready.md`).
+persistent_facts = []
+
+# Executed when the verdict has been delivered. Scalar or array of instructions.
+on_complete = ""
+
+# Where the findings report lands: offered on CONCERNS or FAIL when interactive,
+# always written when headless. Override the path in team/user TOML.
+report_path = "{planning_artifacts}/readiness-{date}.md"
