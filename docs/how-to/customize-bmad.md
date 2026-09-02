@@ -269,7 +269,7 @@ Customizable workflows run their activation in a fixed sequence so you know exac
 1. Resolve the `[workflow]` block (base → team → user merge)
 2. Execute `activation_steps_prepend` in order
 3. Load `persistent_facts` as foundational context for the run
-4. Load config (`_bmad/bmm/config.yaml`) and resolve standard variables (project name, languages, paths, date)
+4. Resolve central config (`uv run _bmad/scripts/resolve_config.py`, the four-layer TOML merge described under Central Configuration below) and resolve standard variables (project name, languages, paths, date)
 5. Greet the user
 6. Execute `activation_steps_append` in order
 
