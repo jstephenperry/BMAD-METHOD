@@ -711,7 +711,8 @@ class Installer {
    * Excludes dev-only tests and Python caches so they don't ship to users.
    * Wipes the destination first so files removed or renamed in source
    * don't linger and get recorded as installed. Also seeds
-   * gitignore files for personal overrides and generated render snapshots.
+   * gitignore files for personal overrides, per-developer state at the
+   * install root, and generated render snapshots.
    */
   async _installSharedScripts(paths) {
     const srcScriptsDir = path.join(paths.srcDir, 'src', 'scripts');
@@ -733,6 +734,27 @@ class Installer {
     if (!(await fs.pathExists(customGitignore))) {
       await fs.writeFile(customGitignore, '*.user.toml\n', 'utf8');
       this.installedFiles.add(customGitignore);
+    }
+
+    // config.user.toml is rewritten with the developer's own answers on every
+    // install and memory/ (_memory/ in v6.1) holds agent runtime state; neither
+    // belongs in the project repo. Seeded once, then owned by the project.
+    const bmadGitignore = path.join(paths.bmadDir, '.gitignore');
+    if (!(await fs.pathExists(bmadGitignore))) {
+      await fs.writeFile(
+        bmadGitignore,
+        [
+          '# Personal install answers (user_name, languages) - regenerated on every install',
+          'config.user.toml',
+          '# Agent memory sidecars (current layout)',
+          'memory/',
+          '# Agent memory sidecars (v6.1 layout)',
+          '_memory/',
+          '',
+        ].join('\n'),
+        'utf8',
+      );
+      this.installedFiles.add(bmadGitignore);
     }
 
     const renderDir = path.join(paths.bmadDir, 'render');

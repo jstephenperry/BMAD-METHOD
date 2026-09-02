@@ -3796,9 +3796,24 @@ async function runTests() {
     const installer49 = new Installer();
     await installer49._installSharedScripts(paths49);
     const renderGitignore49 = path.join(bmadDir49, 'render', '.gitignore');
+    const bmadGitignore49 = path.join(bmadDir49, '.gitignore');
+    const seededIgnores49 = (await fs.readFile(bmadGitignore49, 'utf8')).split('\n').filter((line) => line && !line.startsWith('#'));
+    assert(
+      seededIgnores49.join(' ') === 'config.user.toml memory/ _memory/',
+      'fresh install seeds _bmad/.gitignore with the personal config and memory sidecars',
+      seededIgnores49.join('\n'),
+    );
+    assert(installer49.installedFiles.has(bmadGitignore49), 'a seeded _bmad/.gitignore is recorded as installed');
+    const projectGitignore49 = '# project-owned\nconfig.user.toml\nscratch/\n';
+    await fs.writeFile(bmadGitignore49, projectGitignore49, 'utf8');
     const reinstall49 = new Installer();
     await reinstall49._installSharedScripts(paths49);
     assert(reinstall49.installedFiles.has(renderGitignore49), 'existing render gitignore remains installer-owned on update');
+    assert(
+      (await fs.readFile(bmadGitignore49, 'utf8')) === projectGitignore49,
+      'an existing _bmad/.gitignore survives re-install byte-for-byte',
+    );
+    assert(!reinstall49.installedFiles.has(bmadGitignore49), 'an existing _bmad/.gitignore is left project-owned on re-install');
 
     const official49 = new OfficialModules();
     await official49.install('bmm', bmadDir49, null, {
