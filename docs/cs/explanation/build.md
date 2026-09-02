@@ -7,7 +7,7 @@ sidebar:
 
 `bmad-build` je standardní implementační workflow pro veškerou vývojovou práci. Přijímá vše od volně formulovaného záměru nebo issue po plně naplánovanou story a vytváří změny kódu s minimem bezpečných human-in-the-loop kroků.
 
-Upstream plánování je volitelné a jeho hloubka se liší. Jasná změna může vstoupit přímo; větší iniciativa může přinést PRD, UX, architekturu, epicy, stories, kontrolu připravenosti a sprint plán. Tyto artefakty posilují kontext, nevybírají jiný vývojový workflow.
+Upstream plánování je volitelné a jeho hloubka se liší. Jasná změna může vstoupit přímo; větší iniciativa může přinést PRD, UX, architekturu, epicy, stories a kontrolu připravenosti. Tyto artefakty posilují kontext, nevybírají jiný vývojový workflow.
 
 Když do Build vstoupí naplánovaná story, zůstává zdrojem produktového kontextu a akceptačních kritérií. Build vytvoří vlastní záznam provedení aktuálního běhu, aby implementační rozhodnutí a nálezy revize zůstaly dohledatelné, aniž by story nahrazoval.
 
@@ -29,7 +29,7 @@ Současné LLM stále selhávají předvídatelnými způsoby: chybně čtou zá
 
 Workflow začíná tím, že člověk a model zkomprimují požadavek do jednoho koherentního cíle. Vstup může začínat jako hrubé vyjádření záměru, ale předtím, než workflow poběží autonomně, musí být dostatečně malý, jasný a bez protimluvů pro provedení.
 
-Záměr může přijít v mnoha formách: pár frází, odkaz na bug tracker, výstup z plan mode, text zkopírovaný z chatové relace nebo naplánovaná story z epiců a sprint artefaktů BMad. Workflow použije veškerý dostupný upstream kontext a vyřeší mezery potřebné pro bezpečnou implementaci.
+Záměr může přijít v mnoha formách: pár frází, odkaz na bug tracker, výstup z plan mode, text zkopírovaný z chatové relace nebo naplánovaná story z epiců nebo spec složky BMad. Workflow použije veškerý dostupný upstream kontext a vyřeší mezery potřebné pro bezpečnou implementaci.
 
 Tento workflow neodstraňuje lidskou kontrolu. Přemisťuje ji na malý počet vysoce hodnotných momentů:
 

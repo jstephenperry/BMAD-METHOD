@@ -83,7 +83,6 @@ Il fonctionne aussi de manière autonome :
 
 - **Revue d’une PR** — surtout celles avec plus de quelques fichiers ou des modifications transversales
 - **Prise en main d’une modification** — quand vous devez comprendre ce qui s’est passé sur une branche que vous n’avez pas écrite
-- **Revue de sprint** — le workflow peut récupérer les stories marquées `review` dans votre fichier de statut de sprint
 
 Invoquez-le en disant « checkpoint » ou « guide-moi à travers cette modification ». Il fonctionne dans n’importe quel terminal, mais vous en tirerez plus de parti dans un IDE — VS Code, Cursor ou similaire — car le workflow produit des références `chemin:ligne` à chaque étape. Dans un terminal intégré à un IDE, celles-ci sont cliquables, ce qui vous permet de sauter de fichier en fichier en suivant l’historique de revue.
 

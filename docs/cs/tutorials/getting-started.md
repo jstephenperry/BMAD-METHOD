@@ -81,7 +81,7 @@ Hloubka plánování je flexibilní:
 | --- | --- | --- |
 | **Přímá** | Jasné opravy, funkce, issues nebo existující specifikace | Záměr, issue nebo specifikace |
 | **Produktové plánování** | Produkty, platformy a složité funkce | PRD a volitelný UX návrh |
-| **Plné solutioning** | Koordinované, rizikové nebo mezisystémové iniciativy | PRD, UX, architektura, epicy, stories a sprint plán |
+| **Plné solutioning** | Koordinované, rizikové nebo mezisystémové iniciativy | PRD, UX, architektura, epicy a stories |
 
 :::note
 Nejde o oddělené implementační cesty. Všechny vstupy se sbíhají do `bmad-build`; plánování pouze mění množství dostupného kontextu.
@@ -169,20 +169,14 @@ Epicy a stories se nyní vytvářejí *po* architektuře. Tím vznikají kvalitn
 
 **Kontrola připravenosti k implementaci** *(vysoce doporučeno)*
 1. Vyvolejte **Architect agenta** (`bmad-agent-architect`) v novém chatu
-2. Spusťte `bmad-sprint-planning` (`bmad-sprint-planning`) — otevírá se bránou připravenosti
+2. Spusťte `bmad-readiness` (`bmad-readiness`)
 3. Validuje soudržnost všech plánovacích dokumentů
 
 ## Krok 2: Sestavte svůj projekt
 
 Přejděte k implementaci s jakýmkoli dostupným kontextem: přímým požadavkem, issue, specifikací nebo plně naplánovanou story. **Každý workflow by měl běžet v novém chatu.**
 
-U plánované práce spusťte `bmad-build` a určete vybranou story nebo položku sprintu, například: `Implementuj story 2.3 z _bmad-output/planning-artifacts/epics.md`.
-
-### Inicializace plánování sprintu (pro plánovanou práci)
-
-Vyvolejte **Developer agenta** (`bmad-agent-dev`) a spusťte `bmad-sprint-planning` (`bmad-sprint-planning`). Tím se vytvoří `sprint-status.yaml` pro sledování všech epiců a stories.
-
-Když Build v tomto souboru rozpozná vybranou story, během implementace ji přesune do stavu `in-progress` a po dokončení implementace do stavu `review`.
+U plánované práce spusťte `bmad-build` a určete vybranou story, například: `Implementuj story 2.3 z _bmad-output/planning-artifacts/epics.md`.
 
 ### Cyklus vývoje
 
@@ -217,7 +211,6 @@ váš-projekt/
 │   │   ├── architecture.md                  # Technická rozhodnutí
 │   │   └── epics/                           # Soubory epiců a stories
 │   ├── implementation-artifacts/
-│   │   └── sprint-status.yaml               # Sledování sprintu
 │   └── project-context.md                   # Pravidla implementace (volitelné)
 └── ...
 ```
@@ -231,7 +224,7 @@ váš-projekt/
 | `bmad-architecture`            | `bmad-architecture`                | Architect | Vytvoření dokumentu architektury                |
 | `bmad-generate-project-context`       | `bmad-generate-project-context`           | Analyst   | Vytvoření souboru kontextu projektu             |
 | `bmad-create-epics-and-stories`       | `bmad-create-epics-and-stories`           | PM        | Rozklad PRD na epicy                            |
-| `bmad-sprint-planning`                | `bmad-sprint-planning`                    | DEV       | Brána připravenosti + inicializace sledování sprintu + přehled stavu |
+| `bmad-readiness`                      | `bmad-readiness`                          | Architect | Brána připravenosti před implementací           |
 | `bmad-build`                      | `bmad-build`                          | DEV       | Implementace záměru, issue, funkce, opravy nebo story |
 | `bmad-code-review`                    | `bmad-code-review`                        | DEV       | Revize implementovaného kódu                    |
 

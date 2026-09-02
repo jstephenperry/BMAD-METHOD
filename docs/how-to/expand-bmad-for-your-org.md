@@ -1,11 +1,11 @@
 ---
 title: 'How to Expand BMad for Your Organization'
-description: Six customization patterns that reshape BMad without forking — agent-wide rules, workflow conventions, external publishing, template swaps, agent roster changes, and advanced integration patterns
+description: Six customization patterns that reshape BMad without editing installed files — agent-wide rules, workflow conventions, external publishing, template swaps, agent roster changes, and advanced integration patterns
 sidebar:
   order: 9
 ---
 
-BMad's customization surface lets an organization reshape behavior without editing installed files or forking skills. This guide walks through six recipes that cover most enterprise needs.
+BMad's customization surface lets a team reshape behavior without editing installed files. This guide walks through six recipes that cover most enterprise needs. Where the change belongs to the org that owns this fork instead — a shipped default rather than a per-project override — Recipe 5c says where it goes.
 
 :::note[Prerequisites]
 
@@ -180,9 +180,13 @@ description = "Country doctor's warmth, short fuse. 'Dammit Jim, I'm a doctor no
 
 Ask party-mode to "invite the Enterprise crew." It filters by `team = "startrek"` and spawns Spock and McCoy with those descriptors. Real BMad agents (Mary, Amelia) can sit at the same table if you ask them to.
 
-### 5c. Pin Team Install Settings
+### 5c. Pin Install Settings
 
-The installer prompts each developer for values like `planning_artifacts` path. When the org needs one shared answer across the team, pin it in central config — any developer's local prompt answer gets overridden at resolution time:
+The installer prompts each developer for values like the `planning_artifacts` path. There are two places to fix an answer, and they belong to different owners.
+
+**The org, in the fork.** BMad here is a hard fork, so the shipped defaults are yours to edit. Change the prompt's `default:` in the module's `module.yaml`, or a skill's default in its `customize.toml`, then cut a release: every project installing from the fork is offered the new answer first. Use this when the value is a genuine org default that a project may still decline.
+
+**A team, in its own repo.** Pin the value in central config. It wins over whatever each developer answered locally, and it is committed next to the code it applies to:
 
 ```toml
 # _bmad/custom/config.toml
@@ -194,6 +198,8 @@ implementation_artifacts = "{project-root}/shared/implementation"
 [core]
 document_output_language = "English"
 ```
+
+Every skill resolves central config through `resolve_config.py`, so a pinned path reaches the skills that read `planning_artifacts` and `implementation_artifacts` — not just the install answers file.
 
 Personal settings like `user_name`, `communication_language`, or `user_skill_level` stay under each developer's own `_bmad/config.user.toml`. The team file shouldn't touch those.
 

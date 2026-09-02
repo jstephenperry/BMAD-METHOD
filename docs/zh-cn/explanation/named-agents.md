@@ -35,7 +35,7 @@ BMad 内置五个命名智能体，各自对应 BMad Method 的一个阶段：
 | 📋 **John**，产品经理 | 规划 | PRD 创建、Epic/Story 拆分、实施就绪评审 |
 | 🎨 **Sally**，UX 设计师 | 规划 | UX 设计规范 |
 | 🏗️ **Winston**，系统架构师 | 方案设计 | 技术架构、一致性检查 |
-| 💻 **Amelia**，高级工程师 | 实现 | Story 执行、Build、代码评审、Sprint 规划 |
+| 💻 **Amelia**，高级工程师 | 实现 | Story 执行、Build、代码评审、Epic 回顾 |
 
 :::note[Paige 去哪儿了？]
 📚 技术文档工程师 **Paige** 正在休整——她将在未来以更强大的能力回归。项目文档功能仍然可用：直接调用 `bmad-document-project` 技能，或通过 Mary 的菜单使用。

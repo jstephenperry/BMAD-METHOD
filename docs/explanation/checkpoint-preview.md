@@ -83,7 +83,6 @@ It also works standalone:
 
 - **Reviewing a PR** — especially one with more than a handful of files or cross-cutting changes
 - **Onboarding to a change** — when you need to understand what happened on a branch you didn't write
-- **Sprint review** — the workflow can pick up stories marked `review` in your sprint status file
 
 Invoke it by saying "checkpoint" or "walk me through this change." It works in any terminal, but you'll get more out of it inside an IDE — VS Code, Cursor, or similar — because the workflow produces `path:line` references at every step. In an IDE-embedded terminal those are clickable, so you can jump from file to file as you follow the review trail.
 

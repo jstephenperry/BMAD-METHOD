@@ -48,7 +48,7 @@ Rozhodněte, jak to budovat, a rozložte práci na stories.
 | ----------------------------------------- | ------------------------------------------ | --------------------------- |
 | `bmad-architecture`                | Explicitní technická rozhodnutí            | `architecture.md` s ADR     |
 | `bmad-create-epics-and-stories`           | Rozložení požadavků na implementovatelnou práci | Soubory epiců se stories |
-| `bmad-sprint-planning`                    | Brána připravenosti před implementací, poté sledování stories a přehled stavu sprintu | PASS/CONCERNS/FAIL + `sprint-status.yaml` |
+| `bmad-readiness`                          | Brána připravenosti před implementací      | PASS/CONCERNS/FAIL          |
 
 ## Fáze 4: Implementace
 
@@ -58,12 +58,12 @@ Všechny implementační vstupy se sbíhají do `bmad-build`. Přijímá přím�
 | -------------------------- | ------------------------------------------------------------------------ | -------------------------------- |
 | `bmad-build`           | Převod přímého záměru nebo naplánované story na implementovaný a revidovaný kód | `spec-*.md` + kód          |
 | `bmad-code-review`         | Validace kvality implementace                                            | Schváleno nebo požadovány změny  |
-| `bmad-correct-course`      | Řešení významných změn uprostřed sprintu                                 | Aktualizovaný plán nebo přesměrování |
+| `bmad-correct-course`      | Řešení významných změn během implementace                                 | Aktualizovaný plán nebo přesměrování |
 | `bmad-retrospective`       | Revize po dokončení epicu                                                | Poučení                          |
 
 ### Přímý a plánovaný vstup
 
-Jasná práce může vstoupit do `bmad-build` přímo. Větší iniciativa může nejprve vytvořit PRD, UX, architekturu, epicy, stories, kontrolu připravenosti a sprint plán. Tyto artefakty přidávají kontext; nevybírají jiný implementační workflow.
+Jasná práce může vstoupit do `bmad-build` přímo. Větší iniciativa může nejprve vytvořit PRD, UX, architekturu, epicy, stories a kontrolu připravenosti. Tyto artefakty přidávají kontext; nevybírají jiný implementační workflow.
 
 ## Správa kontextu
 

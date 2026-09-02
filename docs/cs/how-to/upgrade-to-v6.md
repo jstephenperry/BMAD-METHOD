@@ -61,8 +61,8 @@ Pokud máte vytvořené nebo implementované stories:
 
 1. Dokončete instalaci v6
 2. Umístěte `epics.md` nebo `epics/epic*.md` do `_bmad-output/planning-artifacts/`
-3. Spusťte workflow `bmad-sprint-planning` Scrum Mastera
-4. Řekněte SM, které epicy/stories jsou již dokončené
+3. Spusťte workflow `bmad-readiness`
+4. Předejte každou nedokončenou story do `bmad-build`
 
 ## Co získáte
 

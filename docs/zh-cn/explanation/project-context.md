@@ -24,7 +24,7 @@ sidebar:
 - `bmad-architecture`：在 solutioning 时纳入你的技术偏好
 - `bmad-code-review`：按项目标准做一致性校验
 - `bmad-build`：在规划和实施直接意图或 story 时遵循既有模式
-- `bmad-sprint-planning`、`bmad-retrospective`、`bmad-correct-course`：读取项目级背景
+- `bmad-retrospective`、`bmad-correct-course`：读取项目级背景
 
 ## 什么时候建立或更新
 

@@ -82,7 +82,7 @@ La profondeur de planification reste flexible :
 |---|---|---|
 | **Directe** | Corrections, fonctionnalités, issues ou spécifications claires | Intention, issue ou spécification |
 | **Planification produit** | Produits, plateformes et fonctionnalités complexes | PRD et conception UX optionnelle |
-| **Solutioning complet** | Initiatives coordonnées, risquées ou multi-systèmes | PRD, UX, architecture, epics, stories et plan de sprint |
+| **Solutioning complet** | Initiatives coordonnées, risquées ou multi-systèmes | PRD, UX, architecture, epics et stories |
 
 :::note
 Il ne s’agit pas de voies d’implémentation distinctes. Tous les points d’entrée convergent vers `bmad-build`; la planification ne change que la quantité de contexte disponible.
@@ -182,20 +182,14 @@ Les epics et stories sont désormais créés *après* l’architecture. Cela pro
 **Vérification de la préparation à l’implémentation** *(fortement recommandée)*
 
 1. Invoquez l'**agent Architecte** (`bmad-agent-architect`) dans un nouveau chat
-2. Exécutez `bmad-sprint-planning` (`bmad-sprint-planning`) — il s’ouvre sur le jalon de préparation
+2. Exécutez `bmad-readiness` (`bmad-readiness`)
 3. Valide la cohérence de l’ensemble des documents de planification
 
 ## Étape 2 : Développer votre projet
 
 Passez à l’implémentation avec le contexte disponible : demande directe, issue, spécification ou story entièrement planifiée. **Chaque workflow doit être exécuté dans un nouveau chat.**
 
-Pour un travail planifié, invoquez `bmad-build` et indiquez la story ou l’élément de sprint sélectionné, par exemple : `Implémente la story 2.3 depuis _bmad-output/planning-artifacts/epics.md`.
-
-### Initialiser la planification de sprint (pour le travail planifié)
-
-Invoquez l'**agent Développeur** (`bmad-agent-dev`) et exécutez `bmad-sprint-planning` (`bmad-sprint-planning`). Cette commande crée `sprint-status.yaml` pour suivre tous les epics et stories.
-
-Lorsque Build retrouve la story sélectionnée dans ce fichier, il la passe à `in-progress` pendant l’implémentation, puis à `review` quand l’implémentation est terminée.
+Pour un travail planifié, invoquez `bmad-build` et indiquez la story sélectionnée, par exemple : `Implémente la story 2.3 depuis _bmad-output/planning-artifacts/epics.md`.
 
 ### Le cycle de développement
 
@@ -230,7 +224,6 @@ your-project/
 │   │   ├── architecture.md                  # Décisions techniques
 │   │   └── epics/                           # Fichiers epic et story
 │   ├── implementation-artifacts/
-│   │   └── sprint-status.yaml               # Suivi de sprint
 │   └── project-context.md                   # Règles d’implémentation (optionnel)
 └── ...
 ```
@@ -244,7 +237,7 @@ your-project/
 | `bmad-architecture`            | `bmad-architecture`            | Architect | Créer le document d’architecture                                |
 | `bmad-generate-project-context`       | `bmad-generate-project-context`       | Analyst   | Créer le fichier de contexte projet                             |
 | `bmad-create-epics-and-stories`       | `bmad-create-epics-and-stories`       | PM        | Décomposer le PRD en epics                                      |
-| `bmad-sprint-planning`                | `bmad-sprint-planning`                | DEV       | Jalon de préparation + initialisation du suivi de sprint + vue d’état        |
+| `bmad-readiness`                      | `bmad-readiness`                      | Architect | Jalon de préparation avant implémentation                       |
 | `bmad-build`                      | `bmad-build`                      | DEV       | Implémenter une intention, une issue, une fonctionnalité, un correctif ou une story |
 | `bmad-code-review`                    | `bmad-code-review`                    | DEV       | Revoir le code implémenté                                       |
 

@@ -61,8 +61,8 @@ Nếu bạn đã có các story được tạo hoặc đã triển khai:
 
 1. Hoàn thành cài đặt v6
 2. Đặt `epics.md` hoặc `epics/epic*.md` vào `_bmad-output/planning-artifacts/`
-3. Chạy workflow `bmad-sprint-planning` của Scrum Master
-4. Nói rõ với SM những epic/story nào đã hoàn thành
+3. Chạy workflow `bmad-readiness`
+4. Đưa từng story chưa hoàn thành vào `bmad-build`
 
 ## Bạn nhận được gì
 

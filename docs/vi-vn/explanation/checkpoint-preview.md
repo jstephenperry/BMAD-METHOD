@@ -83,7 +83,6 @@ Nó cũng hoạt động độc lập:
 
 - **Review một PR** - đặc biệt hữu ích khi PR có nhiều hơn vài file hoặc có thay đổi cắt ngang nhiều khu vực
 - **Làm quen với một thay đổi (onboard to a change)** - khi bạn cần hiểu chuyện gì đã xảy ra trên một branch mà bạn không phải người viết
-- **Review sprint (sprint review)** - workflow có thể nhặt các story được đánh dấu `review` trong file trạng thái sprint của bạn
 
 Bạn có thể gọi nó bằng cách nói "checkpoint" hoặc "dẫn tôi đi qua thay đổi này". Nó chạy được trong mọi terminal, nhưng sẽ phát huy tốt nhất trong IDE như VS Code, Cursor hoặc công cụ tương tự, vì workflow tạo tham chiếu `path:line` ở mọi bước. Trong terminal tích hợp của IDE, các tham chiếu đó có thể bấm được, nên bạn có thể nhảy qua lại giữa các file khi đi theo review trail.
 

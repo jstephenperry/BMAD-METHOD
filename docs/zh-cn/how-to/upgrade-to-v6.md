@@ -65,8 +65,8 @@ v6 新技能会安装到：
 
 1. 完成 v6 安装
 2. 将 `epics.md` 或 `epics/epic*.md` 放入 `_bmad-output/planning-artifacts/`
-3. 运行 Developer 的 `bmad-sprint-planning` 工作流
-4. 告知智能体哪些史诗/故事已经完成
+3. 运行 `bmad-readiness` 工作流
+4. 把每个未完成的 story 交给 `bmad-build`
 
 ## 你将获得
 

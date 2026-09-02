@@ -35,7 +35,7 @@ BMad hiện có năm named agent, mỗi agent gắn với một phase trong BMad
 | 📋 **John**, Quản lý sản phẩm (Product Manager) | Planning | PRD creation, epic/story breakdown, implementation readiness |
 | 🎨 **Sally**, Nhà thiết kế UX (UX Designer) | Planning | UX design specifications |
 | 🏗️ **Winston**, Kiến trúc sư hệ thống (System Architect) | Solutioning | technical architecture, alignment checks |
-| 💻 **Amelia**, Kỹ sư cấp cao (Senior Engineer) | Implementation | story execution, build, code review, sprint planning |
+| 💻 **Amelia**, Kỹ sư cấp cao (Senior Engineer) | Implementation | story execution, build, code review, epic retrospectives |
 
 :::note[Paige đâu rồi?]
 📚 **Paige**, Technical Writer, đang tạm nghỉ — cô ấy sẽ trở lại trong tương lai với năng lực mạnh hơn nhiều. Tài liệu dự án vẫn được hỗ trợ: gọi trực tiếp skill `bmad-document-project` hoặc qua menu của Mary.

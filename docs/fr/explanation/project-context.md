@@ -24,7 +24,7 @@ Chaque workflow d’implémentation charge automatiquement `project-context.md` 
 - `bmad-architecture` — respecte les préférences techniques pendant la phase de solutioning
 - `bmad-code-review` — valide par rapport aux standards du projet
 - `bmad-build` — applique les patterns lors de la planification et de l’implémentation d’intentions directes ou de stories
-- `bmad-sprint-planning`, `bmad-retrospective`, `bmad-correct-course` — fournit le contexte global du projet
+- `bmad-retrospective`, `bmad-correct-course` — fournit le contexte global du projet
 
 ## Quand Le Créer
 

@@ -76,7 +76,7 @@ All implementation uses `bmad-build`; scope determines what context you prepare 
 | Scope | Recommended preparation |
 | --- | --- |
 | **Clear updates or additions** | Enter `bmad-build` directly with the request, issue, or existing spec. |
-| **Major changes or additions** | Prepare the useful PRD, UX, architecture, epic, story, readiness, and sprint context, then pass the selected work to `bmad-build`. |
+| **Major changes or additions** | Prepare the useful PRD, UX, architecture, epic, story, and readiness context, then pass the selected work to `bmad-build`. |
 
 ### During PRD Creation
 

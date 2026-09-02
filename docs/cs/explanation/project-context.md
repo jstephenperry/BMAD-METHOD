@@ -24,7 +24,7 @@ Každý implementační workflow automaticky načítá `project-context.md`, pok
 - `bmad-architecture` — respektuje technické preference během solutioningu
 - `bmad-code-review` — validuje proti standardům projektu
 - `bmad-build` — aplikuje vzory při plánování a implementaci přímých záměrů i stories
-- `bmad-sprint-planning`, `bmad-retrospective`, `bmad-correct-course` — poskytuje celkový kontext projektu
+- `bmad-retrospective`, `bmad-correct-course` — poskytuje celkový kontext projektu
 
 ## Kdy ho vytvořit
 

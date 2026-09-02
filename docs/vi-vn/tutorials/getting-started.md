@@ -81,7 +81,7 @@ BMad giúp bạn xây dựng phần mềm thông qua các workflow có hướng 
 | --- | --- | --- |
 | **Trực tiếp** | Bản sửa, tính năng, issue hoặc spec đã rõ | Ý định, issue hoặc spec |
 | **Lập kế hoạch sản phẩm** | Sản phẩm, nền tảng và tính năng phức tạp | PRD và UX tùy chọn |
-| **Định hình giải pháp đầy đủ** | Sáng kiến phối hợp, rủi ro cao hoặc liên hệ thống | PRD, UX, kiến trúc, epic, story và kế hoạch sprint |
+| **Định hình giải pháp đầy đủ** | Sáng kiến phối hợp, rủi ro cao hoặc liên hệ thống | PRD, UX, kiến trúc, epic và story |
 
 :::note
 Đây không phải các nhánh triển khai riêng. Mọi đầu vào đều hội tụ vào `bmad-build`; lập kế hoạch chỉ thay đổi lượng ngữ cảnh sẵn có.
@@ -169,20 +169,14 @@ Epics và stories giờ được tạo *sau* kiến trúc. Điều này giúp st
 
 **Kiểm tra mức sẵn sàng để triển khai** *(Rất nên dùng)*
 1. Gọi **Architect agent** (`bmad-agent-architect`) trong một chat mới
-2. Chạy `bmad-sprint-planning` (`bmad-sprint-planning`) — mở đầu bằng cổng kiểm tra mức sẵn sàng
+2. Chạy `bmad-readiness` (`bmad-readiness`)
 3. Xác nhận tính nhất quán giữa toàn bộ tài liệu lập kế hoạch
 
 ## Bước 2: Xây Dựng Dự Án
 
 Chuyển sang implementation với ngữ cảnh đang có: yêu cầu trực tiếp, issue, spec hoặc story đã được lập kế hoạch đầy đủ. **Mỗi workflow nên chạy trong một chat mới.**
 
-Với công việc đã lập kế hoạch, chạy `bmad-build` và nêu rõ story hoặc hạng mục sprint đã chọn, ví dụ: `Triển khai story 2.3 từ _bmad-output/planning-artifacts/epics.md`.
-
-### Khởi Tạo Sprint Planning (Cho công việc đã lập kế hoạch)
-
-Gọi **Developer agent** (`bmad-agent-dev`) và chạy `bmad-sprint-planning` (`bmad-sprint-planning`). Workflow này sẽ tạo `sprint-status.yaml` để theo dõi toàn bộ epic và story.
-
-Khi Build nhận diện được story đã chọn trong file này, workflow chuyển story sang `in-progress` trong lúc triển khai và sang `review` khi triển khai hoàn tất.
+Với công việc đã lập kế hoạch, chạy `bmad-build` và nêu rõ story đã chọn, ví dụ: `Triển khai story 2.3 từ _bmad-output/planning-artifacts/epics.md`.
 
 ### Chu Trình Xây Dựng
 
@@ -217,7 +211,6 @@ your-project/
 │   │   ├── architecture.md                  # Các quyết định kỹ thuật
 │   │   └── epics/                           # Các file epic và story
 │   ├── implementation-artifacts/
-│   │   └── sprint-status.yaml               # Theo dõi sprint
 │   └── project-context.md                   # Quy tắc triển khai (tùy chọn)
 └── ...
 ```
@@ -231,7 +224,7 @@ your-project/
 | `bmad-architecture` | `bmad-architecture` | Architect | Tạo tài liệu kiến trúc |
 | `bmad-generate-project-context` | `bmad-generate-project-context` | Analyst | Tạo file project context |
 | `bmad-create-epics-and-stories` | `bmad-create-epics-and-stories` | PM | Phân rã PRD thành epics |
-| `bmad-sprint-planning` | `bmad-sprint-planning` | DEV | Cổng sẵn sàng + khởi tạo theo dõi sprint + xem trạng thái |
+| `bmad-readiness` | `bmad-readiness` | Architect | Cổng kiểm tra mức độ sẵn sàng trước khi triển khai |
 | `bmad-build` | `bmad-build` | DEV | Triển khai ý định, issue, tính năng, bản sửa hoặc story |
 | `bmad-code-review` | `bmad-code-review` | DEV | Review phần code đã triển khai |
 

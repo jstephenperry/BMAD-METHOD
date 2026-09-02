@@ -61,8 +61,8 @@ Si vous avez des stories[^3] créées ou implémentées :
 
 1. Terminez l’installation v6
 2. Placez `epics.md` ou `epics/epic*.md`[^2] dans `_bmad-output/planning-artifacts/`
-3. Lancez le workflow Développeur `bmad-sprint-planning`[^4]
-4. Indiquez à l’agent quels epics/stories sont déjà terminés
+3. Lancez le workflow `bmad-readiness`
+4. Confiez chaque story non terminée à `bmad-build`
 
 ## Résultat de la migration
 
@@ -104,4 +104,3 @@ votre-projet/
 [^1]: PRD (Product Requirements Document) : document de référence qui décrit les objectifs du produit, les besoins utilisateurs, les fonctionnalités attendues, les contraintes et les critères de succès, afin d’aligner les équipes sur ce qui doit être construit et pourquoi.
 [^2]: Epic : dans les méthodologies agiles, une grande unité de travail qui peut être décomposée en plusieurs stories. Un epic représente généralement une fonctionnalité majeure ou un ensemble de capacités livrable sur plusieurs sprints.
 [^3]: Story (User Story) : une description courte et simple d’une fonctionnalité du point de vue de l’utilisateur. Les stories sont des unités de travail suffisamment petites pour être complétées en un sprint.
-[^4]: Sprint : dans Scrum, une période de temps fixe (généralement 1 à 4 semaines) pendant laquelle l’équipe travaille à livrer un incrément de produit potentiellement libérable.

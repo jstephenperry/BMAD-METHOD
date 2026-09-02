@@ -35,7 +35,7 @@ BMad embarque cinq agents nommés, chacun ancré à une phase de la méthode BMa
 | 📋 **John**, Chef de produit       | Planification  | création de PRD, décomposition epic/story, vérification de la préparation à l’implémentation                             |
 | 🎨 **Sally**, Designer UX          | Planification  | spécifications de design UX                                                                                              |
 | 🏗️ **Winston**, Architecte système  | Solutioning    | architecture technique, vérifications d’alignement                                                                     |
-| 💻 **Amelia**, Ingénieure senior   | Implémentation | exécution de stories, build, revue de code, planification de sprint  |
+| 💻 **Amelia**, Ingénieure senior   | Implémentation | exécution de stories, build, revue de code, rétrospectives d’epic  |
 
 :::note[Où est Paige ?]
 📚 **Paige**, la Rédactrice technique, est en pause — elle reviendra à l’avenir avec des capacités bien plus étendues. La documentation de projet reste couverte : invoquez directement la compétence `bmad-document-project` ou passez par le menu de Mary.

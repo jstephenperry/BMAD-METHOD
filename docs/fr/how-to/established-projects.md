@@ -82,7 +82,7 @@ Toute implémentation utilise `bmad-build` ; la portée détermine le contexte
 | Portée                              | Approche recommandée                                                                                                                                                                 |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Mises à jour ou ajouts clairs**   | Entrez directement dans `bmad-build` avec la demande, l’issue ou la spécification existante. |
-| **Modifications ou ajouts majeurs** | Préparez le PRD, l’UX, l’architecture, les epics, les stories et le contexte de sprint utiles, puis confiez le travail sélectionné à `bmad-build`. |
+| **Modifications ou ajouts majeurs** | Préparez le PRD, l’UX, l’architecture, les epics, les stories et le contrôle de préparation utiles, puis confiez le travail sélectionné à `bmad-build`. |
 
 ### Pendant la création du PRD
 

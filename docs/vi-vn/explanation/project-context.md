@@ -24,7 +24,7 @@ Mỗi workflow triển khai đều tự động nạp `project-context.md` nếu
 - `bmad-architecture` - tôn trọng ưu tiên kỹ thuật trong giai đoạn solutioning
 - `bmad-code-review` - đối chiếu với tiêu chuẩn của dự án
 - `bmad-build` - áp dụng pattern khi lập kế hoạch và triển khai ý định trực tiếp hoặc story
-- `bmad-sprint-planning`, `bmad-retrospective`, `bmad-correct-course` - cung cấp bối cảnh cấp dự án
+- `bmad-retrospective`, `bmad-correct-course` - cung cấp bối cảnh cấp dự án
 
 ## Khi nào nên tạo
 

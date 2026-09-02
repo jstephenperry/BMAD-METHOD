@@ -35,7 +35,7 @@ BMad ships five named agents, each anchored to a phase of the BMad Method:
 | 📋 **John**, Product Manager | Planning | PRD creation, epic/story breakdown, implementation readiness |
 | 🎨 **Sally**, UX Designer | Planning | UX design specifications |
 | 🏗️ **Winston**, System Architect | Solutioning | technical architecture, alignment checks |
-| 💻 **Amelia**, Senior Engineer | Implementation | story execution, build, code review, sprint planning |
+| 💻 **Amelia**, Senior Engineer | Implementation | story execution, build, code review, epic retrospectives |
 
 :::note[Where is Paige?]
 📚 **Paige**, the Technical Writer, is on hiatus — she will return in the future far more capable. Project context is still covered: invoke `bmad-project-context` directly or through Mary's menu.

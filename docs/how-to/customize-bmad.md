@@ -28,17 +28,19 @@ The `bmad-customize` skill is a guided authoring helper for the **per-skill agen
 
 ## How It Works
 
-Every customizable skill ships a `customize.toml` file with its defaults. This file defines the skill's complete customization surface -- read it to see what's customizable. You never edit this file. Instead, you create sparse override files containing only the fields you want to change.
+Every customizable skill ships a `customize.toml` file with its defaults. This file defines the skill's complete customization surface -- read it to see what's customizable. In an installed project you never edit it. Instead, you create sparse override files containing only the fields you want to change.
 
 ### Three-Layer Override Model
 
 ```text
 Priority 1 (wins): _bmad/custom/{skill-name}.user.toml  (personal, gitignored)
-Priority 2:        _bmad/custom/{skill-name}.toml        (team/org, committed)
-Priority 3 (last): skill's own customize.toml                    (defaults)
+Priority 2:        _bmad/custom/{skill-name}.toml        (team, committed)
+Priority 3 (last): the skill's own customize.toml        (org defaults, shipped)
 ```
 
 The `_bmad/custom/` folder starts empty. Files only appear when someone actively customizes.
+
+**Where the org layer lives.** This repository is a hard fork of BMad, so the shipped `customize.toml` *is* the org layer. An org owner changes a default for everyone by editing that file in the fork — or a prompt's `default:` in the module's `module.yaml` — and cutting a release; every project that installs from the fork picks the new default up. Teams and individuals never edit installed files: they layer `_bmad/custom/` overrides on top.
 
 ### Merge Rules (by shape, not by field name)
 
@@ -51,7 +53,7 @@ The resolver applies four structural rules. Field names are never special-cased 
 | Array of tables where every item shares the **same** identifier field (every item has `code`, or every item has `id`) | Merge by that key — matching keys **replace in place**, new keys **append** |
 | Any other array (scalars; tables with no identifier; arrays that mix `code` and `id` across items) | **Append** — base items first, then team items, then user items |
 
-**No removal mechanism.** Overrides cannot delete base items. If you need to suppress a default menu item, override it by `code` with a no-op description or prompt. If you need to restructure an array more deeply, fork the skill.
+**No removal mechanism.** Overrides cannot delete base items — the resolver only overrides, deep-merges and appends. Inside a project, suppress a default menu item by overriding it by `code` with a no-op description or prompt. To take an item out of the list for real, or to restructure an array more deeply, edit the shipped array in the fork's `customize.toml`: that is the org layer, and the only place an item can actually leave.
 
 **The `code` / `id` convention.** BMad uses `code` (short identifier like `"BP"` or `"R1"`) and `id` (longer stable identifier) as merge keys on arrays of tables. If you author a custom array-of-tables that should be replaceable-by-key rather than append-only, pick **one** convention (either `code` on every item, or `id` on every item) and stick with it across the whole array. Mixing `code` on some items and `id` on others falls back to append — the resolver won't guess which key to merge on.
 
@@ -186,7 +188,7 @@ Each menu item has exactly one of `skill` (invokes a registered skill) or `promp
 
 ### 4. Personal vs Team
 
-**Team file** (`bmad-agent-pm.toml`): Committed to git. Shared across the org. Use for compliance rules, company persona, custom capabilities.
+**Team file** (`bmad-agent-pm.toml`): Committed to git. Shared by everyone working in the repo. Use for compliance rules, company persona, custom capabilities.
 
 **Personal file** (`bmad-agent-pm.user.toml`): Gitignored automatically. Use for tone adjustments, personal workflow preferences, and private facts the agent should keep in mind.
 

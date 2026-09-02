@@ -7,7 +7,7 @@ sidebar:
 
 `bmad-build` est le workflow d’implémentation standard pour tout travail de développement. Il accepte aussi bien une intention libre ou une issue qu’une story entièrement planifiée, et produit des modifications de code avec le minimum d’interventions humaines compatible avec la sécurité.
 
-La planification amont reste optionnelle et variable. Un changement clair peut entrer directement ; une initiative plus vaste peut apporter PRD, UX, architecture, epics, stories, contrôle de préparation et plan de sprint. Ces artefacts renforcent le contexte sans sélectionner un autre workflow de développement.
+La planification amont reste optionnelle et variable. Un changement clair peut entrer directement ; une initiative plus vaste peut apporter PRD, UX, architecture, epics, stories et contrôle de préparation. Ces artefacts renforcent le contexte sans sélectionner un autre workflow de développement.
 
 Lorsqu’une story planifiée entre dans Build, elle reste la source du contexte produit et des critères d’acceptation. Build crée son propre journal d’exécution pour l’exécution en cours afin de conserver la traçabilité des décisions d’implémentation et des observations de revue, sans remplacer la story.
 
@@ -29,7 +29,7 @@ Les LLM actuels échouent encore de manière prévisible : ils interprètent ma
 
 Le workflow commence par compresser l’interaction de la personne et du modèle à partir de la requête en un objectif cohérent. L’entrée peut commencer sous forme d’une expression grossière de l’intention, mais avant que le workflow ne s’exécute de manière autonome, elle doit devenir suffisamment petite, claire et sans contradiction pour être exécutable.
 
-L’intention peut prendre plusieurs formes : quelques phrases, un lien vers un outil de suivi de bugs, une sortie du mode planification, du texte copié depuis une session de chat ou une story planifiée issue des epics et artefacts de sprint BMad. Le workflow utilise tout le contexte amont disponible et résout les lacunes nécessaires à une implémentation sûre.
+L’intention peut prendre plusieurs formes : quelques phrases, un lien vers un outil de suivi de bugs, une sortie du mode planification, du texte copié depuis une session de chat ou une story planifiée issue des epics ou d’un dossier de spec BMad. Le workflow utilise tout le contexte amont disponible et résout les lacunes nécessaires à une implémentation sûre.
 
 Ce workflow n’élimine pas le contrôle humain. Il le déplace vers un nombre réduit d’étapes à forte valeur :
 

@@ -82,7 +82,7 @@ Veškerá implementace používá `bmad-build`; rozsah určuje, jaký kontext p�
 | Rozsah                         | Doporučený přístup                                                                                                            |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | **Jasné aktualizace či doplnění** | Vstupte přímo do `bmad-build` s požadavkem, issue nebo existující specifikací. |
-| **Velké změny či doplnění**    | Připravte užitečné PRD, UX, architekturu, epic, story a sprint kontext a pak předejte vybranou práci do `bmad-build`. |
+| **Velké změny či doplnění**    | Připravte užitečné PRD, UX, architekturu, epic, story a kontrolu připravenosti a pak předejte vybranou práci do `bmad-build`. |
 
 ### Během tvorby PRD
 

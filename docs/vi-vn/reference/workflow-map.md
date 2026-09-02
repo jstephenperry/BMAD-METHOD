@@ -48,7 +48,7 @@ Quyết định cách xây và chia nhỏ công việc thành các story.
 | ----------------------------------------- | ------------------------------------------ | --------------------------- |
 | `bmad-architecture` | Làm rõ các quyết định kỹ thuật | `architecture.md` kèm ADR |
 | `bmad-create-epics-and-stories` | Phân rã yêu cầu thành các phần việc có thể triển khai | Các file epic chứa các story |
-| `bmad-sprint-planning` | Cổng kiểm tra mức độ sẵn sàng trước khi triển khai, sau đó theo dõi story và xem trạng thái sprint | PASS/CONCERNS/FAIL + `sprint-status.yaml` |
+| `bmad-readiness` | Cổng kiểm tra mức độ sẵn sàng trước khi triển khai | PASS/CONCERNS/FAIL |
 
 ## Giai đoạn 4: Triển khai
 
@@ -58,12 +58,12 @@ Mọi đầu vào triển khai đều hội tụ vào `bmad-build`. Workflow nà
 | -------------------------- | ------------------------------------------------------------------------ | -------------------------------- |
 | `bmad-build` | Biến ý định trực tiếp hoặc story đã lập kế hoạch thành mã nguồn đã triển khai và review | `spec-*.md` + mã nguồn |
 | `bmad-code-review` | Kiểm tra chất lượng phần triển khai | Được duyệt hoặc yêu cầu thay đổi |
-| `bmad-correct-course` | Xử lý thay đổi lớn giữa sprint | Kế hoạch cập nhật hoặc định tuyến lại |
+| `bmad-correct-course` | Xử lý thay đổi lớn trong lúc triển khai | Kế hoạch cập nhật hoặc định tuyến lại |
 | `bmad-retrospective` | Review sau khi hoàn tất epic | Bài học rút ra |
 
 ### Đầu vào trực tiếp và đã lập kế hoạch
 
-Công việc rõ ràng có thể đi thẳng vào `bmad-build`. Sáng kiến lớn hơn có thể chuẩn bị PRD, UX, kiến trúc, epic, story, kiểm tra mức sẵn sàng và kế hoạch sprint trước. Các artifact này bổ sung ngữ cảnh, không chọn một workflow triển khai khác.
+Công việc rõ ràng có thể đi thẳng vào `bmad-build`. Sáng kiến lớn hơn có thể chuẩn bị PRD, UX, kiến trúc, epic, story và kiểm tra mức sẵn sàng trước. Các artifact này bổ sung ngữ cảnh, không chọn một workflow triển khai khác.
 
 ## Quản lý ngữ cảnh
 

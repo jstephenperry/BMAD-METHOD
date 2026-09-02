@@ -83,7 +83,6 @@ sidebar:
 
 - **审查 PR** — 尤其是涉及多个文件或跨模块变更的 PR
 - **了解一个变更** — 当你需要理解一个不是你写的分支上发生了什么
-- **Sprint 审查** — 工作流可以提取 sprint 状态文件中标记为 `review` 的 story
 
 通过说 "checkpoint" 或 "walk me through this change" 来调用。它在任何终端中都能工作，但在 IDE 中——VS Code、Cursor 或类似工具——你会获得更多，因为工作流在每一步都生成 `path:line` 引用。在嵌入 IDE 的终端中，这些引用是可点击的，你可以沿着审查线索在文件间跳转。
 

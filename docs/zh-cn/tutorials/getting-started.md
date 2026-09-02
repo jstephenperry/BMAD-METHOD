@@ -81,7 +81,7 @@ BMad 通过带有专门 AI 智能体的引导工作流帮助你构建软件。�
 | --- | --- | --- |
 | **直接** | 清晰的修复、功能、issue 或现有规格 | 意图、issue 或规格 |
 | **产品规划** | 产品、平台和复杂功能 | PRD 与可选 UX 设计 |
-| **完整方案设计** | 跨系统、高风险或协同项目 | PRD、UX、架构、epics、stories 与 sprint 计划 |
+| **完整方案设计** | 跨系统、高风险或协同项目 | PRD、UX、架构、epics、stories |
 
 :::note
 这些不是独立的实施路径。所有入口都汇入 `bmad-build`；规划只会改变实施前已有的上下文量。
@@ -168,20 +168,14 @@ BMad-Help 将检测你已完成的内容，并准确推荐下一步该做什么�
 
 **实现就绪检查** *（强烈推荐）*
 1. 在新对话中调用 **Architect 智能体**（`bmad-agent-architect`）
-2. 运行 `bmad-sprint-planning`（`bmad-sprint-planning`）— 以就绪 gate 检查开始
+2. 运行 `bmad-readiness`（`bmad-readiness`）
 3. 验证所有规划文档之间的一致性
 
 ## 步骤 2：构建你的项目
 
 携带现有上下文进入实现阶段：直接请求、issue、规格或完整规划的 story。**每个工作流应该在新对话中运行。**
 
-对于已规划工作，运行 `bmad-build` 并指出选定的 story 或 sprint 项，例如：`实现 _bmad-output/planning-artifacts/epics.md 中的 story 2.3`。
-
-### 初始化冲刺规划（用于规划工作）
-
-调用 **Developer 智能体**（`bmad-agent-dev`）并运行 `bmad-sprint-planning`（`bmad-sprint-planning`）。这会创建 `sprint-status.yaml` 来跟踪所有史诗和故事。
-
-当 Build 在该文件中解析出选定 story 时，它会在实施期间把状态改为 `in-progress`，并在实施完成后改为 `review`。
+对于已规划工作，运行 `bmad-build` 并指出选定的 story，例如：`实现 _bmad-output/planning-artifacts/epics.md 中的 story 2.3`。
 
 ### 构建周期
 
@@ -216,7 +210,6 @@ your-project/
 │   │   ├── architecture.md                  # 技术决策
 │   │   └── epics/                           # 史诗和故事文件
 │   ├── implementation-artifacts/
-│   │   └── sprint-status.yaml               # 冲刺跟踪
 │   └── project-context.md                   # 实现规则（可选）
 └── ...
 ```
@@ -230,7 +223,7 @@ your-project/
 | `bmad-architecture`          | `bmad-architecture`             | Architect | 创建架构文档                                |
 | `bmad-generate-project-context`     | `bmad-generate-project-context`        | Analyst  | 创建项目上下文文件                           |
 | `bmad-create-epics-and-stories`     | `bmad-create-epics-and-stories`        | PM       | 将 PRD 分解为史诗                            |
-| `bmad-sprint-planning`              | `bmad-sprint-planning`                 | DEV      | 就绪 gate 检查 + 初始化冲刺跟踪 + 冲刺状态摘要              |
+| `bmad-readiness`                    | `bmad-readiness`                       | Architect | 实施前就绪 gate 检查                                       |
 | `bmad-build`                    | `bmad-build`                       | DEV      | 实施意图、issue、功能、修复或已规划 story     |
 | `bmad-code-review`                  | `bmad-code-review`                     | DEV      | 审查已实现的代码                             |
 

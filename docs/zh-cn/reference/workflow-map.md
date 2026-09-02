@@ -43,7 +43,7 @@ BMad Method（BMM）通过分阶段 workflow 逐步构建上下文，让智能�
 | --- | --- | --- |
 | `bmad-architecture` | 显式记录技术决策与架构边界 | `architecture.md`（含 ADR） |
 | `bmad-create-epics-and-stories` | 将需求拆分为可实施的 epics/stories | epics 文件与 story 条目 |
-| `bmad-sprint-planning` | 实施前就绪 gate 检查，随后生成 story 追踪与冲刺状态摘要 | PASS / CONCERNS / FAIL + `sprint-status.yaml` |
+| `bmad-readiness` | 实施前就绪 gate 检查 | PASS / CONCERNS / FAIL |
 
 ## 阶段 4：实施
 
@@ -58,7 +58,7 @@ BMad Method（BMM）通过分阶段 workflow 逐步构建上下文，让智能�
 
 ### 直接入口与规划入口
 
-目标清晰的工作可以直接进入 `bmad-build`。更大的项目可以先准备 PRD、UX、架构、epics、stories、就绪检查和 sprint 计划。上游产物只会增加实施上下文，不会选择另一条实施工作流。
+目标清晰的工作可以直接进入 `bmad-build`。更大的项目可以先准备 PRD、UX、架构、epics、stories 和就绪检查。上游产物只会增加实施上下文，不会选择另一条实施工作流。
 
 ## 上下文管理
 

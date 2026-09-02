@@ -5,7 +5,7 @@ sidebar:
   order: 15
 ---
 
-Run `bmad-retrospective` when an epic is done. It reads what the epic actually produced (the specs, the full diff, the per-story commits, the sprint status) and works from that evidence rather than anyone's recollection of how the work went. What comes back is a written review, a set of owned action items, and a verdict on whether the epic met its bar.
+Run `bmad-retrospective` when an epic is done. It reads what the epic actually produced (the spec folder, the story files, the full diff, the per-story commits) and works from that evidence rather than anyone's recollection of how the work went. What comes back is a written review, a set of owned action items, and a verdict on whether the epic met its bar.
 
 ## What it does
 
@@ -28,10 +28,9 @@ The retrospective reports what the diff, the commits, and the specs actually sho
 
 ## What you get
 
-Two artifacts and a decision:
+One artifact and a decision:
 
-- **A retrospective document** in your implementation artifacts — the evidence inventory, findings grouped with their sources, the verdict, and the action items.
-- **An updated sprint status** — the epic's retrospective marked done, each action item appended with a stable id and a link back to its finding.
+- **A retrospective document** — `RETROSPECTIVE.md` in the epic's spec folder, holding the evidence inventory, findings grouped with their sources, the verdict, and the action items.
 - **A verdict** of `accepted`, `accepted-with-open-items`, or `rejected`, which tells you whether to start the next epic or hold and fix first. Unfinished stories for that epic make the machine verdict **rejected** (a human can still override interactively).
 
 ## What to do with the output
@@ -46,11 +45,11 @@ A failing epic never closes as quietly accepted. If the criteria aren't met, or 
 
 ## Running it
 
-Say "run a retrospective" or "let's retro epic 3." It finds the completed epic from sprint status, or takes the one you name, and by default stops at the written report and verdict.
+Say "run a retrospective" or "let's retro this epic." An epic is a spec folder: it takes the one you name, or finds the finished folders under your spec roots and asks which. By default it stops at the written report and verdict.
 
 | You want | Do this |
 | --- | --- |
 | A standard review | "run a retrospective" |
-| A specific epic | "retro epic 3" |
+| A specific epic | Name its spec folder — "retro the checkout epic" |
 | The team to talk it over | Ask to "discuss it as a team" — it convenes [party mode](./party-mode.md) over the real findings, off by default |
-| An unattended run for automation | `-H <epic>` — headless, verdict on the evidence alone |
+| An unattended run for automation | `-H <spec-folder>` — headless, verdict on the evidence alone |

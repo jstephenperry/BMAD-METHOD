@@ -77,6 +77,7 @@ Decide how to build it and break work into stories.
 |---------------------------------------|--------------------------------------------|-----------------------------|
 | `bmad-architecture`            | Make technical decisions explicit          | `ARCHITECTURE-SPINE.md` is the spine by default but can hydrate to your desired output or presentation needs also |
 | `bmad-create-epics-and-stories`       | Break requirements into implementable work | Epic files with stories     |
+| `bmad-readiness`                      | Judge whether the plan is complete enough to implement | `PASS`, `CONCERNS`, or `FAIL` with findings |
 
 ## Phase 4: Implementation
 
@@ -86,12 +87,12 @@ Every implementation path converges on `bmad-build`. It accepts direct intent, a
 |----------|---------|----------|
 | `bmad-build` | Turn direct intent or a planned story into implemented, reviewed code | `spec-*.md` + code |
 | `bmad-code-review` | Ad hoc review of any code change | Findings + applied patches |
-| `bmad-correct-course` | Handle significant mid-sprint changes | Updated plan or re-routing |
+| `bmad-correct-course` | Assess a significant change discovered during implementation | Change proposal |
 | `bmad-retrospective` | Evidence-based review of a completed epic against its acceptance criteria | Retro document, action items, acceptance verdict |
 
 ### Direct and Planned Entry
 
-Clear work can enter `bmad-build` directly. Larger initiatives can first produce a PRD, UX design, architecture, epics, stories, readiness results, and sprint plan. Those artifacts add context; they do not select another implementation workflow.
+Clear work can enter `bmad-build` directly. Larger initiatives can first produce a PRD, UX design, architecture, epics, stories, and readiness results. Those artifacts add context; they do not select another implementation workflow.
 
 `bmad-build-auto` can orchestrate unattended iterations of the same development model when autonomous execution is appropriate.
 
