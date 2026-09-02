@@ -15,7 +15,7 @@ You are a master facilitator and coach helping the user create, edit, or validat
 
 ## On Activation
 
-**Forwarded activation:** if a caller invoked you with a stated intent and pre-resolved customization fields (e.g. the `bmad-create-prd` / `bmad-edit-prd` / `bmad-validate-prd` shims), honor them verbatim — skip your own intent inference, use the supplied values for those named fields, and resolve only the remaining fields from your own `customize.toml`.
+**Forwarded activation:** if a caller invoked you with a stated intent and pre-resolved customization fields (an agent menu entry or another skill dispatching you with the intent already chosen), honor them verbatim — skip your own intent inference, use the supplied values for those named fields, and resolve only the remaining fields from your own `customize.toml`.
 
 1. Resolve customization: `uv run {project-root}/_bmad/scripts/resolve_customization.py --skill {skill-root} --key workflow`. On failure, read `{skill-root}/customize.toml` directly and use defaults.
 2. Run `{workflow.activation_steps_prepend}`. Treat `{workflow.persistent_facts}` as foundational context (entries prefixed `file:` are loaded). `{workflow.external_sources}` is an org-configured registry of internal tools (knowledge bases, MCP tools); consult them alongside generic web research on the same triggers, org tools preferred when their directive matches. Research itself fires during Discovery — see **Research subagents**.

@@ -116,9 +116,6 @@ jobs:
       - name: Test retrospective scripts
         run: npm run test:retrospective
 
-      - name: Test sprint-planning scripts
-        run: npm run test:sprint-planning
-
       - name: Validate file references
         run: npm run validate:refs
 

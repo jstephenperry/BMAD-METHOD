@@ -25,9 +25,9 @@ const colors = {
 
 const SRC_DIR = path.join(__dirname, '..', 'src');
 
-// Directories still on the YAML regime. Each is deleted outright by the
-// sprint-mode / v6-shim removal, which drops its entry here in the same commit.
-const EXCLUDED_DIRS = ['bmm-skills/v6-shims/', 'bmm-skills/plan/bmad-sprint-planning/'];
+// Directories exempt from the guard. Empty since the sprint-mode and v6-shim
+// removal deleted the last skills that read a per-module config.yaml.
+const EXCLUDED_DIRS = [];
 
 const FORBIDDEN = /config(?:\.user)?\.yaml/;
 

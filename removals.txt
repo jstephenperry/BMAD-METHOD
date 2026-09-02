@@ -85,3 +85,28 @@ bmad-agent-tech-writer
 # which now opens with a readiness gate (PASS/CONCERNS/FAIL) before
 # generating tracking. The IR agent menu trigger dispatches sprint-planning.
 bmad-check-implementation-readiness
+
+# Removed skills (sprint mode retired)
+# bmad-sprint-planning: sprint-status.yaml is no longer written or read by
+# any skill; stories enter the dev cycle through spec folders. The readiness
+# gate it carried is now bmad-readiness, which the IR menu trigger dispatches.
+bmad-sprint-planning
+
+# Removed bmm v6 compatibility shims. Each forwarded to the skill that
+# replaced it (bmad-prd, bmad-architecture, bmad-deep-recon,
+# bmad-project-context, bmad-build, bmad-build-auto); invoke the replacement.
+# bmad-create-story and bmad-dev-story are retired outright (Build is the
+# Phase 4 loop); bmad-sprint-status went with sprint mode.
+bmad-create-architecture
+bmad-create-prd
+bmad-create-story
+bmad-dev-auto
+bmad-dev-story
+bmad-document-project
+bmad-domain-research
+bmad-edit-prd
+bmad-market-research
+bmad-quick-dev
+bmad-sprint-status
+bmad-technical-research
+bmad-validate-prd
