@@ -97,5 +97,5 @@ your-project/
 | ------------- | ------------------------------------- | ------------------------------------ |
 | **Core**      | `_bmad-core` was actually BMad Method | `_bmad/core/` is universal framework |
 | **Method**    | `_bmad-method`                        | `_bmad/bmm/`                         |
-| **Config**    | Modified files directly               | `config.yaml` per module             |
+| **Config**    | Modified files directly               | `_bmad/config.toml` for everything   |
 | **Documents** | Sharded or unsharded required setup   | Fully flexible, auto-scanned         |

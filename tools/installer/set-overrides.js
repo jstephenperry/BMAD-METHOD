@@ -1,7 +1,6 @@
 // `--set <module>.<key>=<value>` is a post-install patch. The installer runs
-// its normal flow and writes `_bmad/config.toml`, `_bmad/config.user.toml`,
-// and `_bmad/<module>/config.yaml`; afterwards `applySetOverrides` upserts
-// each override into those files.
+// its normal flow and writes `_bmad/config.toml` and `_bmad/config.user.toml`;
+// afterwards `applySetOverrides` upserts each override into those files.
 //
 // This is intentionally NOT integrated with the prompt/template/schema
 // system. Tradeoffs:
@@ -9,9 +8,9 @@
 //     writes "research" verbatim. Pass `--set bmm.project_knowledge='{project-root}/research'`
 //     if you want the rendered form.
 //   - Carry-forward across installs is best-effort: declared schema keys
-//     persist via the existingValue path on the next interactive run; values
-//     for keys outside any module's schema may need to be re-passed on each
-//     install (or edited directly in `_bmad/config.toml`).
+//     persist because the next install reads `_bmad/config.toml` back as its
+//     prompt defaults; values for keys outside any module's schema may need to
+//     be re-passed on each install (or edited directly in `_bmad/config.toml`).
 //   - No "key not in schema" validation: whatever you assert, we write.
 //
 // Names that, when used as object keys, can mutate `Object.prototype` and
@@ -24,7 +23,10 @@ const PROTOTYPE_POLLUTING_NAMES = new Set(['__proto__', 'prototype', 'constructo
 
 const path = require('node:path');
 const fs = require('./fs-native');
-const yaml = require('yaml');
+
+// Directories under `_bmad/` that are never modules. Mirrors the installer's
+// own module scan so `--set custom.x=y` can't invent a `[modules.custom]`.
+const NON_MODULE_DIRS = new Set(['_config', '_memory', 'memory', 'docs', 'scripts', 'custom', 'render']);
 
 /**
  * Parse a single `--set <module>.<key>=<value>` entry.
@@ -242,13 +244,16 @@ async function applySetOverrides(overrides, bmadDir) {
   const userPath = path.join(bmadDir, 'config.user.toml');
 
   for (const moduleCode of Object.keys(overrides)) {
-    // Skip overrides for modules not actually installed. The installer writes
-    // `_bmad/<module>/config.yaml` for every installed module (including core),
-    // so its presence is a reliable "is this module here?" signal that works
-    // for both fresh installs and quick-updates without coupling to caller-
-    // supplied module lists.
-    const moduleConfigYaml = path.join(bmadDir, moduleCode, 'config.yaml');
-    if (!(await fs.pathExists(moduleConfigYaml))) {
+    // Skip overrides for modules not actually installed. `_bmad/<module>/` is
+    // the installer's own "is this module here?" signal (see
+    // OfficialModules.isInstalled) and works for both fresh installs and
+    // quick-updates without coupling to caller-supplied module lists.
+    if (NON_MODULE_DIRS.has(moduleCode)) {
+      continue;
+    }
+    const moduleDir = path.join(bmadDir, moduleCode);
+    const moduleStat = await fs.stat(moduleDir).catch(() => null);
+    if (!moduleStat || !moduleStat.isDirectory()) {
       continue;
     }
 
@@ -280,47 +285,6 @@ async function applySetOverrides(overrides, bmadDir) {
         scope: userOwnsIt ? 'user' : 'team',
         file: path.basename(targetPath),
       });
-    }
-
-    // Also patch the per-module yaml (`_bmad/<module>/config.yaml`). The
-    // installer reads this file as `_existingConfig` on subsequent runs and
-    // surfaces declared values as prompt defaults — under `--yes` those
-    // defaults are accepted, so patching here gives `--set` natural
-    // carry-forward for declared keys without needing schema-strict
-    // partition exemptions in the manifest writer. For undeclared keys the
-    // value lives in the per-module yaml but won't be re-emitted into
-    // config.toml on the next install (the schema-strict partition drops
-    // it); re-pass `--set` if you need it sticky.
-    const moduleYamlPath = path.join(bmadDir, moduleCode, 'config.yaml');
-    if (await fs.pathExists(moduleYamlPath)) {
-      try {
-        const text = await fs.readFile(moduleYamlPath, 'utf8');
-        const parsed = yaml.parse(text);
-        if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
-          // Preserve the installer's banner header (everything up to the
-          // first non-comment line) so `_bmad/<module>/config.yaml` keeps
-          // its provenance comments after we round-trip it.
-          const headerLines = [];
-          for (const line of text.split('\n')) {
-            if (line.startsWith('#') || line.trim() === '') {
-              headerLines.push(line);
-            } else {
-              break;
-            }
-          }
-          for (const key of Object.keys(moduleOverrides)) {
-            parsed[key] = moduleOverrides[key];
-          }
-          const body = yaml.stringify(parsed, { indent: 2, lineWidth: 0, minContentWidth: 0 });
-          const header = headerLines.length > 0 ? headerLines.join('\n') + '\n' : '';
-          await fs.writeFile(moduleYamlPath, header + body, 'utf8');
-        }
-      } catch {
-        // Per-module yaml unparseable — skip silently. The central toml was
-        // already patched above, which is the user-visible state for the
-        // current install. Carry-forward will fail next install but the
-        // current install reflects the override.
-      }
     }
   }
 

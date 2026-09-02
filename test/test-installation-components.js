@@ -3280,16 +3280,10 @@ async function runTests() {
         '[core]\nuser_name = "OldName"\n\n[modules.bmm]\nuser_skill_level = "intermediate"\n',
         'utf8',
       );
-      // Per-module config.yaml stubs are the "is this module installed?"
-      // signal applySetOverrides uses to skip uninstalled-module overrides.
+      // `_bmad/<module>/` is the "is this module installed?" signal
+      // applySetOverrides uses to skip uninstalled-module overrides.
       await fs.ensureDir(path.join(bmadDir, 'core'));
-      await fs.writeFile(path.join(bmadDir, 'core', 'config.yaml'), 'project_name: demo\n', 'utf8');
       await fs.ensureDir(path.join(bmadDir, 'bmm'));
-      await fs.writeFile(
-        path.join(bmadDir, 'bmm', 'config.yaml'),
-        'project_knowledge: "{project-root}/docs"\nuser_skill_level: intermediate\n',
-        'utf8',
-      );
 
       const overrides = {
         core: { user_name: 'Brian' },
@@ -3325,7 +3319,6 @@ async function runTests() {
       await fs.ensureDir(bmadDir);
       await fs.writeFile(path.join(bmadDir, 'config.toml'), '[core]\nuser_name = "Brian"\n', 'utf8');
       await fs.ensureDir(path.join(bmadDir, 'core'));
-      await fs.writeFile(path.join(bmadDir, 'core', 'config.yaml'), 'user_name: Brian\n', 'utf8');
       // Override targets a key only in team config; routes to team. user.toml
       // never gets created in this case (correct — no user-scope writes).
       await applySetOverrides({ core: { user_name: 'Updated' } }, bmadDir);
@@ -3338,19 +3331,21 @@ async function runTests() {
       await fs.remove(tmp).catch(() => {});
     }
 
-    // ---- applySetOverrides skips modules without per-module config.yaml --
+    // ---- applySetOverrides skips modules with no `_bmad/<module>/` dir ----
     {
       const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'bmad-applyset-skip-'));
       const bmadDir = path.join(tmp, '_bmad');
       await fs.ensureDir(bmadDir);
       await fs.writeFile(path.join(bmadDir, 'config.toml'), '[core]\nuser_name = "Brian"\n', 'utf8');
       await fs.ensureDir(path.join(bmadDir, 'core'));
-      await fs.writeFile(path.join(bmadDir, 'core', 'config.yaml'), 'user_name: Brian\n', 'utf8');
-      // bmm is not installed (no `_bmad/bmm/config.yaml`). The override for
-      // bmm should be silently skipped, no `[modules.bmm]` section created.
-      const applied = await applySetOverrides({ bmm: { foo: 'bar' }, core: { user_name: 'Updated' } }, bmadDir);
+      // bmm is not installed (no `_bmad/bmm/`). The override for bmm should be
+      // silently skipped, no `[modules.bmm]` section created. `custom/` exists
+      // on every install but is not a module, so it must be skipped too.
+      await fs.ensureDir(path.join(bmadDir, 'custom'));
+      const applied = await applySetOverrides({ bmm: { foo: 'bar' }, custom: { foo: 'bar' }, core: { user_name: 'Updated' } }, bmadDir);
       const team = await fs.readFile(path.join(bmadDir, 'config.toml'), 'utf8');
       assert(!team.includes('[modules.bmm]'), 'applySetOverrides does NOT create section for uninstalled module');
+      assert(!team.includes('[modules.custom]'), 'applySetOverrides does NOT treat non-module _bmad dirs as modules');
       assert(team.includes('user_name = "Updated"'), 'applySetOverrides still applies overrides for installed modules');
       assert(applied.length === 1 && applied[0].module === 'core', 'applySetOverrides reports only the installed-module entries');
       await fs.remove(tmp).catch(() => {});
@@ -3438,14 +3433,14 @@ async function runTests() {
     await fs.writeFile(path.join(bmadDir45, 'bmm', 'agents', 'bmad-agent-analyst', 'SKILL.md'), 'x');
     await fs.ensureDir(path.join(bmadDir45, 'bmm', 'plan', 'research', 'bmad-research'));
     await fs.writeFile(path.join(bmadDir45, 'bmm', 'plan', 'research', 'bmad-research', 'SKILL.md'), 'x');
-    await fs.writeFile(path.join(bmadDir45, 'bmm', 'config.yaml'), 'module: bmm\n');
+    await fs.writeFile(path.join(bmadDir45, 'bmm', 'module-help.csv'), 'skillId\n');
 
     const installer45 = new Installer();
     await installer45._cleanupSkillDirs(bmadDir45);
 
     assert(!(await fs.pathExists(path.join(bmadDir45, 'bmm', 'agents'))), 'empty skill-group dir is pruned after cleanup');
     assert(!(await fs.pathExists(path.join(bmadDir45, 'bmm', 'plan'))), 'empty nested skill-group dir is pruned');
-    assert(await fs.pathExists(path.join(bmadDir45, 'bmm', 'config.yaml')), 'module-level files are preserved');
+    assert(await fs.pathExists(path.join(bmadDir45, 'bmm', 'module-help.csv')), 'module-level files are preserved');
     assert(await fs.pathExists(bmadDir45), 'bmad root is never removed');
   } catch (error) {
     console.log(`${colors.red}Test Suite 45 setup failed: ${error.message}${colors.reset}`);
@@ -3821,8 +3816,6 @@ async function runTests() {
       moduleConfig: {},
       silent: true,
     });
-    await installer49.generateModuleConfigs(bmadDir49, { core: { communication_language: 'English' }, bmm: {} });
-
     const scripts49 = path.join(bmadDir49, 'scripts');
     const skill49 = path.join(bmadDir49, 'bmm', 'ship', 'bmad-build-auto');
     const skill49Build = path.join(bmadDir49, 'bmm', 'ship', 'bmad-build');
@@ -3866,7 +3859,6 @@ async function runTests() {
       (await fs.readFile(renderGitignore49, 'utf8')) === '*\n!.gitignore\n',
       'generated render snapshots are ignored by installed projects',
     );
-    assert(!(await fs.pathExists(path.join(bmadDir49, 'render', 'config.yaml'))), 'render cache is excluded from module config generation');
 
     await fs.writeFile(
       path.join(bmadDir49, 'config.toml'),
@@ -4000,9 +3992,8 @@ async function runTests() {
     );
 
     // Every core key seeds, not just the four with a legacy shortcut flag.
-    // project_name has none, and module config.yaml files snapshot the core
-    // values at generate time, so a key that misses collection leaves those
-    // copies stale.
+    // project_name has none, and dependent module paths are built from the
+    // collected core values, so a key that misses collection is simply lost.
     const otherKeys50 = await new UI().collectModuleConfigs(root50, ['core', 'bmm'], {
       yes: true,
       set: ['core.user_name=Bob', 'core.project_name=Foo', 'bmm.user_skill_level=expert'],
@@ -4192,6 +4183,169 @@ async function runTests() {
     console.log(`${colors.red}Test Suite 52 setup failed: ${error.message}${colors.reset}`);
     console.log(error.stack);
     failed++;
+  }
+
+  console.log('');
+
+  // ============================================================
+  // Test Suite 53: config lives only in the central TOML
+  // ============================================================
+  console.log(`${colors.yellow}Test Suite 53: config lives only in the central TOML${colors.reset}\n`);
+
+  let root53;
+  try {
+    root53 = await fs.mkdtemp(path.join(os.tmpdir(), 'bmad-toml-only-'));
+    const bmadDir53 = path.join(root53, '_bmad');
+    const installer53 = new Installer();
+
+    // ---- _readOutputFolder reads [core] output_folder from config.toml ----
+    await fs.ensureDir(bmadDir53);
+    assert(
+      (await installer53._readOutputFolder(bmadDir53)) === '_bmad-output',
+      'getOutputFolder falls back to _bmad-output when no config.toml exists',
+    );
+
+    await fs.writeFile(path.join(bmadDir53, 'config.toml'), '[core]\nproject_name = "demo"\noutput_folder = "artifacts"\n', 'utf8');
+    assert((await installer53._readOutputFolder(bmadDir53)) === 'artifacts', 'getOutputFolder reads [core] output_folder from config.toml');
+
+    // The core schema renders output_folder through `{project-root}/{value}`,
+    // so a `--set core.output_folder='{project-root}/gen'` lands prefixed.
+    await fs.writeFile(path.join(bmadDir53, 'config.user.toml'), '[core]\noutput_folder = "{project-root}/personal-out"\n', 'utf8');
+    assert(
+      (await installer53._readOutputFolder(bmadDir53)) === 'personal-out',
+      'getOutputFolder honours config.user.toml and strips the {project-root}/ prefix',
+    );
+
+    await fs.ensureDir(path.join(bmadDir53, 'custom'));
+    await fs.writeFile(path.join(bmadDir53, 'custom', 'config.toml'), '[core]\noutput_folder = "pinned-out"\n', 'utf8');
+    assert(
+      (await installer53._readOutputFolder(bmadDir53)) === 'pinned-out',
+      'getOutputFolder honours a custom-layer pin, matching the skills resolution order',
+    );
+
+    // uninstall names the folder it would remove — same reader, real entry point.
+    await fs.ensureDir(path.join(bmadDir53, '_config'));
+    await fs.writeFile(path.join(bmadDir53, '_config', 'manifest.yaml'), 'installation:\n  version: 6.11.0\nmodules: []\n', 'utf8');
+    await fs.ensureDir(path.join(root53, 'pinned-out'));
+    assert((await installer53.getOutputFolder(root53)) === 'pinned-out', 'uninstall resolves the output folder from the TOML layers');
+    const uninstalled53 = await installer53.uninstall(root53, {
+      removeIdeConfigs: false,
+      removeOutputFolder: true,
+      silent: true,
+    });
+    assert(uninstalled53.removed.outputFolder === true, 'uninstall --remove-output-folder removes the TOML-named folder');
+    assert(!(await fs.pathExists(path.join(root53, 'pinned-out'))), 'the output folder named by config.toml is gone after uninstall');
+
+    // ---- install answers round-trip through config.toml, byte-identically --
+    const roundTripRoot53 = await fs.mkdtemp(path.join(os.tmpdir(), 'bmad-toml-roundtrip-'));
+    const roundTripBmad53 = path.join(roundTripRoot53, '_bmad');
+    await fs.ensureDir(path.join(roundTripBmad53, '_config'));
+    // loadExistingConfig locates the install by its _config/manifest.yaml.
+    await fs.writeFile(
+      path.join(roundTripBmad53, '_config', 'manifest.yaml'),
+      'installation:\n  version: 6.11.0\nmodules:\n  - name: core\n  - name: bmm\n',
+      'utf8',
+    );
+    const answers53 = {
+      core: {
+        user_name: 'Tester',
+        project_name: 'demo-project',
+        communication_language: 'English',
+        document_output_language: 'English',
+        output_folder: '_bmad-output',
+      },
+      bmm: {
+        user_skill_level: 'expert',
+        planning_artifacts: '{project-root}/_bmad-output/planning-artifacts',
+        implementation_artifacts: '{project-root}/_bmad-output/implementation-artifacts',
+        project_knowledge: '{project-root}/docs',
+      },
+    };
+
+    const gen53a = new ManifestGenerator();
+    gen53a.updatedModules = ['core', 'bmm'];
+    gen53a.agents = [];
+    await gen53a.writeCentralConfig(roundTripBmad53, answers53);
+    const firstTeam53 = await fs.readFile(path.join(roundTripBmad53, 'config.toml'), 'utf8');
+    const firstUser53 = await fs.readFile(path.join(roundTripBmad53, 'config.user.toml'), 'utf8');
+
+    // A second install with unchanged answers re-reads the previous run's
+    // answers as its prompt defaults and writes them back. No per-module yaml
+    // exists to carry them, so this is the whole carry-forward path.
+    const reread53 = new OfficialModules();
+    await reread53.loadExistingConfig(roundTripRoot53);
+    assert(
+      reread53.existingConfig.core?.user_name === 'Tester' && reread53.existingConfig.core?.project_name === 'demo-project',
+      'a re-install pre-fills core answers from config.toml + config.user.toml',
+    );
+    assert(
+      reread53.existingConfig.bmm?.user_skill_level === 'expert' &&
+        reread53.existingConfig.bmm?.project_knowledge === '{project-root}/docs',
+      'a re-install pre-fills module answers from config.toml + config.user.toml',
+    );
+
+    const gen53b = new ManifestGenerator();
+    gen53b.updatedModules = ['core', 'bmm'];
+    gen53b.agents = [];
+    await gen53b.writeCentralConfig(roundTripBmad53, {
+      core: { ...reread53.existingConfig.core },
+      bmm: { ...reread53.existingConfig.bmm },
+    });
+    assert(
+      (await fs.readFile(path.join(roundTripBmad53, 'config.toml'), 'utf8')) === firstTeam53,
+      'a second install with unchanged answers leaves _bmad/config.toml byte-identical',
+    );
+    assert(
+      (await fs.readFile(path.join(roundTripBmad53, 'config.user.toml'), 'utf8')) === firstUser53,
+      'a second install with unchanged answers leaves _bmad/config.user.toml byte-identical',
+    );
+
+    // ---- --set core.output_folder still flows all the way to config.toml ---
+    const { applySetOverrides } = require('../tools/installer/set-overrides');
+    await fs.ensureDir(path.join(roundTripBmad53, 'core'));
+    const appliedSet53 = await applySetOverrides({ core: { output_folder: 'generated' } }, roundTripBmad53);
+    assert(
+      appliedSet53.length === 1 && appliedSet53[0].file === 'config.toml',
+      '--set core.output_folder is routed to the team config.toml',
+    );
+    assert(
+      (await installer53._readOutputFolder(roundTripBmad53)) === 'generated',
+      '--set core.output_folder still reaches the value uninstall reads back',
+    );
+
+    // ---- a legacy per-module config.yaml is swept, hand-written ones are not
+    const legacyRoot53 = await fs.mkdtemp(path.join(os.tmpdir(), 'bmad-legacy-yaml-'));
+    const legacyBmad53 = path.join(legacyRoot53, '_bmad');
+    await fs.ensureDir(path.join(legacyBmad53, 'core'));
+    await fs.ensureDir(path.join(legacyBmad53, 'bmm'));
+    await fs.ensureDir(path.join(legacyBmad53, 'mine'));
+    await fs.writeFile(
+      path.join(legacyBmad53, 'core', 'config.yaml'),
+      '# CORE Module Configuration\n# Generated by BMAD installer\n\nuser_name: Tester\n',
+      'utf8',
+    );
+    await fs.writeFile(
+      path.join(legacyBmad53, 'bmm', 'config.yaml'),
+      '# BMM Module Configuration\n# Generated by BMAD installer\n\nuser_skill_level: expert\n',
+      'utf8',
+    );
+    await fs.writeFile(path.join(legacyBmad53, 'mine', 'config.yaml'), 'hand: written\n', 'utf8');
+    await new Installer()._removeLegacyModuleConfigs(legacyBmad53);
+    assert(
+      !(await fs.pathExists(path.join(legacyBmad53, 'core', 'config.yaml'))) &&
+        !(await fs.pathExists(path.join(legacyBmad53, 'bmm', 'config.yaml'))),
+      'an install sweeps the installer-generated per-module config.yaml files away',
+    );
+    assert(await fs.pathExists(path.join(legacyBmad53, 'mine', 'config.yaml')), 'a config.yaml without the installer banner is left alone');
+
+    await fs.remove(roundTripRoot53).catch(() => {});
+    await fs.remove(legacyRoot53).catch(() => {});
+  } catch (error) {
+    console.log(`${colors.red}Test Suite 53 setup failed: ${error.message}${colors.reset}`);
+    console.log(error.stack);
+    failed++;
+  } finally {
+    if (root53) await fs.remove(root53).catch(() => {});
   }
 
   console.log('');

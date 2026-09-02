@@ -82,9 +82,6 @@ function escapeTableCell(str) {
 // Path prefixes/patterns that only exist in installed structure, not in source
 const INSTALL_ONLY_PATHS = ['_config/', 'custom/', 'render/bmad-build/', 'render/bmad-build-auto/'];
 
-// Files that are generated at install time and don't exist in the source tree
-const INSTALL_GENERATED_FILES = ['config.yaml', 'config.user.yaml'];
-
 // Variables that indicate a path is not statically resolvable
 const UNRESOLVABLE_VARS = [
   '{output_folder}',
@@ -187,11 +184,6 @@ function isInstallOnly(cleanedPath) {
   // Skip paths that only exist in the installed _bmad/ structure, not in src/
   for (const prefix of INSTALL_ONLY_PATHS) {
     if (cleanedPath.startsWith(prefix)) return true;
-  }
-  // Skip files that are generated during installation
-  const basename = path.basename(cleanedPath);
-  for (const generated of INSTALL_GENERATED_FILES) {
-    if (basename === generated) return true;
   }
   return false;
 }

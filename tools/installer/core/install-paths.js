@@ -69,9 +69,6 @@ class InstallPaths {
   moduleDir(name) {
     return path.join(this.bmadDir, name);
   }
-  moduleConfig(name) {
-    return path.join(this.bmadDir, name, 'config.yaml');
-  }
 }
 
 async function assertReadableDir(dirPath, label) {

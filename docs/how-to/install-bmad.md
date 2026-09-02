@@ -188,7 +188,7 @@ npx bmad-method install --yes --action update \
 
 ### Module config overrides
 
-`--set <module>.<key>=<value>` lets you set any module config option non-interactively. It's repeatable and scales to every module — present and future. The flag is applied as a post-install patch: the installer runs its normal flow first, then `--set` upserts each value into `_bmad/config.toml` (team scope) or `_bmad/config.user.toml` (user scope), and into `_bmad/<module>/config.yaml` so declared values carry forward to the next install.
+`--set <module>.<key>=<value>` lets you set any module config option non-interactively. It's repeatable and scales to every module — present and future. The flag is applied as a post-install patch: the installer runs its normal flow first, then `--set` upserts each value into `_bmad/config.toml` (team scope) or `_bmad/config.user.toml` (user scope).
 
 **Example — install bmm with explicit project knowledge and skill level:**
 
@@ -212,7 +212,7 @@ npx bmad-method install --list-options bmm
 
 - **Routing.** The patch step looks for `[modules.<module>] <key>` (or `[core] <key>`) in `config.user.toml` first; if found there, it updates that file. Otherwise it writes to the team-scope `config.toml`. So user-scope keys (e.g. `core.user_name`, `bmm.user_skill_level`) end up in `config.user.toml` and team-scope keys end up in `config.toml`, matching the partition the installer uses.
 - **Verbatim values.** The value is written exactly as you provided it — no `result:` template rendering. To get the rendered form (e.g. `{project-root}/research`), pass it explicitly: `--set bmm.project_knowledge='{project-root}/research'`.
-- **Carry-forward, declared keys.** Values for keys declared in `module.yaml` survive subsequent installs because they're also written to `_bmad/<module>/config.yaml`, which the installer reads as the prompt default on the next run.
+- **Carry-forward, declared keys.** Values for keys declared in `module.yaml` survive subsequent installs because the installer reads `_bmad/config.toml` and `_bmad/config.user.toml` back as its prompt defaults on the next run.
 - **Carry-forward, undeclared keys.** A value for a key the module's schema doesn't declare lands in `config.toml` for the current install but won't be re-emitted on the next install (the manifest writer's schema-strict partition drops unknown keys). Re-pass `--set` if you need it sticky, or edit `_bmad/config.toml` directly.
 - **No validation.** `single-select` values aren't checked against the allowed choices, and unknown keys aren't rejected — whatever you assert is written.
 - **Modules not in `--modules`.** Setting a value for a module you didn't include prints a warning and the value is dropped (no file gets created for an uninstalled module).
