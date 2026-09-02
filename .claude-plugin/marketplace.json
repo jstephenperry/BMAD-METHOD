@@ -1,22 +1,33 @@
 {
-  "name": "bmad-method",
+  "name": "continuous-agile",
   "owner": {
-    "name": "Brian (BMad) Madison"
+    "name": "J. Stephen Perry"
   },
-  "description": "Breakthrough Method of Agile AI-driven Development — a full-lifecycle framework with agents and workflows for analysis, planning, architecture, and implementation.",
+  "description": "Continuous Agile — full-lifecycle agentic development: agents and workflows for product conception, planning, architecture, implementation, and testing, without time-boxes.",
   "license": "MIT",
-  "homepage": "https://github.com/bmad-code-org/BMAD-METHOD",
-  "repository": "https://github.com/bmad-code-org/BMAD-METHOD",
-  "keywords": ["bmad", "agile", "ai", "orchestrator", "development", "methodology", "agents", "brainstorming", "thinking"],
+  "homepage": "https://github.com/jstephenperry/continuous-agile",
+  "repository": "https://github.com/jstephenperry/continuous-agile",
+  "keywords": [
+    "continuous-agile",
+    "agile",
+    "ai",
+    "agentic",
+    "orchestrator",
+    "development",
+    "methodology",
+    "agents",
+    "brainstorming",
+    "thinking"
+  ],
   "plugins": [
     {
-      "name": "bmad-method-analyze-plan-build",
-      "displayName": "BMad Method Analyze Plan Build",
+      "name": "continuous-agile-conceive-build-verify",
+      "displayName": "Continuous Agile",
       "source": "./",
-      "description": "Full-lifecycle AI development framework — agents and workflows for product analysis, planning, architecture, and implementation.",
+      "description": "Full-lifecycle agentic development — agents and workflows for product conception, planning, architecture, implementation, and testing.",
       "version": "6.11.0",
       "author": {
-        "name": "Brian (BMad) Madison"
+        "name": "J. Stephen Perry"
       },
       "skills": [
         "./src/bmm-skills/agents/bmad-agent-analyst",

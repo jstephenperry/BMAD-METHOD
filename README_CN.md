@@ -1,4 +1,8 @@
-![BMad Method](banner-bmad-method.png)
+# Continuous Agile
+
+> Continuous Agile is an independent hard fork of [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by BMad Code, LLC. Not affiliated with or endorsed by BMad Code, LLC. See [NOTICE](NOTICE).
+>
+> This translation still describes the upstream project and has not yet been updated for Continuous Agile.
 
 [![Version](https://img.shields.io/npm/v/bmad-method?color=blue&label=version)](https://www.npmjs.com/package/bmad-method)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)

@@ -17,19 +17,11 @@ startMessage: |
      Without it, bmad-build and bmad-build-auto halt on activation.
      If it's not set up yet, ask your AI agent to "install and set up uv for me".
 
-  🌐 CONNECT:
-    Website:   https://bmadcode.com/
-    Discord:   https://discord.gg/gk8jAdXWmj
-    YouTube:   https://www.youtube.com/@BMadCode
-    X:         https://x.com/BMadCode
-    Facebook:  https://facebook.com/@BMadCode
+  🌐 PROJECT:
+    Repository: https://github.com/jstephenperry/continuous-agile
 
-  ⭐ SUPPORT THE PROJECT:
-    Star us:   https://github.com/bmad-code-org/BMAD-METHOD/
-    Donate:    https://buymeacoffee.com/bmad
-    Corporate sponsorship and speaking inquiries: contact@bmadcode.com
-
-  Docs, blog, and latest updates: https://bmadcode.com/
+  Continuous Agile is an independent hard fork of BMAD-METHOD by BMad Code, LLC.
+  It is not affiliated with or endorsed by BMad Code, LLC.
 
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

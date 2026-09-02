@@ -24,7 +24,7 @@ import { validatePublishedImplementationModel } from './validate-published-imple
 const PROJECT_ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const BUILD_DIR = path.join(PROJECT_ROOT, 'build');
 
-const REPO_URL = 'https://github.com/bmad-code-org/BMAD-METHOD';
+const REPO_URL = 'https://github.com/jstephenperry/continuous-agile';
 
 // DO NOT CHANGE THESE VALUES!
 // llms-full.txt is consumed by AI agents as context. Most LLMs have ~200k token limits.

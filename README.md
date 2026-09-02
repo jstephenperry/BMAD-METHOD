@@ -1,17 +1,19 @@
-![BMad Method](banner-bmad-method.png)
+# Continuous Agile
 
-
-[![Version](https://img.shields.io/npm/v/bmad-method?color=blue&label=version)](https://www.npmjs.com/package/bmad-method)
+[![Version](https://img.shields.io/npm/v/continuous-agile?color=blue&label=version)](https://www.npmjs.com/package/continuous-agile)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?logo=discord&logoColor=white)](https://discord.gg/gk8jAdXWmj)
 
-**Agile Ai Driven Development — turn an idea or change request into working software without giving up the thinking.**
+**Full-lifecycle agentic development — turn an idea or change request into working software without giving up the thinking.**
 
-Ai Driven Development (AiDD) covers the whole effort, not only the code: what to build, how it holds together, and how it changes as you learn. BMad Method is the agile way to do it — decisions stay explicit, context carries forward, and the process sizes itself to the work. Small changes go straight to build. Complex work gets the depth it needs. The same method covers a weekend prototype and a system with years of history behind it.
+Continuous Agile covers the whole effort, not only the code: what to build, how it holds together, and how it changes as you learn. It keeps what agile was always for — decisions stay explicit, context carries forward, the process sizes itself to the work — and drops the scaffolding that only existed because humans batch their coordination. There are no sprints, no velocity, and no estimates. Work flows continuously through spec folders, which are the unit of execution and the unit of handoff between teams.
 
-![The BMad delivery loop: a vague notion starts at Clarify, a big clear idea at Plan, and a small change at Build and verify; Learn and adjust loops back to Plan](docs/images/bmad-delivery-loop.svg)
+Small changes go straight to build. Complex work gets the depth it needs. The same method covers a weekend prototype and a system with years of history behind it.
 
-_Start anywhere. Use BMad end to end, or carry its briefs, specifications, and architecture into your existing delivery workflow._
+![The delivery loop: a vague notion starts at Clarify, a big clear idea at Plan, and a small change at Build and verify; Learn and adjust loops back to Plan](docs/images/bmad-delivery-loop.svg)
+
+_Start anywhere. Use Continuous Agile end to end, or carry its briefs, specifications, and architecture into your existing delivery workflow._
+
+> Continuous Agile is an independent hard fork of [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by BMad Code, LLC, maintained separately. It is not affiliated with or endorsed by BMad Code, LLC. See [NOTICE](NOTICE).
 
 ## Start Building
 
@@ -23,15 +25,15 @@ npx bmad-method install
 
 Open your project in your AI coding tool, invoke `bmad-build` with what you want to change, and keep making the decisions that matter. Run `bmad-help` whenever you want guidance on what comes next or what is optional.
 
-**[Build your first project with BMad →](https://docs.bmad-method.org/tutorials/getting-started/)**
+**[Build your first project →](docs/tutorials/getting-started.md)**
 
-**[Add BMad to an existing codebase →](https://docs.bmad-method.org/how-to/established-projects/)**
+**[Add Continuous Agile to an existing codebase →](docs/how-to/established-projects.md)**
 
-BMad is free and open source, with no paywalled workflows or gated community. For prerelease builds, CI/CD, configuration overrides, and non-interactive setup, see the [installation guide](https://docs.bmad-method.org/how-to/install-bmad/).
+Continuous Agile is free and open source. For prerelease builds, CI/CD, configuration overrides, and non-interactive setup, see the [installation guide](docs/how-to/install-bmad.md).
 
-## Why BMad?
+## Why Continuous Agile?
 
-Coding assistants are effective at implementation, but they often turn unstated assumptions into code. BMad keeps you in control while its agents and workflows make the important decisions explicit and preserve them as context for the work that follows.
+Coding assistants are effective at implementation, but they often turn unstated assumptions into code. Continuous Agile keeps you in control while its agents and workflows make the important decisions explicit and preserve them as context for the work that follows.
 
 - **Right-sized process** — Go directly to implementation for clear changes or add deeper planning for larger initiatives.
 - **New or existing code** — Start from nothing, or establish verified context on a codebase you inherited and work from what is actually there.
@@ -40,15 +42,15 @@ Coding assistants are effective at implementation, but they often turn unstated 
 - **Guided collaboration** — Use structured workflows and multiple-agent discussions without handing over judgment.
 - **One delivery path** — Move from early thinking through reviewed implementation, correction, and learning.
 
-[See how the workflows fit together →](https://docs.bmad-method.org/reference/workflow-map/)
+[See how the workflows fit together →](docs/reference/workflow-map.md)
 
-## BMad Ecosystem
+## Modules
 
-Install the core method or add official modules for specialized work.
+Install the core method, or add modules for specialized work. The add-on modules below are published by BMad Code, LLC and remain installable in Continuous Agile; they are listed here to describe compatibility, not affiliation.
 
 | Module | Purpose |
 | --- | --- |
-| **[BMad Method](https://github.com/bmad-code-org/BMAD-METHOD)** | Plan and deliver software, from new prototypes to established codebases |
+| **Continuous Agile** (this repository) | Plan and deliver software, from new prototypes to established codebases |
 | **[BMad Builder](https://github.com/bmad-code-org/bmad-builder)** | Skill, workflow, and agent builder |
 | **[BMad Creative Intelligence Suite](https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite)** | Creative thinking partners for innovation, design thinking, and storytelling |
 | **[BMad Test Architect](https://github.com/bmad-code-org/bmad-method-test-architecture-enterprise)** | Enterprise testing add-on for BMad Method |

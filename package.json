@@ -1,31 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "bmad-method",
+  "name": "continuous-agile",
   "version": "6.11.0",
-  "description": "Breakthrough Method of Agile AI-driven Development",
+  "description": "Continuous Agile — full-lifecycle agentic development, from product conception through implementation and testing",
   "keywords": [
     "agile",
     "ai",
+    "agents",
+    "agentic",
     "orchestrator",
     "development",
     "methodology",
-    "agents",
-    "bmad"
+    "continuous-agile"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bmad-code-org/BMAD-METHOD.git"
+    "url": "git+https://github.com/jstephenperry/continuous-agile.git"
   },
   "license": "MIT",
-  "author": "Brian (BMad) Madison",
+  "author": "J. Stephen Perry",
   "main": "tools/installer/bmad-cli.js",
   "bin": {
-    "bmad": "tools/installer/bmad-cli.js",
-    "bmad-method": "tools/installer/bmad-cli.js"
+    "cagile": "tools/installer/bmad-cli.js",
+    "continuous-agile": "tools/installer/bmad-cli.js"
   },
   "scripts": {
-    "bmad:install": "node tools/installer/bmad-cli.js install",
-    "bmad:uninstall": "node tools/installer/bmad-cli.js uninstall",
+    "ca:install": "node tools/installer/bmad-cli.js install",
+    "ca:uninstall": "node tools/installer/bmad-cli.js uninstall",
     "docs:build": "node tools/build-docs.mjs",
     "docs:dev": "astro dev --root website",
     "docs:fix-links": "node tools/fix-doc-links.js",
@@ -35,7 +36,7 @@
     "format:check": "prettier --check \"**/*.{js,cjs,mjs,json,yaml}\"",
     "format:fix": "prettier --write \"**/*.{js,cjs,mjs,json,yaml}\"",
     "format:fix:staged": "prettier --write",
-    "install:bmad": "node tools/installer/bmad-cli.js install",
+    "install:ca": "node tools/installer/bmad-cli.js install",
     "lint": "eslint . --ext .js,.cjs,.mjs,.yaml --max-warnings=0",
     "lint:fix": "eslint . --ext .js,.cjs,.mjs,.yaml --fix",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",

@@ -1,0 +1,21 @@
+Continuous Agile
+================
+
+Continuous Agile is an independent hard fork of BMAD-METHOD
+(https://github.com/bmad-code-org/BMAD-METHOD), created by BMad Code, LLC and
+licensed under the MIT License. The MIT License covering the original software
+is reproduced in LICENSE, together with the copyright notice for this fork.
+
+Continuous Agile is not affiliated with, endorsed by, or certified by
+BMad Code, LLC.
+
+"BMad", "BMad Method", "BMad Core", and "BMad Code" are trademarks of
+BMad Code, LLC. They are used in this project only to describe the origin of
+the software, which that project's trademark guidelines expressly permit. This
+fork is distributed under its own name, and BMad wordmarks and logos have been
+removed from its branding.
+
+Internal identifiers inherited from the original software -- the `_bmad/`
+install directory, the `bmad-*` skill names, and similar technical names --
+are retained for compatibility with existing installations. They are technical
+identifiers, not product, service, company, or domain names.

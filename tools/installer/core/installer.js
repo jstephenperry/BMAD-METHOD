@@ -146,7 +146,7 @@ class Installer {
 
       // Surface any "action needed" post-install messages for installed modules
       // (e.g. run a setup skill) and let the user acknowledge them before the
-      // final summary, so "BMAD is ready to use!" stays the last thing shown.
+      // final summary, so "Continuous Agile is ready to use!" stays the last thing shown.
       await this._displayPostInstallMessages(config, officialModules);
 
       // Render consolidated summary
@@ -1259,7 +1259,7 @@ class Installer {
 
     // Repeat the uv warning here when it applies. The pre-install probe fires
     // before every prompt in the run, so by now it is far up the scrollback —
-    // and this box is titled "BMAD is ready to use!", which is only true if
+    // and this box is titled "Continuous Agile is ready to use!", which is only true if
     // the rendered skills can actually start.
     const { detectUv } = require('./uv-check');
     if (!detectUv()) {
@@ -1271,13 +1271,9 @@ class Installer {
       );
     }
 
-    lines.push(
-      '',
-      `    Blog, Docs and Guides: ${color.blue('https://bmadcode.com/')}`,
-      `    Community: ${color.blue('https://discord.gg/gk8jAdXWmj')}`,
-    );
+    lines.push('', `    Docs and Guides: ${color.blue('https://github.com/jstephenperry/continuous-agile')}`);
 
-    await prompts.box(lines.join('\n'), 'BMAD is ready to use!', {
+    await prompts.box(lines.join('\n'), 'Continuous Agile is ready to use!', {
       rounded: true,
       formatBorder: color.green,
     });
