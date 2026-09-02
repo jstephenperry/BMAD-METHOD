@@ -444,7 +444,7 @@ async function main() {
     }
     // Every published step must be reachable, which also keeps the loop above non-vacuous.
     for (const name of Object.keys(bytesByName(dir))) {
-      if (!/^(?:step-|sync-sprint-status)/.test(name)) continue;
+      if (!name.startsWith('step-')) continue;
       assert(referenced.has(name), `published step is unreachable from the snapshot: ${name}`);
     }
 
@@ -474,7 +474,6 @@ async function main() {
     assert(/^Offer to push\b/m.test(present), 'standalone "Offer to push" line was lost');
 
     const artifacts = `${fs.realpathSync(build.project)}/implementation`;
-    assert(markdown.includes(`${artifacts}/sprint-status.yaml`), 'sprint-status path was not baked absolute');
     assert(markdown.includes(`${artifacts}/deferred-work.md`), 'deferred-work path was not baked absolute');
 
     for (const name of ['step-01-clarify-and-route.md', 'step-02-plan.md', 'step-04-review.md', 'step-oneshot.md']) {

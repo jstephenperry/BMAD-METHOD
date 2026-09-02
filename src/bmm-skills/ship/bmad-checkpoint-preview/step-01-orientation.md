@@ -16,16 +16,10 @@ The conversation context before this skill was triggered IS your starting point 
 2. **Recent conversation**
    Do the last few messages reveal what change the user wants reviewed? Look for spec paths, commit refs, branches, PRs, or descriptions of a change. Use the same routing as above.
 
-3. **Sprint tracking**
-   Check for a sprint status file (`*sprint-status*`) in `{implementation_artifacts}` or `{planning_artifacts}`. If found, scan for stories with status `review`:
-   - Exactly one → suggest it and confirm with the user.
-   - Multiple → present as numbered options.
-   - None → fall through.
-
-4. **Current git state**
+3. **Current git state**
    Check current branch and HEAD. Confirm: "I see HEAD is `<short-sha>` on `<branch>` — is this the change you want to review?"
 
-5. **Ask**
+4. **Ask**
    If none of the above identified a change, ask:
    - What changed and why?
    - Which commit, branch, or PR should I look at?

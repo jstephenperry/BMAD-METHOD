@@ -3,7 +3,6 @@ diff_file: '' # set at runtime: path to the diff file
 claims_file: '' # set at runtime (path or empty)
 spec_file: '' # set at runtime (path or empty)
 review_mode: '' # set at runtime: "full" or "no-spec"
-story_key: '' # set at runtime when discovered from sprint status
 ---
 
 # Step 1: Gather Context
@@ -23,6 +22,7 @@ story_key: '' # set at runtime when discovered from sprint status
    - PR reference → resolve to branch/commit via `gh pr view`. If resolution fails, ask for a SHA or branch.
    - Commit or branch → use directly.
    - Spec file → set `{spec_file}` to the provided path. Check its frontmatter for `baseline_commit`. If found, use as diff baseline. If not found, continue the cascade (a spec alone does not identify a diff source).
+   - Spec folder plus story id → look for `{spec_folder}/stories/{story_id}-*.md`. Exactly one match → treat it as the spec file above. No match or more than one → HALT and ask for the story file path.
    - Also scan the argument for diff-mode keywords that narrow the scope:
      - "staged" / "staged changes" → Staged changes only
      - "uncommitted" / "working tree" / "all changes" → Uncommitted changes (staged + unstaged)
@@ -34,19 +34,10 @@ story_key: '' # set at runtime when discovered from sprint status
    **Tier 2 — Recent conversation.**
    Do the last few messages reveal what the user wants to be reviewed? Look for spec paths, commit refs, branches, PRs, or descriptions of a change. Apply the same diff-mode keyword scan and routing as Tier 1.
 
-   **Tier 3 — Sprint tracking.**
-   Look for a sprint status file (`*sprint-status*`) in `{implementation_artifacts}` or `{planning_artifacts}`. If found, scan for stories with status `review`:
-   - **Exactly one `review` story:** Set `{story_key}` to the story's key (e.g., `1-2-user-auth`). HALT and give the user a choice:
-     - **Review this story** — review the detected story `<story-id>` (status `review`).
-     - **Choose another target** — pick a different review target.
-     If the user chooses **Review this story**, use the story context to determine the diff source (branch name derived from story slug, or uncommitted changes). If they choose **Choose another target**, clear `{story_key}` and fall through.
-   - **Multiple `review` stories:** Present them as numbered options alongside a manual choice option. Wait for user selection. If a story is selected, set `{story_key}` and use its context to determine the diff source. If manual choice is selected, clear `{story_key}` and fall through.
-   - **None:** Fall through.
+   **Tier 3 — Current git state.**
+   If version control is unavailable, skip to Tier 4. Otherwise, check the current branch and HEAD. If the branch is not `main` (or the default branch), confirm: "I see HEAD is `<short-sha>` on `<branch>` — do you want to review this branch's changes?" If confirmed, treat as a branch diff against `main`. If declined, fall through.
 
-   **Tier 4 — Current git state.**
-   If version control is unavailable, skip to Tier 5. Otherwise, check the current branch and HEAD. If the branch is not `main` (or the default branch), confirm: "I see HEAD is `<short-sha>` on `<branch>` — do you want to review this branch's changes?" If confirmed, treat as a branch diff against `main`. If declined, fall through.
-
-   **Tier 5 — Ask.**
+   **Tier 4 — Ask.**
    Fall through to instruction 2.
 
    Never ask extra questions beyond what the cascade prescribes. If a tier above already identified the target, skip the remaining tiers and proceed to instruction 3 (construct diff).

@@ -14,7 +14,7 @@ deferred_work_file: '{implementation_artifacts}/deferred-work.md'
 
 ### 1. Clean review shortcut
 
-If zero findings remain after triage (all dismissed or none raised): state that and proceed to section 6 (Sprint Status Update).
+If zero findings remain after triage (all dismissed or none raised): state that and proceed to section 6 (Update story status).
 
 ### 2. Write findings to the story file
 
@@ -82,7 +82,7 @@ If `{spec_file}` is **not** set, present only options 1 and 2 (omit "Leave as ac
 - Deferred: <W>
 - Dismissed: <R>
 
-### 6. Update story status and sync sprint tracking
+### 6. Update story status
 
 Skip this section if `{spec_file}` is not set.
 
@@ -92,19 +92,6 @@ Skip this section if `{spec_file}` is not set.
 - If `patch` findings were left as action items, or unresolved issues remain: set `{new_status}` = `in-progress`. Update the story file Status section to `in-progress`.
 
 Save the story file.
-
-#### Sync sprint-status.yaml
-
-If `{story_key}` is not set, skip this subsection and note that sprint status was not synced because no story key was available.
-
-If `{sprint_status}` file exists:
-
-1. Load the FULL `{sprint_status}` file.
-2. Find the `development_status` entry matching `{story_key}`.
-3. If found: update `development_status[{story_key}]` to `{new_status}`. Update `last_updated` to current date. Save the file, preserving ALL comments and structure including STATUS DEFINITIONS.
-4. If `{story_key}` not found in sprint status: warn the user that the story file was updated but sprint-status sync failed.
-
-If `{sprint_status}` file does not exist, note that story status was updated in the story file only.
 
 #### Completion summary
 
@@ -121,7 +108,7 @@ If `{sprint_status}` file does not exist, note that story status was updated in 
 Present the user with follow-up options:
 
 > **What would you like to do next?**
-> 1. **Start the next story** — run `dev-story` to pick up the next `ready-for-dev` story
+> 1. **Start the next story** — run `bmad-build` on the next story
 > 2. **Re-run code review** — address findings and review again
 > 3. **Done** — end the workflow
 

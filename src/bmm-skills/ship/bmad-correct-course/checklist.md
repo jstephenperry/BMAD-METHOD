@@ -181,7 +181,7 @@
 
 </section>
 
-<section n="5" title="Sprint Change Proposal Components">
+<section n="5" title="Change Proposal Components">
 
 <check-item id="5.1">
 <prompt>Create identified issue summary</prompt>
@@ -237,7 +237,7 @@
 </check-item>
 
 <check-item id="6.2">
-<prompt>Verify Sprint Change Proposal accuracy</prompt>
+<prompt>Verify Change Proposal accuracy</prompt>
 <action>Review complete proposal for consistency and clarity</action>
 <action>Ensure all recommendations are well-supported by analysis</action>
 <action>Check that proposal is actionable and specific</action>
@@ -253,11 +253,10 @@
 </check-item>
 
 <check-item id="6.4">
-<prompt>Update sprint-status.yaml to reflect approved epic changes</prompt>
-<action>If epics were added: Add new epic entries with status 'backlog'</action>
-<action>If epics were removed: Remove corresponding entries</action>
-<action>If epics were renumbered: Update epic IDs and story references</action>
-<action>If stories were added/removed: Update story entries within affected epics</action>
+<prompt>Route approved epic and story changes to the artifacts that own them</prompt>
+<action>If the work is planned in the epics document: apply the approved epic and story edits there, or hand off to bmad-create-epics-and-stories for a replan</action>
+<action>If the work is planned in a spec folder: apply the approved edits to SPEC.md, then re-run bmad-spec's Story Breakdown to re-derive stories.yaml rather than hand-editing the list</action>
+<action>If stories were added or removed: confirm no story spec under stories/ is orphaned or missing</action>
 <status>[ ] Done / [ ] N/A / [ ] Action-needed</status>
 </check-item>
 

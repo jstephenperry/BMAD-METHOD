@@ -52,8 +52,6 @@ When there is only one concern, omit the bold label — just list the stops dire
 
 Change `{spec_file}` status to `done` in the frontmatter.
 
-Follow `[[bmad-snapshot:sync-sprint-status.md]]` with `target_status` = `review`.
-
 ### Commit and Complete
 
 If version control is available and the tree is dirty, create a local commit with a conventional message derived from the spec title.

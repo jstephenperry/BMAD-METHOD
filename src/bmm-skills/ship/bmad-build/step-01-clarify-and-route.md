@@ -1,6 +1,5 @@
 ---
 spec_file: '' # set at runtime for both routes before leaving this step
-story_key: '' # set at runtime to the current story's full sprint-status key (e.g. 3-2-digest-delivery) when the intent is an epic story and sprint-status resolution succeeds
 ---
 
 # Step 1: Clarify and Route
@@ -21,8 +20,8 @@ Before listing artifacts or prompting the user, check whether you already know t
 1. Explicit argument
    Did the user pass a specific file path, spec name, or clear instruction this message?
    - If the user explicitly supplied a spec folder and a story id, with no specific spec file path, set `spec_folder` and `story_id`. Read `{spec_folder}/stories.yaml`; if it is missing or fails to parse, HALT rather than falling back to `{{.implementation_artifacts}}`. Find the one entry whose string `id` exactly equals `story_id`; if none exists, HALT rather than falling back. Use that entry's `title` and `description` as the starting intent.
-     - Look for files matching `{spec_folder}/stories/{story_id}-*.md`. More than one match → HALT rather than choosing one. Exactly one match → set `spec_file` to that path and process it exactly as if the user had supplied that specific file path, including **Story-key resolution** and the existing status route below. No matches → derive a valid kebab-case slug from the entry's `title` (and `description` if needed), then set `spec_file` = `{spec_folder}/stories/{story_id}-{slug}.md` and proceed to INSTRUCTIONS.
-   - If it points to a file that matches the spec template (has `status` frontmatter with a recognized value: draft, ready-for-dev, in-progress, in-review, or done) → set `spec_file`. Before exiting, run **Story-key resolution** (below). Then **EARLY EXIT** to the appropriate step: `draft` → `[[bmad-snapshot:step-02-plan.md]]`, `ready-for-dev`/`in-progress` → `[[bmad-snapshot:step-03-implement.md]]`, `in-review` → `[[bmad-snapshot:step-04-review.md]]`. For `done`, ingest as context and proceed to INSTRUCTIONS — do not resume.
+     - Look for files matching `{spec_folder}/stories/{story_id}-*.md`. More than one match → HALT rather than choosing one. Exactly one match → set `spec_file` to that path and process it exactly as if the user had supplied that specific file path, using the status route below. No matches → derive a valid kebab-case slug from the entry's `title` (and `description` if needed), then set `spec_file` = `{spec_folder}/stories/{story_id}-{slug}.md` and proceed to INSTRUCTIONS.
+   - If it points to a file that matches the spec template (has `status` frontmatter with a recognized value: draft, ready-for-dev, in-progress, in-review, or done) → set `spec_file`. **EARLY EXIT** to the appropriate step: `draft` → `[[bmad-snapshot:step-02-plan.md]]`, `ready-for-dev`/`in-progress` → `[[bmad-snapshot:step-03-implement.md]]`, `in-review` → `[[bmad-snapshot:step-04-review.md]]`. For `done`, ingest as context and proceed to INSTRUCTIONS — do not resume.
    - Anything else (intent files, external docs, plans, descriptions) → ingest it as starting intent and proceed to INSTRUCTIONS. Do not attempt to infer a workflow state from it.
 
 2. Recent conversation
@@ -33,19 +32,13 @@ Before listing artifacts or prompting the user, check whether you already know t
    - Active specs (`draft`, `ready-for-dev`, `in-progress`, `in-review`) in `{{.implementation_artifacts}}`? → List them and HALT. Give the user a choice:
      - Resume one of the listed specs
      - **New** — start new work
-     If `draft` selected: Set `spec_file`. Run **Story-key resolution** (below). **EARLY EXIT** → `[[bmad-snapshot:step-02-plan.md]]` (resume planning from the draft)
-     If `ready-for-dev` or `in-progress` selected: Set `spec_file`. Run **Story-key resolution** (below). **EARLY EXIT** → `[[bmad-snapshot:step-03-implement.md]]`
-     If `in-review` selected: Set `spec_file`. Run **Story-key resolution** (below). **EARLY EXIT** → `[[bmad-snapshot:step-04-review.md]]`
+     If `draft` selected: Set `spec_file`. **EARLY EXIT** → `[[bmad-snapshot:step-02-plan.md]]` (resume planning from the draft)
+     If `ready-for-dev` or `in-progress` selected: Set `spec_file`. **EARLY EXIT** → `[[bmad-snapshot:step-03-implement.md]]`
+     If `in-review` selected: Set `spec_file`. **EARLY EXIT** → `[[bmad-snapshot:step-04-review.md]]`
      If the user chooses **New**: proceed to INSTRUCTIONS
    - Unformatted spec or intent file lacking `status` frontmatter? → Suggest treating its contents as the starting intent. Do NOT attempt to infer a state and resume it.
 
 Never ask extra questions if you already understand what the user intends.
-
-### Story-key resolution
-
-This runs on ALL paths (early-exit and INSTRUCTIONS) whenever `spec_file` is set. Determine whether the spec is an epic story — use the spec's filename, frontmatter, and any loaded epics file to identify `epic_num` and `story_num`. If the spec is not an epic story, skip silently and leave `story_key` unset.
-
-If the spec is an epic story and `{{.implementation_artifacts}}/sprint-status.yaml` exists: find the `development_status` key matching `{epic_num}-{story_num}` by exact numeric equality on the first two segments (so `1-1` never collides with `1-10`). Exactly one match → set `story_key` to that full key. Zero or multiple matches → leave `story_key` unset (warn on multiple).
 
 ## INSTRUCTIONS
 
@@ -69,8 +62,6 @@ If the spec is an epic story and `{{.implementation_artifacts}}/sprint-status.ya
      4. **Verify.** After compilation, verify the output file exists, is non-empty, and starts with `# Epic <N> Context:`. If valid, load it. If verification fails, HALT and report the failure.
 
      5. **Previous story continuity.** Regardless of which context source succeeded above, scan `{{.implementation_artifacts}}` for specs from the same epic with `status: done` and a lower story number. Load the most recent one (highest story number below current). Extract its **Code Map**, **Design Notes**, **Spec Change Log**, and **task list** as continuity context for step-02 planning. If no `done` spec is found but an `in-review` spec exists for the same epic with a lower story number, note it to the user and ask whether to load it.
-
-     6. **Resolve `{story_key}`.** If not already set by an earlier early-exit path, run **Story-key resolution** (above) now.
 
      **B) Freeform path** — if the intent is not an epic story:
      - Planning artifacts are the output of BMAD phases 1-3. Typical files include:

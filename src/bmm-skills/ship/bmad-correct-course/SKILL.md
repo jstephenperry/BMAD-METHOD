@@ -1,13 +1,13 @@
 ---
 name: bmad-correct-course
-description: 'Assess the impact of a significant change during sprint execution across the PRD, epics, architecture, and UX documents, and produce a sprint change proposal. Use when the user says "correct course" or "propose sprint change"'
+description: 'Assess the impact of a significant change discovered during implementation across the PRD, epics, architecture, UX documents, and specs, and produce a change proposal. Use when the user says "correct course" or "propose a change"'
 ---
 
-# Correct Course - Sprint Change Management Workflow
+# Correct Course - Change Management Workflow
 
-**Goal:** Manage significant changes during sprint execution by analyzing impact across all project artifacts and producing a structured Sprint Change Proposal.
+**Goal:** Manage significant changes discovered during implementation by analyzing impact across all project artifacts and producing a structured Change Proposal.
 
-**Your Role:** You are a Developer navigating change management. Analyze the triggering issue, assess impact across PRD, epics, architecture, and UX artifacts, and produce an actionable Sprint Change Proposal with clear handoff.
+**Your Role:** You are a Developer navigating change management. Analyze the triggering issue, assess impact across PRD, epics, architecture, UX, and spec artifacts, and produce an actionable Change Proposal with clear handoff.
 
 ## Conventions
 
@@ -48,6 +48,7 @@ Resolve config: `uv run {project-root}/_bmad/scripts/resolve_config.py --project
 - `implementation_artifacts`
 - `planning_artifacts`
 - `project_knowledge`
+- `output_folder`
 - `date` as system-generated current datetime
 - YOU MUST ALWAYS SPEAK OUTPUT in your Agent communication style with the config `{communication_language}`
 - Language MUST be tailored to `{user_skill_level}`
@@ -66,7 +67,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 
 ## Paths
 
-- `default_output_file` = `{planning_artifacts}/sprint-change-proposal-{date}.md`
+- `default_output_file` = `{planning_artifacts}/change-proposal-{date}.md`
 
 ## Input Files
 
@@ -77,6 +78,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 | Architecture | `{planning_artifacts}/*architecture*.md` (whole) or `{planning_artifacts}/*architecture*/*.md` (sharded) | FULL_LOAD |
 | UX Design | `{planning_artifacts}/*ux*.md` (whole) or `{planning_artifacts}/*ux*/*.md` (sharded) | FULL_LOAD |
 | Spec | `{planning_artifacts}/*spec-*.md` (whole) | FULL_LOAD |
+| Spec folder | `{output_folder}/specs/spec-*/SPEC.md` plus the files its `companions:` frontmatter lists, and a sibling `stories.yaml` when present | FULL_LOAD |
 | Project Context | `AGENTS.md` in the affected repo (the `bmad:context` block) | FULL_LOAD |
 
 ## Execution
@@ -95,6 +97,11 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
    - Process the combined content as a single document
 4. **Priority**: If both whole and sharded versions exist, use the whole document
 
+**Discovery Process for Spec folders:**
+
+1. **List spec folders** — every `{output_folder}/specs/spec-*/` directory holding a `SPEC.md`. Load each `SPEC.md` that relates to the affected work, plus the files its `companions:` frontmatter lists (paths resolve relative to that folder unless absolute).
+2. **Stories** — a sibling `stories.yaml`, when present, is that spec's ordered story list and `stories/<id>-*.md` are its story specs. For work planned this way, they are the current epics and stories.
+
 **Discovery Process for Project Context:**
 
 1. **Read `AGENTS.md`** in the repo the change affects — the block between the `bmad:context` markers carries the policy, frozen paths, and conventions a course correction must respect.
@@ -103,7 +110,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 
 **Fuzzy matching**: Be flexible with document names — users may use variations like `prd.md`, `bmm-prd.md`, `product-requirements.md`, etc.
 
-**Missing documents**: Not all documents may exist. PRD and Epics are essential; Architecture, UX Design, Spec, and Document Project are loaded if available. HALT if PRD or Epics cannot be found.
+**Missing documents**: Not all documents may exist. PRD and Epics are essential unless the work is planned in a spec folder, where `SPEC.md` and `stories.yaml` stand in for them; Architecture, UX Design, Spec, and Document Project are loaded if available. HALT if neither pair can be found.
 
 <workflow>
 
@@ -112,7 +119,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
   <action>Ask: "What specific issue or change has been identified that requires navigation?"</action>
   <action>Verify access to project documents:</action>
     - PRD (Product Requirements Document) — required
-    - Current Epics and Stories — required
+    - Current Epics and Stories — required (a spec folder's `SPEC.md` and `stories.yaml` stand in for the PRD and Epics when the work is planned there)
     - Architecture documentation — optional, load if available
     - UI/UX specifications — optional, load if available
   <action>Ask user for mode preference:</action>
@@ -122,7 +129,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 
 <action if="change trigger is unclear">HALT: "Cannot navigate change without clear understanding of the triggering issue. Please provide specific details about what needs to change and why."</action>
 
-<action if="PRD or Epics are unavailable">HALT: "Need access to PRD and Epics to assess change impact. Please ensure these documents are accessible. Architecture and UI/UX will be used if available."</action>
+<action if="neither PRD and Epics nor a spec folder is available">HALT: "Need access to the PRD and Epics, or the spec folder, to assess change impact. Please ensure these documents are accessible. Architecture and UI/UX will be used if available."</action>
 </step>
 
 <step n="2" goal="Execute Change Analysis Checklist">
@@ -194,8 +201,8 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 
 </step>
 
-<step n="4" goal="Generate Sprint Change Proposal">
-<action>Compile comprehensive Sprint Change Proposal document with following sections:</action>
+<step n="4" goal="Generate Change Proposal">
+<action>Compile comprehensive Change Proposal document with following sections:</action>
 
 <action>Section 1: Issue Summary</action>
 
@@ -234,8 +241,8 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 - Specify handoff recipients and their responsibilities
 - Define success criteria for implementation
 
-<action>Present complete Sprint Change Proposal to user</action>
-<action>Write Sprint Change Proposal document to {default_output_file}</action>
+<action>Present complete Change Proposal to user</action>
+<action>Write Change Proposal document to {default_output_file}</action>
 <action>HALT and give the user a choice:
 - **Continue** — proceed to approval
 - **Edit** — revise the proposal first
@@ -245,7 +252,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 
 <step n="5" goal="Finalize and Route for Implementation">
 <action>Get explicit user approval for complete proposal</action>
-<ask>Do you approve this Sprint Change Proposal for implementation? (yes/no/revise)</ask>
+<ask>Do you approve this Change Proposal for implementation? (yes/no/revise)</ask>
 
 <check if="no or revise">
   <action>Gather specific feedback on what needs adjustment</action>
@@ -256,7 +263,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 </check>
 
 <check if="yes the proposal is approved by the user">
-  <action>Finalize Sprint Change Proposal document</action>
+  <action>Finalize Change Proposal document</action>
   <action>Determine change scope classification:</action>
 
 - **Minor**: Can be implemented directly by Developer agent
@@ -274,12 +281,12 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 
 <check if="Moderate scope">
   <action>Route to: Product Owner / Developer agents</action>
-  <action>Deliverables: Sprint Change Proposal + backlog reorganization plan</action>
+  <action>Deliverables: Change Proposal + backlog reorganization plan</action>
 </check>
 
 <check if="Major scope">
   <action>Route to: Product Manager / Solution Architect</action>
-  <action>Deliverables: Complete Sprint Change Proposal + escalation notice</action>
+  <action>Deliverables: Complete Change Proposal + escalation notice</action>
 
 <action>Confirm handoff completion and next steps with user</action>
 <action>Document handoff in workflow execution log</action>
@@ -296,7 +303,7 @@ Activation is complete. If `activation_steps_prepend` or `activation_steps_appen
 
 <action>Confirm all deliverables produced:</action>
 
-- Sprint Change Proposal document
+- Change Proposal document
 - Specific edit proposals with before/after
 - Implementation handoff plan
 
