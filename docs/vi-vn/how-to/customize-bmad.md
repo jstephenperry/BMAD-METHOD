@@ -1,5 +1,5 @@
 ---
-title: 'Cách tùy chỉnh BMad'
+title: 'Cách tùy chỉnh Continuous Agile'
 description: Tùy chỉnh agent và workflow trong khi vẫn giữ khả năng tương thích khi cập nhật
 sidebar:
   order: 7
@@ -21,8 +21,8 @@ Skill `bmad-customize` là trợ lý tạo cấu hình có hướng dẫn cho **
 
 :::note[Điều kiện tiên quyết]
 
-- BMad đã được cài trong dự án của bạn (xem [Cách cài đặt BMad](./install-bmad.md))
-- Một cách để chạy resolver script — BMad đang chuẩn hóa sang `uv` (`uv run`, tự cấp Python cho bạn); một `python3` 3.11+ thuần trên PATH vẫn dùng được trong giai đoạn chuyển đổi. Script chỉ dùng stdlib `tomllib`, nên không cần `pip install` gì cả.
+- Continuous Agile đã được cài trong dự án của bạn (xem [Cách cài đặt Continuous Agile](./install-bmad.md))
+- Một cách để chạy resolver script — Continuous Agile đang chuẩn hóa sang `uv` (`uv run`, tự cấp Python cho bạn); một `python3` 3.11+ thuần trên PATH vẫn dùng được trong giai đoạn chuyển đổi. Script chỉ dùng stdlib `tomllib`, nên không cần `pip install` gì cả.
 - Một trình soạn thảo văn bản cho file TOML
 :::
 
@@ -53,7 +53,7 @@ Resolver áp dụng bốn quy tắc cấu trúc. Tên trường không được 
 
 **Không có cơ chế xóa.** Override không thể xóa phần tử mặc định. Nếu bạn cần vô hiệu hóa một menu item mặc định, hãy override nó theo `code` bằng mô tả hoặc prompt no-op. Nếu cần tái cấu trúc mảng sâu hơn, bạn phải fork skill.
 
-**Quy ước `code` / `id`.** BMad dùng `code` (định danh ngắn như `"BP"` hoặc `"R1"`) và `id` (định danh ổn định dài hơn) làm merge key cho mảng các table. Nếu bạn tự tạo một mảng table muốn có khả năng replace-by-key thay vì append-only, hãy chọn **một** quy ước duy nhất và dùng nhất quán cho toàn bộ mảng. Nếu trộn `code` ở phần tử này và `id` ở phần tử khác, resolver sẽ rơi về chế độ append vì nó không đoán merge theo khóa nào.
+**Quy ước `code` / `id`.** Continuous Agile dùng `code` (định danh ngắn như `"BP"` hoặc `"R1"`) và `id` (định danh ổn định dài hơn) làm merge key cho mảng các table. Nếu bạn tự tạo một mảng table muốn có khả năng replace-by-key thay vì append-only, hãy chọn **một** quy ước duy nhất và dùng nhất quán cho toàn bộ mảng. Nếu trộn `code` ở phần tử này và `id` ở phần tử khác, resolver sẽ rơi về chế độ append vì nó không đoán merge theo khóa nào.
 
 ### Một số trường của agent là chỉ đọc
 
@@ -106,7 +106,7 @@ Ví dụ này append thêm principle mới vào danh sách mặc định và tha
 
 ### 3. Tùy chỉnh đúng phần bạn cần
 
-Mọi ví dụ bên dưới đều giả định schema agent phẳng của BMad. Các trường nằm trực tiếp trong `[agent]`, không có các sub-table như `metadata` hay `persona`.
+Mọi ví dụ bên dưới đều giả định schema agent phẳng của Continuous Agile. Các trường nằm trực tiếp trong `[agent]`, không có các sub-table như `metadata` hay `persona`.
 
 **Scalar (`icon`, `role`, `identity`, `communication_style`).** Scalar override sẽ thắng, nên bạn chỉ cần đặt những trường đang muốn đổi:
 
@@ -201,7 +201,7 @@ persistent_facts = [
 
 ## Cách quá trình resolve diễn ra
 
-Khi agent được kích hoạt, `SKILL.md` của nó sẽ gọi một shared Python script để merge ba lớp nói trên và trả về block kết quả ở dạng JSON. Script này chỉ dùng `tomllib` của Python stdlib (không có dependency ngoài). BMad đang chuẩn hóa sang `uv run` để chạy các script này (uv tự cấp một bản Python phù hợp cho bạn); một `python3` thuần vẫn dùng được trong giai đoạn chuyển đổi:
+Khi agent được kích hoạt, `SKILL.md` của nó sẽ gọi một shared Python script để merge ba lớp nói trên và trả về block kết quả ở dạng JSON. Script này chỉ dùng `tomllib` của Python stdlib (không có dependency ngoài). Continuous Agile đang chuẩn hóa sang `uv run` để chạy các script này (uv tự cấp một bản Python phù hợp cho bạn); một `python3` thuần vẫn dùng được trong giai đoạn chuyển đổi:
 
 ```bash
 uv run {project-root}/_bmad/scripts/resolve_customization.py \
@@ -269,7 +269,7 @@ Workflow có thể tùy chỉnh sẽ chạy activation theo thứ tự cố đ�
 1. Resolve block `[workflow]` bằng merge base -> team -> user
 2. Chạy `activation_steps_prepend` theo đúng thứ tự
 3. Nạp `persistent_facts` làm ngữ cảnh nền tảng cho cả lần chạy
-4. Nạp config (`_bmad/bmm/config.yaml`) và resolve các biến chuẩn như tên dự án, ngôn ngữ, đường dẫn, ngày tháng
+4. Resolve cấu hình trung tâm (`uv run _bmad/scripts/resolve_config.py`, tức merge TOML bốn lớp được mô tả ở mục Cấu hình trung tâm bên dưới) và resolve các biến chuẩn như tên dự án, ngôn ngữ, đường dẫn, ngày tháng
 5. Chào người dùng
 6. Chạy `activation_steps_append` theo đúng thứ tự
 
@@ -370,7 +370,7 @@ Trong cùng một dự án, bạn hoàn toàn có thể dùng đồng thời c�
 
 ## Ví dụ thực chiến
 
-Để xem các recipe thiên về doanh nghiệp như định hình một agent trên mọi workflow mà nó dispatch, ép workflow tuân thủ convention nội bộ, publish output lên Confluence và Jira, tùy chỉnh agent roster, hoặc thay template đầu ra bằng template riêng của tổ chức, hãy xem [Cách mở rộng BMad cho tổ chức của bạn](./expand-bmad-for-your-org.md).
+Để xem các recipe thiên về doanh nghiệp như định hình một agent trên mọi workflow mà nó dispatch, ép workflow tuân thủ convention nội bộ, publish output lên Confluence và Jira, tùy chỉnh agent roster, hoặc thay template đầu ra bằng template riêng của tổ chức, hãy xem [Cách mở rộng Continuous Agile cho tổ chức của bạn](./expand-bmad-for-your-org.md).
 
 ## Khắc phục sự cố
 

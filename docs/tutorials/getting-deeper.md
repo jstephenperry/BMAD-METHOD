@@ -1,22 +1,22 @@
 ---
 title: 'Getting Deeper'
-description: Use Build and BMad Spec to extend a command in a specific Django version
+description: Use Build and Spec to extend a command in a specific Django version
 sidebar:
   order: 2
 ---
 
 You already know Build from small projects. Here, you will use it in a specific
 version of Django: first for one bounded command change, then for three related
-stories defined by one BMad Spec.
+stories defined by one spec.
 
 :::note[Prerequisites]
 Use a macOS or Linux shell with Git, Node.js 20.12+ and `npx`,
 [uv](https://docs.astral.sh/uv/getting-started/installation/), and a coding tool
-supported by BMad. Complete [Getting Started](./getting-started.md) before
-continuing. The exact install and launch commands below are for Claude Code. If
-you use another supported tool, you can run Build there instead. VS Code is
-optional but useful. Build can open the finished work for you when VS Code's
-`code` command is available.
+supported by Continuous Agile. Complete [Getting Started](./getting-started.md)
+before continuing. The exact install and launch commands below are for Claude
+Code. If you use another supported tool, you can run Build there instead. VS
+Code is optional but useful. Build can open the finished work for you when VS
+Code's `code` command is available.
 :::
 
 ## 1. Check Out the Exact Django Version
@@ -64,16 +64,17 @@ The command ends with this error:
 manage.py diffsettings: error: argument --output: invalid choice: 'json' (choose from hash, unified)
 ```
 
-## 4. Install BMad
+## 4. Install Continuous Agile
 
-Install BMad Method from the stable release channel. This exact command sets it
-up for Claude Code:
+Install Continuous Agile from the stable release channel. This exact command
+sets it up for Claude Code:
 
 ```bash
-npx bmad-method install --directory . --modules bmm --tools claude-code --yes
+npx continuous-agile install --directory . --modules bmm --tools claude-code --yes
 ```
 
-Tell Git to ignore the BMad files and uv lockfile created for this tutorial:
+Tell Git to ignore the Continuous Agile files and uv lockfile created for this
+tutorial:
 
 ```bash
 cat >> .git/info/exclude <<'EOF'
@@ -140,7 +141,7 @@ there now.
 The next change needs three Build runs. `/bmad-forge-idea` can help you decide
 what to build. `/bmad-advanced-elicitation` can help you improve a draft. You do
 not need either here because the requirements are already clear. Send them
-straight to BMad Spec:
+straight to `bmad-spec`:
 
 ```text
 /bmad-spec Create a spec named diffsettings-audit and break it into
@@ -158,10 +159,10 @@ documentation. Do not add another Django documentation file or an external
 service. Use diffsettings-audit as the spec folder slug.
 ```
 
-BMad Spec writes one spec in
+`bmad-spec` writes one spec in
 `_bmad-output/specs/spec-diffsettings-audit/` and the three ordered stories in
-its `stories.yaml`. Read the spec and stories, and answer any questions BMad
-Spec asks. Continue when they match the requirements above.
+its `stories.yaml`. Read the spec and stories, and answer any questions it
+asks. Continue when they match the requirements above.
 
 ## 9. Build the Three Stories
 
@@ -255,5 +256,5 @@ optional final step. You do not need it to finish this tutorial.
 
 ## 12. Keep Building
 
-Now [install BMad in your own repository](../how-to/install-bmad.md), then use
-the `bmad-build` skill to make a change you want.
+Now [install Continuous Agile in your own repository](../how-to/install-bmad.md),
+then use the `bmad-build` skill to make a change you want.

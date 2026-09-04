@@ -1,11 +1,11 @@
 ---
 title: "FAQ cho dự án đã tồn tại"
-description: Các câu hỏi phổ biến khi dùng BMad Method trên dự án đã tồn tại
+description: Các câu hỏi phổ biến khi dùng Continuous Agile trên dự án đã tồn tại
 sidebar:
   order: 11
 ---
 
-Các câu trả lời nhanh cho những câu hỏi thường gặp khi làm việc với dự án đã tồn tại bằng BMad Method (BMM).
+Các câu trả lời nhanh cho những câu hỏi thường gặp khi làm việc với dự án đã tồn tại bằng Continuous Agile (BMM).
 
 ## Các câu hỏi
 
@@ -48,4 +48,4 @@ Build sẽ nhận diện quy ước hiện có và hỏi: "Tôi có nên tuân t
 
 BMM tôn trọng lựa chọn của bạn - nó không ép buộc hiện đại hóa, nhưng sẽ đưa ra lựa chọn đó.
 
-**Có câu hỏi chưa được trả lời ở đây?** Hãy [mở issue](https://github.com/bmad-code-org/BMAD-METHOD/issues) hoặc hỏi trên [Discord](https://discord.gg/gk8jAdXWmj) để chúng tôi bổ sung!
+**Có câu hỏi chưa được trả lời ở đây?** Hãy [mở issue](https://github.com/jstephenperry/continuous-agile/issues) để chúng tôi bổ sung!

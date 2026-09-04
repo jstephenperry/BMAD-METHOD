@@ -1,13 +1,13 @@
 ---
 title: "Bắt đầu"
-description: Cài đặt BMad và xây dựng dự án đầu tiên của bạn
+description: Cài đặt Continuous Agile và xây dựng dự án đầu tiên của bạn
 ---
 
 Xây dựng phần mềm nhanh hơn bằng các workflow vận hành bởi AI, với những agent chuyên biệt hướng dẫn bạn qua các bước lập kế hoạch, kiến trúc và triển khai.
 
 ## Bạn Sẽ Học Được Gì
 
-- Cài đặt và khởi tạo BMad Method cho một dự án mới
+- Cài đặt và khởi tạo Continuous Agile cho một dự án mới
 - Dùng **BMad-Help** — trợ lý thông minh biết bước tiếp theo bạn nên làm gì
 - Chọn độ sâu lập kế hoạch phù hợp với công việc
 - Đi qua các phase từ yêu cầu đến code chạy được
@@ -21,14 +21,14 @@ Xây dựng phần mềm nhanh hơn bằng các workflow vận hành bởi AI, v
 :::
 
 :::tip[Cách Dễ Nhất]
-**Cài đặt** → `npx bmad-method install`
+**Cài đặt** → `npx continuous-agile install`
 **Hỏi** → `bmad-help what should I do first?`
 **Xây dựng** → Để BMad-Help dẫn bạn qua từng workflow
 :::
 
 ## Làm Quen Với BMad-Help: Người Dẫn Đường Thông Minh Của Bạn
 
-**BMad-Help là cách nhanh nhất để bắt đầu với BMad.** Bạn không cần phải nhớ workflow hay phase nào cả, chỉ cần hỏi, và BMad-Help sẽ:
+**BMad-Help là cách nhanh nhất để bắt đầu với Continuous Agile.** Bạn không cần phải nhớ workflow hay phase nào cả, chỉ cần hỏi, và BMad-Help sẽ:
 
 - **Kiểm tra dự án của bạn** để xem những gì đã hoàn thành
 - **Hiển thị các lựa chọn** dựa trên những module bạn đã cài
@@ -59,12 +59,12 @@ BMad-Help sẽ trả lời:
 BMad-Help không chỉ trả lời câu hỏi — **nó còn tự động chạy ở cuối mỗi workflow** để cho bạn biết chính xác bước tiếp theo cần làm là gì. Không phải đoán, không phải lục tài liệu, chỉ có chỉ dẫn rõ ràng về workflow bắt buộc tiếp theo.
 
 :::tip[Bắt Đầu Từ Đây]
-Sau khi cài BMad, hãy gọi skill `bmad-help` ngay. Nó sẽ nhận biết các module bạn đã cài và hướng bạn đến điểm bắt đầu phù hợp cho dự án.
+Sau khi cài Continuous Agile, hãy gọi skill `bmad-help` ngay. Nó sẽ nhận biết các module bạn đã cài và hướng bạn đến điểm bắt đầu phù hợp cho dự án.
 :::
 
-## Hiểu Về BMad
+## Hiểu Về Continuous Agile
 
-BMad giúp bạn xây dựng phần mềm thông qua các workflow có hướng dẫn với những AI agent chuyên biệt. Quy trình gồm bốn phase:
+Continuous Agile giúp bạn xây dựng phần mềm thông qua các workflow có hướng dẫn với những AI agent chuyên biệt. Quy trình gồm bốn phase:
 
 | Phase | Tên | Điều xảy ra |
 | ----- | -------------- | --------------------------------------------------- |
@@ -92,12 +92,12 @@ BMad giúp bạn xây dựng phần mềm thông qua các workflow có hướng 
 Mở terminal trong thư mục dự án và chạy:
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
-Nếu bạn muốn dùng bản prerelease mới nhất thay vì kênh release mặc định, hãy dùng `npx bmad-method@next install`.
+Nếu bạn muốn dùng bản prerelease mới nhất thay vì kênh release mặc định, hãy dùng `npx continuous-agile@next install`.
 
-Khi được hỏi chọn module, hãy chọn **BMad Method**.
+Khi được hỏi chọn module, hãy chọn **Continuous Agile**.
 
 Trình cài đặt sẽ tạo hai thư mục:
 - `_bmad/` — agents, workflows, tasks và cấu hình
@@ -193,9 +193,9 @@ Sau khi hoàn tất tất cả story trong một epic, hãy gọi **Developer ag
 
 ## Bạn Đã Hoàn Thành Những Gì
 
-Bạn đã nắm được nền tảng để xây dựng với BMad:
+Bạn đã nắm được nền tảng để xây dựng với Continuous Agile:
 
-- Đã cài BMad và cấu hình cho IDE của bạn
+- Đã cài Continuous Agile và cấu hình cho IDE của bạn
 - Đã chọn độ sâu lập kế hoạch phù hợp với công việc
 - Đã tạo các tài liệu lập kế hoạch (PRD, Architecture, Epics và Stories)
 - Đã hiểu chu trình triển khai trong implementation
@@ -204,7 +204,7 @@ Dự án của bạn bây giờ sẽ có dạng:
 
 ```text
 your-project/
-├── _bmad/                                   # Cấu hình BMad
+├── _bmad/                                   # Cấu hình Continuous Agile
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   ├── PRD.md                           # Tài liệu yêu cầu của bạn
@@ -255,7 +255,7 @@ BMad-Help sẽ kiểm tra dự án, phát hiện những gì bạn đã hoàn th
 :::
 
 - **Trong workflow** — Các agent sẽ hướng dẫn bạn bằng câu hỏi và giải thích
-- **Cộng đồng** — [Discord](https://discord.gg/gk8jAdXWmj) (#bmad-method-help, #report-bugs-and-issues)
+- **Cộng đồng** — [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues)
 
 ## Những Điểm Cần Ghi Nhớ
 
@@ -266,4 +266,4 @@ BMad-Help sẽ kiểm tra dự án, phát hiện những gì bạn đã hoàn th
 - **BMad-Help chạy tự động** — Mỗi workflow đều kết thúc bằng hướng dẫn về bước tiếp theo
 :::
 
-Sẵn sàng bắt đầu chưa? Hãy cài BMad, gọi `bmad-help`, và để người dẫn đường thông minh của bạn đưa bạn đi tiếp.
+Sẵn sàng bắt đầu chưa? Hãy cài Continuous Agile, gọi `bmad-help`, và để người dẫn đường thông minh của bạn đưa bạn đi tiếp.

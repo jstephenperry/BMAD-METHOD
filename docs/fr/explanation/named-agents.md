@@ -1,17 +1,17 @@
 ---
 title: "Agents nommés"
-description: Pourquoi les agents BMad ont des noms, des personas et des options de personnalisation — et ce que cela permet par rapport aux alternatives basées sur des menus ou des prompts
+description: Pourquoi les agents de Continuous Agile ont des noms, des personas et des options de personnalisation — et ce que cela permet par rapport aux alternatives basées sur des menus ou des prompts
 sidebar:
   order: 1
 ---
 
 Vous dites « Hey Mary, brainstormons » et Mary s’active. Elle vous salue par votre nom, dans la langue que vous avez configurée, avec son persona distinctif. Elle vous rappelle que `bmad-help` est toujours disponible. Puis elle saute le menu et se lance directement dans le brainstorming — parce que votre intention était claire.
 
-Cette page explique ce qui se passe réellement et pourquoi BMad est conçu ainsi.
+Cette page explique ce qui se passe réellement et pourquoi Continuous Agile est conçu ainsi.
 
 ## Le tabouret à trois pieds
 
-Le modèle d’agent de BMad repose sur trois primitives qui s’articulent :
+Le modèle d’agent de Continuous Agile repose sur trois primitives qui s’articulent :
 
 | Primitive            | Ce qu’elle apporte                                                                                                                                                                      | Où elle se trouve                                                                                                      |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ Retirez l’un des pieds et l’expérience s’effondre :
 
 ## Ce que les agents nommés vous apportent
 
-BMad embarque cinq agents nommés, chacun ancré à une phase de la méthode BMad :
+Continuous Agile embarque cinq agents nommés, chacun ancré à une phase du processus :
 
 | Agent                              | Phase          | Module                                                                                                                  |
 |------------------------------------|----------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -86,8 +86,8 @@ Il existe aussi une seconde surface de personnalisation pour les préoccupations
 
 Pour la surface de personnalisation complète et des exemples concrets, consultez :
 
-- [Comment personnaliser BMad](../how-to/customize-bmad.md) — la référence sur ce qui est personnalisable et comment fonctionne la fusion
-- [Comment étendre BMad pour votre organisation](../how-to/expand-bmad-for-your-org.md) — six recettes pratiques couvrant les règles globales des agents, les conventions de workflow, la publication externe, les remplacements de templates et la personnalisation du registre des agents
+- [Comment personnaliser Continuous Agile](../how-to/customize-bmad.md) — la référence sur ce qui est personnalisable et comment fonctionne la fusion
+- [Comment étendre Continuous Agile pour votre organisation](../how-to/expand-bmad-for-your-org.md) — six recettes pratiques couvrant les règles globales des agents, les conventions de workflow, la publication externe, les remplacements de templates et la personnalisation du registre des agents
 - Skill `bmad-customize` — l’assistant de rédaction guidée qui transforme une intention en fichier d’override correctement placé et vérifié
 
 ## L’idée plus grande

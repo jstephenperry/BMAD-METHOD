@@ -11,7 +11,7 @@ sidebar:
 `Important project context and conventions are located in [path to project context]/project-context.md`
 
 :::note[前置条件]
-- 已安装 BMad Method
+- 已安装 Continuous Agile
 - 了解项目的技术栈与团队约定
 :::
 

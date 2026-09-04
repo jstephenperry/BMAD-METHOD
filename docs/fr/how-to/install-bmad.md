@@ -1,15 +1,15 @@
 ---
-title: "Comment installer BMad"
-description: Installer, mettre à jour et épingler BMad pour le développement local, les équipes et CI
+title: "Comment installer Continuous Agile"
+description: Installer, mettre à jour et épingler Continuous Agile pour le développement local, les équipes et CI
 sidebar:
   order: 1
 ---
 
-Utilisez `npx bmad-method install` pour configurer BMad dans votre projet. Une seule commande gère les premières installations, les mises à niveau, le changement de canal et les exécutions CI scriptées. Cette page couvre tout cela.
+Utilisez `npx continuous-agile install` pour configurer Continuous Agile dans votre projet. Une seule commande gère les premières installations, les mises à niveau, le changement de canal et les exécutions CI scriptées. Cette page couvre tout cela.
 
 ## Quand l’utiliser
 
-- Démarrer un nouveau projet avec BMad
+- Démarrer un nouveau projet avec Continuous Agile
 - Ajouter ou retirer des modules sur une installation existante
 - Basculer un module sur main-HEAD ou l’épingler à une version spécifique
 - Scripter des installations pour des pipelines CI, des Dockerfiles ou des déploiements en entreprise
@@ -18,14 +18,14 @@ Utilisez `npx bmad-method install` pour configurer BMad dans votre projet. Une s
 
 - **Node.js** 20.12+ (requis pour l’installateur)
 - **Git** (pour cloner les modules externes)
-- **Un outil d’IA** tel que Claude Code ou Cursor (exécutez `npx bmad-method install --list-tools` pour voir tous les outils supportés)
+- **Un outil d’IA** tel que Claude Code ou Cursor (exécutez `npx continuous-agile install --list-tools` pour voir tous les outils supportés)
 
 :::
 
 ## Première installation (méthode rapide)
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 L’assistant interactif vous pose cinq questions :
@@ -41,7 +41,7 @@ En acceptant les valeurs par défaut, vous obtenez la dernière version stable d
 :::tip[Vous voulez juste la dernière préversion ?]
 
 ```bash
-npx bmad-method@next install
+npx continuous-agile@next install
 ```
 
 Exécute l’installateur de préversion, qui fournit un snapshot plus récent de core et bmm. Davantage de changements, avec un délai réduit entre le développement et la publication.
@@ -65,12 +65,12 @@ Les canaux sont définis module par module. Vous pouvez exécuter bmb sur `next`
 
 ### Axe 2 : version du binaire de l’installateur
 
-Le paquet npm `bmad-method` lui-même a deux dist-tags :
+Le paquet npm `continuous-agile` lui-même a deux dist-tags :
 
-| Commande                              | Ce que vous obtenez                                                                   |
-|---------------------------------------|---------------------------------------------------------------------------------------|
-| `npx bmad-method install` (`@latest`) | Dernière version stable de l’installateur                                             |
-| `npx bmad-method@next install`        | Dernière préversion de l’installateur, publiée automatiquement à chaque push sur main |
+| Commande                                   | Ce que vous obtenez                                                                   |
+|--------------------------------------------|---------------------------------------------------------------------------------------|
+| `npx continuous-agile install` (`@latest`) | Dernière version stable de l’installateur                                             |
+| `npx continuous-agile@next install`        | Dernière préversion de l’installateur, publiée automatiquement à chaque push sur main |
 
 **Le binaire de l’installateur détermine vos versions de core et bmm.** Ces deux modules sont embarqués dans le paquet de l’installateur plutôt que clonés depuis des dépôts séparés.
 
@@ -78,15 +78,15 @@ Le paquet npm `bmad-method` lui-même a deux dist-tags :
 
 Ils sont liés au binaire de l’installateur que vous avez exécuté :
 
-- `npx bmad-method install` → core et bmm stables les plus récents
-- `npx bmad-method@next install` → core et bmm en préversion
+- `npx continuous-agile install` → core et bmm stables les plus récents
+- `npx continuous-agile@next install` → core et bmm en préversion
 - `node /chemin/vers/checkout-local/tools/installer/bmad-cli.js install` → ce que votre checkout local contient
 
 `--pin bmm=v6.3.0` et `--next=bmm` n’ont aucun effet sur les modules intégrés (l’installateur vous avertit si vous tentez de les utiliser). Une prochaine version détachera bmm du paquet de l’installateur ; une fois publiée, bmm disposera d’un sélecteur de canal dédié, comme c’est le cas pour bmb aujourd’hui.
 
 ## Mettre à jour une installation existante
 
-Exécuter `npx bmad-method install` dans un répertoire contenant déjà `_bmad/` affiche un menu :
+Exécuter `npx continuous-agile install` dans un répertoire contenant déjà `_bmad/` affiche un menu :
 
 | Choix              | Ce qu’il fait                                                                                                                                                                                                        |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -146,13 +146,13 @@ Priorité en cas de chevauchement des options : `--pin` bat `--next=` bat `--ch
 **Installation par défaut — dernière version stable pour tout :**
 
 ```bash
-npx bmad-method install --yes --modules bmm,bmb,cis --tools claude-code
+npx continuous-agile install --yes --modules bmm,bmb,cis --tools claude-code
 ```
 
 **Installation entreprise verrouillée — reproductible à l’octet près :**
 
 ```bash
-npx bmad-method install --yes \
+npx continuous-agile install --yes \
   --modules bmm,bmb,cis \
   --pin bmb=v1.7.0 --pin cis=v0.2.0 \
   --tools claude-code
@@ -161,13 +161,13 @@ npx bmad-method install --yes \
 **Bleeding edge — externes sur le HEAD de main :**
 
 ```bash
-npx bmad-method install --yes --modules bmm,bmb --all-next --tools claude-code
+npx continuous-agile install --yes --modules bmm,bmb --all-next --tools claude-code
 ```
 
 **Ajouter un module à une installation existante** (conserver tout le reste) :
 
 ```bash
-npx bmad-method install --yes --action update \
+npx continuous-agile install --yes --action update \
   --modules bmm,bmb,gds
 ```
 
@@ -176,19 +176,19 @@ npx bmad-method install --yes --action update \
 **Mixer les canaux — bmb sur next, gds sur stable :**
 
 ```bash
-npx bmad-method install --yes --action update \
+npx continuous-agile install --yes --action update \
   --modules bmm,bmb,cis,gds \
   --next=bmb
 ```
 
 ### Substitutions de config de module
 
-`--set <module>.<clé>=<valeur>` vous permet de définir toute option de config de module de manière non interactive. Cette option est répétable et s’adapte à chaque module — présent et futur. L’option est appliquée comme un correctif post-installation : l’installateur exécute d’abord son flux normal, puis `--set` insère ou met à jour chaque valeur dans `_bmad/config.toml` (portée équipe) ou `_bmad/config.user.toml` (portée utilisateur), et dans `_bmad/<module>/config.yaml` pour que les valeurs déclarées soient conservées à la prochaine installation.
+`--set <module>.<clé>=<valeur>` vous permet de définir toute option de config de module de manière non interactive. Cette option est répétable et s’adapte à chaque module — présent et futur. L’option est appliquée comme un correctif post-installation : l’installateur exécute d’abord son flux normal, puis `--set` insère ou met à jour chaque valeur dans `_bmad/config.toml` (portée équipe) ou `_bmad/config.user.toml` (portée utilisateur).
 
 **Exemple — installer bmm avec des connaissances projet et un niveau de compétence explicites :**
 
 ```bash
-npx bmad-method install --yes \
+npx continuous-agile install --yes \
   --modules bmm \
   --tools claude-code \
   --set bmm.project_knowledge=research \
@@ -198,7 +198,7 @@ npx bmad-method install --yes \
 **Découvrir les clés disponibles pour un module :**
 
 ```bash
-npx bmad-method install --list-options bmm
+npx continuous-agile install --list-options bmm
 ```
 
 `--list-options` (sans argument) liste chaque clé que l’installateur peut trouver localement — modules intégrés (`core`, `bmm`) plus tous les modules officiels actuellement en cache. Le cache est par machine et peut être vidé, donc les modules officiels précédemment installés n’apparaîtront pas sur un nouveau checkout ou un worker CI éphémère tant qu’ils ne sont pas réinstallés. Les modules communautaires et personnalisés ne sont pas énumérés ici ; lisez directement le `module.yaml` du module pour voir les clés qu’il déclare.
@@ -207,7 +207,7 @@ npx bmad-method install --list-options bmm
 
 - **Routage.** L’étape de correctif cherche `[modules.<module>] <clé>` (ou `[core] <clé>`) dans `config.user.toml` en premier ; si elle y est trouvée, elle met à jour ce fichier. Sinon elle écrit dans le `config.toml` de portée équipe. Ainsi, les clés de portée utilisateur (ex. `core.user_name`, `bmm.user_skill_level`) finissent dans `config.user.toml` et les clés de portée équipe dans `config.toml`, correspondant à la partition utilisée par l’installateur.
 - **Valeurs littérales.** La valeur est écrite exactement comme vous l’avez fournie — aucun rendu de template `result:`. Pour obtenir la valeur résolue (ex. `{project-root}/research`), passez-la explicitement : `--set bmm.project_knowledge='{project-root}/research'`.
-- **Persistance, clés déclarées.** Les valeurs pour les clés déclarées dans `module.yaml` sont conservées entre les installations car elles sont aussi écrites dans `_bmad/<module>/config.yaml`, que l’installateur lit comme valeur par défaut de l’invite lors de la prochaine exécution.
+- **Persistance, clés déclarées.** Les valeurs pour les clés déclarées dans `module.yaml` sont conservées entre les installations car l’installateur relit `_bmad/config.toml` et `_bmad/config.user.toml` comme valeurs par défaut de ses invites lors de la prochaine exécution.
 - **Persistance, clés non déclarées.** Une valeur pour une clé que le schéma du module ne déclare pas est enregistrée dans `config.toml` pour l’installation courante mais ne sera pas réécrite à la prochaine installation (le partitionneur strict au schéma du manifeste ignore les clés inconnues). Repassez `--set` pour qu’elle soit persistante, ou éditez `_bmad/config.toml` directement.
 - **Pas de validation.** Les valeurs `single-select` ne sont pas vérifiées contre les choix autorisés, et les clés inconnues ne sont pas rejetées — la valeur fournie est écrite telle quelle.
 - **Modules non présents dans `--modules`.** Définir une valeur pour un module que vous n’avez pas inclus affiche un avertissement et la valeur est ignorée (aucun fichier n’est créé pour un module non installé).
@@ -215,7 +215,7 @@ npx bmad-method install --list-options bmm
 Les raccourcis historiques de core (`--user-name`, `--output-folder`, etc.) fonctionnent toujours et restent documentés pour la rétrocompatibilité, mais `--set core.user_name=...` est équivalent.
 
 :::note[Fonctionne avec quick-update]
-`--set` est un correctif post-installation, il s’applique donc de la même manière quel que soit le type d’action. Avec `bmad install --action quick-update` (ou `--yes` sur une installation existante, où quick-update est le défaut), `--set` met à jour les fichiers de configuration centraux à la fin comme une installation normale.
+`--set` est un correctif post-installation, il s’applique donc de la même manière quel que soit le type d’action. Avec `continuous-agile install --action quick-update` (ou `--yes` sur une installation existante, où quick-update est le défaut), `--set` met à jour les fichiers de configuration centraux à la fin comme une installation normale.
 :::
 
 :::caution[Limitation de débit sur les IPs partagées]
@@ -243,7 +243,7 @@ Le champ `sha` est écrit pour les modules basés sur git (externes, communautai
 Pour la reproductibilité inter-machines, ne comptez pas sur la réexécution de la même commande `--modules`. Les installations sur canal stable résolvent vers le plus haut tag publié **au moment de l’installation**, donc une réexécution ultérieure obtiendra les versions publiées entre-temps. Convertissez les tags enregistrés de `manifest.yaml` en options `--pin` explicites sur la machine cible, par ex. :
 
 ```bash
-npx bmad-method install --yes --modules bmb,cis \
+npx continuous-agile install --yes --modules bmb,cis \
   --pin bmb=v1.7.0 --pin cis=v0.4.2 --tools claude-code
 ```
 
@@ -263,4 +263,4 @@ Les installations épinglées ne se mettent pas à niveau. Quick-update applique
 
 ### `--pin bmm=X` n’a rien fait
 
-bmm est un module intégré — `--pin` et `--next=` ne s’appliquent pas. Utilisez `npx bmad-method@next install` pour un core/bmm en préversion, ou clonez le dépôt bmad-bmm et exécutez l’installateur localement pour obtenir les modifications non publiées.
+bmm est un module intégré — `--pin` et `--next=` ne s’appliquent pas. Utilisez `npx continuous-agile@next install` pour un core/bmm en préversion, ou clonez le dépôt bmad-bmm et exécutez l’installateur localement pour obtenir les modifications non publiées.

@@ -75,7 +75,7 @@ Critical warnings only — data loss, security issues
 ````md
 ```
 your-project/
-├── _bmad/                                   # BMad configuration
+├── _bmad/                                   # Continuous Agile configuration
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   └── PRD.md                           # Your requirements document
@@ -325,7 +325,7 @@ Starlight 右侧 “On this page” 来自标题层级：
 在定义开头用斜体标记适用范围：
 
 - `*Direct-entry implementation only.*`
-- `*BMad Method/Enterprise.*`
+- `*Continuous Agile/Enterprise.*`
 - `*Phase N.*`
 - `*BMGD.*`
 - `*Established projects.*`

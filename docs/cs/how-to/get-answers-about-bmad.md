@@ -1,13 +1,13 @@
 ---
-title: "Jak získat odpovědi o BMad"
-description: Použijte LLM k rychlému zodpovězení vašich otázek o BMad
+title: "Jak získat odpovědi o Continuous Agile"
+description: Použijte LLM k rychlému zodpovězení vašich otázek o Continuous Agile
 sidebar:
   order: 3
 ---
 
 ## Začněte zde: BMad-Help
 
-**Nejrychlejší způsob, jak získat odpovědi o BMad, je skill `bmad-help`.** Tento inteligentní průvodce zodpoví více než 80 % všech otázek a je vám k dispozici přímo ve vašem IDE při práci.
+**Nejrychlejší způsob, jak získat odpovědi o Continuous Agile, je skill `bmad-help`.** Tento inteligentní průvodce zodpoví více než 80 % všech otázek a je vám k dispozici přímo ve vašem IDE při práci.
 
 BMad-Help je víc než vyhledávací nástroj — umí:
 - **Prozkoumat váš projekt** a zjistit, co už bylo dokončeno
@@ -45,9 +45,9 @@ BMad-Help odpoví:
 ## Kdy použít tohoto průvodce
 
 Použijte tuto sekci, když:
-- Chcete pochopit architekturu nebo interní fungování BMad
+- Chcete pochopit architekturu nebo interní fungování Continuous Agile
 - Potřebujete odpovědi mimo to, co BMad-Help nabízí
-- Zkoumáte BMad před instalací
+- Zkoumáte Continuous Agile před instalací
 - Chcete prozkoumat zdrojový kód přímo
 
 ## Kroky
@@ -56,55 +56,46 @@ Použijte tuto sekci, když:
 
 | Zdroj                | Nejlepší pro                              | Příklady                     |
 | -------------------- | ----------------------------------------- | ---------------------------- |
-| **Složka `_bmad`**   | Jak BMad funguje — agenti, workflow, prompty | „Co dělá PM agent?“        |
+| **Složka `_bmad`**   | Jak Continuous Agile funguje — agenti, workflow, prompty | „Co dělá PM agent?“        |
 | **Celý GitHub repo** | Historie, instalátor, architektura        | „Co se změnilo ve v6?“      |
-| **`llms-full.txt`**  | Rychlý přehled z dokumentace              | „Vysvětli čtyři fáze BMad“  |
+| **`llms-full.txt`**  | Rychlý přehled z dokumentace              | „Vysvětli čtyři fáze Continuous Agile“  |
 
-Složka `_bmad` se vytvoří při instalaci BMad. Pokud ji ještě nemáte, naklonujte si repo.
+Složka `_bmad` se vytvoří při instalaci Continuous Agile. Pokud ji ještě nemáte, naklonujte si repo.
 
 ### 2. Nasměrujte AI na zdroj
 
 **Pokud vaše AI umí číst soubory (Claude Code, Cursor atd.):**
 
-- **BMad nainstalován:** Nasměrujte na složku `_bmad` a ptejte se přímo
-- **Chcete hlubší kontext:** Naklonujte si [celé repo](https://github.com/bmad-code-org/BMAD-METHOD)
+- **Continuous Agile nainstalován:** Nasměrujte na složku `_bmad` a ptejte se přímo
+- **Chcete hlubší kontext:** Naklonujte si [celé repo](https://github.com/jstephenperry/continuous-agile)
 
 **Pokud používáte ChatGPT nebo Claude.ai:**
 
 Načtěte `llms-full.txt` do vaší relace:
 
 ```text
-https://bmad-code-org.github.io/BMAD-METHOD/llms-full.txt
+https://jstephenperry.github.io/continuous-agile/llms-full.txt
 ```
 
 ### 3. Položte svou otázku
 
 :::note[Příklad]
-**O:** „Řekni mi nejrychlejší způsob, jak něco vytvořit s BMad“
+**O:** „Řekni mi nejrychlejší způsob, jak něco vytvořit s Continuous Agile“
 
 **A:** Spusťte `bmad-build`. Předejte přímý záměr, issue, specifikaci nebo naplánovanou story; workflow využije dostupný kontext a zvolí potřebnou hloubku upřesnění, plánování, implementace a revize.
 :::
 
 ## Co získáte
 
-Přímé odpovědi o BMad — jak agenti fungují, co dělají workflow, proč jsou věci strukturované tak, jak jsou — bez čekání na odpověď od někoho jiného.
+Přímé odpovědi o Continuous Agile — jak agenti fungují, co dělají workflow, proč jsou věci strukturované tak, jak jsou — bez čekání na odpověď od někoho jiného.
 
 ## Tipy
 
-- **Ověřte překvapivé odpovědi** — LLM se občas mýlí. Zkontrolujte zdrojový soubor nebo se zeptejte na Discordu.
+- **Ověřte překvapivé odpovědi** — LLM se občas mýlí. Zkontrolujte zdrojový soubor.
 - **Buďte konkrétní** — „Co dělá krok 3 PRD workflow?“ je lepší než „Jak funguje PRD?“
 
 ## Stále jste uvízli?
 
 Zkusili jste přístup přes LLM a stále potřebujete pomoc? Nyní máte mnohem lepší otázku k položení.
 
-| Kanál                     | Použijte pro                                |
-| ------------------------- | ------------------------------------------- |
-| `#bmad-method-help`       | Rychlé otázky (chat v reálném čase)         |
-| `help-requests` fórum     | Detailní otázky (vyhledatelné, trvalé)      |
-| `#suggestions-feedback`   | Nápady a požadavky na funkce                |
-| `#report-bugs-and-issues` | Hlášení chyb                                |
-
-**Discord:** [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)
-
-**GitHub Issues:** [github.com/bmad-code-org/BMAD-METHOD/issues](https://github.com/bmad-code-org/BMAD-METHOD/issues) (pro jasné chyby)
+**GitHub Issues:** [github.com/jstephenperry/continuous-agile/issues](https://github.com/jstephenperry/continuous-agile/issues) — otázky, nápady i hlášení chyb

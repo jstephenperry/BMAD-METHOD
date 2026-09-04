@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Utilisez l’installateur BMad pour passer de la v4 à la v6, qui inclut une détection automatique des installations existantes et une assistance à la migration.
+Utilisez l’installateur de Continuous Agile pour passer de la v4 à la v6, qui inclut une détection automatique des installations existantes et une assistance à la migration.
 
 ## Quand utiliser ce guide
 
@@ -74,7 +74,7 @@ votre-projet/
 │   ├── _config/         # Vos personnalisations
 │   │   └── agents/      # Fichiers de personnalisation des agents
 │   ├── core/            # Framework core universel
-│   ├── bmm/             # Module BMad Method
+│   ├── bmm/             # Module BMM (suite Agile)
 │   ├── bmb/             # BMad Builder
 │   └── cis/             # Creative Intelligence Suite
 └── _bmad-output/        # Dossier de sortie (remplace le dossier doc de la v4)
@@ -96,7 +96,7 @@ votre-projet/
 |---------------|---------------------------------------------------------|------------------------------------------|
 | **Core**      | `_bmad-core` correspondait en réalité à la méthode BMad | `_bmad/core/` est le framework universel |
 | **Method**    | `_bmad-method`                                          | `_bmad/bmm/`                             |
-| **Config**    | Fichiers modifiés directement                           | `config.yaml` par module                 |
+| **Config**    | Fichiers modifiés directement                           | `_bmad/config.toml` pour tout            |
 | **Documents** | Division en fragments obligatoire ou optionnelle        | Totalement flexible, analyse automatique |
 
 

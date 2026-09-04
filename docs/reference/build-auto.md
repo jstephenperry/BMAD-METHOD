@@ -82,7 +82,7 @@ On activation, the workflow resolves:
 
 It may also look at:
 
-- BMAD planning artifacts
+- Continuous Agile planning artifacts
 - A cached or newly compiled epic context file for epic-based work
 - The most recent completed prior-story spec from the same epic for continuity
 - Other `stories/*.md` records in the same spec folder, under folder+id dispatch (see Folder+ID Dispatch above)

@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Chaque installation BMad comprend le **module principal** — un petit ensemble de compétences qui fonctionnent dans tous les projets, tous les modules et toutes les phases. Cette page couvre ces sept compétences principales : les quatre outils du noyau plus les trois **compétences de réflexion** (brainstorming, forge idea, party mode).
+Chaque installation de Continuous Agile comprend le **module principal** — un petit ensemble de compétences qui fonctionnent dans tous les projets, tous les modules et toutes les phases. Cette page couvre ces sept compétences principales : les quatre outils du noyau plus les trois **compétences de réflexion** (brainstorming, forge idea, party mode).
 
 :::tip[Raccourci Rapide]
 Exécutez n’importe quel outil en tapant son nom de compétence (par ex., `bmad-help`) dans votre IDE. Aucune session d’agent requise.
@@ -20,7 +20,7 @@ Exécutez n’importe quel outil en tapant son nom de compétence (par ex., `bma
 | [`bmad-help`](#bmad-help)                                 | Obtenir des conseils contextuels sur la prochaine étape                                                                                |
 | [`bmad-advanced-elicitation`](#bmad-advanced-elicitation) | Soumettre la sortie LLM à des méthodes de raffinement itératives                                                                       |
 | [`bmad-review`](#bmad-review)                             | Revue multi-perspectives — contradictoire, cas limites et lacunes de vérification pour le code ; structure et prose pour les documents |
-| [`bmad-customize`](#bmad-customize)                       | Créer et vérifier des personnalisations BMad                                                                                           |
+| [`bmad-customize`](#bmad-customize)                       | Créer et vérifier des personnalisations Continuous Agile                                                                               |
 
 **Compétences de réflexion :**
 
@@ -41,7 +41,7 @@ Exécutez n’importe quel outil en tapant son nom de compétence (par ex., `bma
 **À utiliser quand :**
 
 - Vous avez terminé un workflow et voulez savoir quoi faire ensuite
-- Vous êtes nouveau sur BMad et avez besoin d’orientation
+- Vous êtes nouveau sur Continuous Agile et avez besoin d’orientation
 - Vous êtes bloqué et voulez des conseils contextuels
 - Vous avez installé de nouveaux modules et voulez voir ce qui est disponible
 
@@ -58,7 +58,7 @@ Exécutez n’importe quel outil en tapant son nom de compétence (par ex., `bma
 
 ## bmad-advanced-elicitation
 
-**Pousse le LLM à reconsidérer, raffiner et améliorer sa sortie récente.** — Le point de contrôle de raffinement partagé de BMad : d’autres compétences l’invoquent aux pauses naturelles, et vous pouvez l’appeler directement sur tout contenu récent de la conversation.
+**Pousse le LLM à reconsidérer, raffiner et améliorer sa sortie récente.** — Le point de contrôle de raffinement partagé de Continuous Agile : d’autres compétences l’invoquent aux pauses naturelles, et vous pouvez l’appeler directement sur tout contenu récent de la conversation.
 
 **À utiliser quand :**
 
@@ -127,7 +127,7 @@ Les workflows de Code Review d’autres modules exécutent les perspectives de c
 
 ## bmad-customize
 
-**Créer et vérifier des personnalisations.** — Vous aide à modifier le comportement d’un agent ou d’un workflow BMad installé sans avoir à écrire de TOML manuellement.
+**Créer et vérifier des personnalisations.** — Vous aide à modifier le comportement d’un agent ou d’un workflow Continuous Agile installé sans avoir à écrire de TOML manuellement.
 
 **À utiliser quand :**
 
@@ -137,7 +137,7 @@ Les workflows de Code Review d’autres modules exécutent les perspectives de c
 
 **Fonctionnement :**
 
-1. Analyse les skills BMad installés pour identifier les surfaces personnalisables
+1. Analyse les skills Continuous Agile installés pour identifier les surfaces personnalisables
 2. Sélectionne le bon périmètre pour le changement demandé
 3. Écrit les fichiers de surcharge sous `_bmad/custom/`
 4. Vérifie la configuration fusionnée
@@ -146,7 +146,7 @@ Les workflows de Code Review d’autres modules exécutent les perspectives de c
 
 **Sortie :** Fichiers de surcharge TOML sous `_bmad/custom/`
 
-Pour un guide détaillé sur la personnalisation de BMad, consultez [Comment personnaliser BMad](../how-to/customize-bmad.md).
+Pour un guide détaillé sur la personnalisation de Continuous Agile, consultez [Comment personnaliser Continuous Agile](../how-to/customize-bmad.md).
 
 ## Compétences de Réflexion
 
@@ -201,7 +201,7 @@ La magie se produit dans les idées 50–100. Le workflow encourage la générat
 
 ### bmad-party-mode
 
-**Orchestre des discussions de groupe multi-agents.** — Charge tous les agents BMad installés et facilite une conversation naturelle où chaque agent apporte son expertise et sa personnalité uniques.
+**Orchestre des discussions de groupe multi-agents.** — Charge tous les agents Continuous Agile installés et facilite une conversation naturelle où chaque agent apporte son expertise et sa personnalité uniques.
 
 **À utiliser quand :**
 

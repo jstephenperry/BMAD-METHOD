@@ -15,7 +15,7 @@ Opravy chyb, refaktoringy a malé cílené změny mohou vstoupit do **Build** p�
 - Aktualizace závislostí
 
 :::note[Předpoklady]
-- BMad Method nainstalován (`npx bmad-method install`)
+- Continuous Agile nainstalován (`npx continuous-agile install`)
 - AI-powered IDE (Claude Code, Cursor nebo podobné)
 :::
 

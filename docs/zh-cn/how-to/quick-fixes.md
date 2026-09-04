@@ -15,7 +15,7 @@ Bug 修复、重构或小范围改动可以在很少甚至没有上游规划的�
 - 依赖更新
 
 :::note[前置条件]
-- 已安装 BMad Method（`npx bmad-method install`）
+- 已安装 Continuous Agile（`npx continuous-agile install`）
 - AI 驱动的 IDE（Claude Code、Cursor 或类似工具）
 :::
 

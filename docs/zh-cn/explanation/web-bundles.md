@@ -1,15 +1,15 @@
 ---
 title: 'Web Bundles'
-description: 为 Google Gemini Gems 和 ChatGPT Custom GPTs 打包的 BMad skills
+description: 为 Google Gemini Gems 和 ChatGPT Custom GPTs 打包的 Continuous Agile skills
 ---
 
-在 Web LLM 订阅里跑 BMad 的规划侧，再把 artifact 带回 IDE。
+在 Web LLM 订阅里跑 Continuous Agile 的规划侧，再把 artifact 带回 IDE。
 
 ## 什么是 Web Bundle？
 
-Web bundle 是把 BMad skill 重新打包，安装成 **Google Gemini Gem** 或 **ChatGPT Custom GPT**。每个 bundle 包含：作为 knowledge file 上传的 `SKILL.md` 协议、粘贴到 Gem 或 GPT instructions 的 `INSTRUCTIONS.md` 块，以及 skill 所需的数据文件（CSV、模板、校验清单，以及按需逐步披露的内容）。persona 在粘贴的 instructions 里；协议在 knowledge file 里。换 persona 不用动协议。
+Web bundle 是把 Continuous Agile 的 skill 重新打包，安装成 **Google Gemini Gem** 或 **ChatGPT Custom GPT**。每个 bundle 包含：作为 knowledge file 上传的 `SKILL.md` 协议、粘贴到 Gem 或 GPT instructions 的 `INSTRUCTIONS.md` 块，以及 skill 所需的数据文件（CSV、模板、校验清单，以及按需逐步披露的内容）。persona 在粘贴的 instructions 里；协议在 knowledge file 里。换 persona 不用动协议。
 
-安装不是一键，但步骤有引导。**从 [bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/) 安装**。站点用卡片网格列出每个 bundle，内联展示 Gemini 和 ChatGPT 安装步骤，并提供 ZIP 下载。这是唯一支持的安装路径；架子上的模式一致，装过一个，下一个就是机械操作。
+安装不是一键，但步骤有引导。**从仓库的 [`web-bundles/`](https://github.com/jstephenperry/continuous-agile/tree/main/web-bundles) 目录安装**。每个 bundle 一个子目录，里面的 `INSTRUCTIONS.md` 分别给出 Gemini 和 ChatGPT 的安装步骤，knowledge files 也在同一目录。这是唯一支持的安装路径；架子上的模式一致，装过一个，下一个就是机械操作。
 
 BMad V4 曾 ship web bundles。V6 把它们带回来，为当前的 Gem 和 Custom GPT 平台重写，面向 Canvas、Deep Research 和图像生成。
 
@@ -42,14 +42,14 @@ BMad V4 曾 ship web bundles。V6 把它们带回来，为当前的 Gem 和 Cust
 | UX Coach | Planning | Norman |
 | Market & Industry Research | Analysis | Porter and Christensen |
 
-每个 bundle 带有默认 persona（若所属 BMad agent 存在则继承），以及对比 swap 示例，演示换 voice 的模式。
+每个 bundle 带有默认 persona（若所属 agent 存在则继承），以及对比 swap 示例，演示换 voice 的模式。
 
 ## 一次会话怎么跑
 
 1. **打开 Gem 或 Custom GPT。** Persona 以角色身份问候，开启对话式 discovery。
 2. **发现 scope。** Persona 问你要做什么、手头有什么、约束是什么。没有填表。
 3. **在 Canvas 里干活。** 协议在会话开始就打开 Canvas 并持续更新。Mermaid 图和 HTML 表格与正文并存。
-4. **交接。** 结束时你有一份 Canvas 文档，可导出、粘贴进 repo，或喂给 IDE 里的 BMad skill 进入下一阶段。
+4. **交接。** 结束时你有一份 Canvas 文档，可导出、粘贴进 repo，或喂给 IDE 里的 Continuous Agile skill 进入下一阶段。
 
 对集成 Deep Research 的 bundle（当前是 Market & Industry Research），persona 会在会话中途起草 Deep Research brief，供你粘贴到 Gemini 或 ChatGPT 的 Deep Research 模式，再 ingest 返回的报告。
 
@@ -77,6 +77,6 @@ Persona swap、默认用户名、团队 guardrails、偏好措辞——都在粘
 
 ## 自己构建
 
-Web bundles 用 `bmad-os-skill-to-bundle` 工具 skill 从 BMad skills 生成。指向任意 BMad skill 文件夹，产出 bundle 文件，persona 从所属 agent 继承。
+Web bundles 用 `bmad-os-skill-to-bundle` 工具 skill 从 Continuous Agile 的 skills 生成。指向任意 skill 文件夹，产出 bundle 文件，persona 从所属 agent 继承。
 
-从 [bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/) 安装任意 bundle。
+从仓库的 [`web-bundles/`](https://github.com/jstephenperry/continuous-agile/tree/main/web-bundles) 目录安装任意 bundle。

@@ -7,7 +7,7 @@ sidebar:
 
 ## Agents par défaut
 
-Cette page liste les agents BMM (suite Agile) par défaut installés avec la méthode BMad, ainsi que leurs identifiants de skill, déclencheurs de menu et workflows principaux. Chaque agent est invoqué en tant que skill.
+Cette page liste les agents BMM (suite Agile) par défaut installés avec Continuous Agile, ainsi que leurs identifiants de skill, déclencheurs de menu et workflows principaux. Chaque agent est invoqué en tant que skill.
 
 ## Notes
 

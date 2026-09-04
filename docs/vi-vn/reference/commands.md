@@ -1,15 +1,15 @@
 ---
 title: Các skill
-description: Tài liệu tham chiếu cho skill của BMad — skill là gì, hoạt động ra sao và tìm ở đâu.
+description: Tài liệu tham chiếu cho skill của Continuous Agile — skill là gì, hoạt động ra sao và tìm ở đâu.
 sidebar:
   order: 4
 ---
 
-Skills là các prompt dựng sẵn để nạp agent, chạy workflow hoặc thực thi task bên trong IDE của bạn. Trình cài đặt BMad sinh chúng từ các module bạn đã chọn tại thời điểm cài đặt. Nếu sau này bạn thêm, xóa hoặc thay đổi module, hãy chạy lại trình cài đặt để đồng bộ skills (xem [Khắc phục sự cố](#khắc-phục-sự-cố)).
+Skills là các prompt dựng sẵn để nạp agent, chạy workflow hoặc thực thi task bên trong IDE của bạn. Trình cài đặt Continuous Agile sinh chúng từ các module bạn đã chọn tại thời điểm cài đặt. Nếu sau này bạn thêm, xóa hoặc thay đổi module, hãy chạy lại trình cài đặt để đồng bộ skills (xem [Khắc phục sự cố](#khắc-phục-sự-cố)).
 
 ## Skill So Với Trigger Trong Menu Agent
 
-BMad cung cấp hai cách để bắt đầu công việc, và chúng phục vụ những mục đích khác nhau.
+Continuous Agile cung cấp hai cách để bắt đầu công việc, và chúng phục vụ những mục đích khác nhau.
 
 | Cơ chế | Cách gọi | Điều xảy ra |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Trigger trong menu agent yêu cầu bạn đang ở trong một phiên agent đa
 
 ## Skills Được Tạo Ra Như Thế Nào
 
-Khi bạn chạy `npx bmad-method install`, trình cài đặt sẽ đọc manifest của mọi module được chọn rồi tạo một skill cho mỗi agent, workflow, task và tool. Mỗi skill là một thư mục chứa file `SKILL.md`, hướng dẫn AI nạp file nguồn tương ứng và làm theo chỉ dẫn trong đó.
+Khi bạn chạy `npx continuous-agile install`, trình cài đặt sẽ đọc manifest của mọi module được chọn rồi tạo một skill cho mỗi agent, workflow, task và tool. Mỗi skill là một thư mục chứa file `SKILL.md`, hướng dẫn AI nạp file nguồn tương ứng và làm theo chỉ dẫn trong đó.
 
 Trình cài đặt dùng template cho từng loại skill:
 
@@ -129,6 +129,6 @@ Mọi skill đều dùng tiền tố `bmad-` theo sau là tên mô tả, ví d�
 
 **Skills không xuất hiện sau khi cài đặt.** Một số nền tảng yêu cầu bật skills thủ công trong phần cài đặt. Hãy kiểm tra tài liệu IDE của bạn hoặc hỏi trợ lý AI cách bật skills. Bạn cũng có thể cần khởi động lại IDE hoặc reload cửa sổ.
 
-**Thiếu skill mà bạn mong đợi.** Trình cài đặt chỉ tạo skill cho những module bạn đã chọn. Hãy chạy lại `npx bmad-method install` và kiểm tra lại phần chọn module. Đồng thời xác nhận rằng file skill thực sự tồn tại trong thư mục dự kiến.
+**Thiếu skill mà bạn mong đợi.** Trình cài đặt chỉ tạo skill cho những module bạn đã chọn. Hãy chạy lại `npx continuous-agile install` và kiểm tra lại phần chọn module. Đồng thời xác nhận rằng file skill thực sự tồn tại trong thư mục dự kiến.
 
 **Skill từ module đã bỏ vẫn còn xuất hiện.** Trình cài đặt không tự xóa các file skill cũ. Hãy xóa các thư mục lỗi thời trong thư mục skills của IDE, hoặc xóa toàn bộ thư mục skills rồi chạy lại trình cài đặt để có tập skill sạch.

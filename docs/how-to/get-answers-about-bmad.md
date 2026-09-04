@@ -1,13 +1,13 @@
 ---
-title: 'How to Get Answers About BMad'
-description: Use an LLM to quickly answer your own BMad questions
+title: 'How to Get Answers About Continuous Agile'
+description: Use an LLM to quickly answer your own Continuous Agile questions
 sidebar:
   order: 4
 ---
 
-Use BMad's built-in help, source docs, or the community to get answers — from quickest to most thorough.
+Use Continuous Agile's built-in help, source docs, or the community to get answers — from quickest to most thorough.
 
-## 1. Ask BMad-Help
+## 1. Ask `bmad-help`
 
 The fastest way to get answers. The `bmad-help` skill is available directly in your AI session and handles over 80% of questions — it inspects your project, sees what you've completed, and tells you what to do next.
 
@@ -23,12 +23,12 @@ You can also use `/bmad-help` or `$bmad-help` depending on your platform, but ju
 
 ## 2. Go Deeper with Source
 
-BMad-Help draws on your installed configuration. For questions about BMad's internals, history, or architecture — or if you're researching BMad before installing — point your AI at the source directly.
+`bmad-help` draws on your installed configuration. For questions about Continuous Agile's internals, history, or architecture — or if you're researching it before installing — point your AI at the source directly.
 
-Clone or open the [BMAD-METHOD repo](https://github.com/bmad-code-org/BMAD-METHOD) and ask your AI about it. Any agent-capable tool (Claude Code, Cursor, Windsurf, etc.) can read the source and answer questions directly.
+Clone or open the [Continuous Agile repo](https://github.com/jstephenperry/continuous-agile) and ask your AI about it. Any agent-capable tool (Claude Code, Cursor, Windsurf, etc.) can read the source and answer questions directly.
 
 :::note[Example]
-**Q:** "Tell me the fastest way to build something with BMad"
+**Q:** "Tell me the fastest way to build something with Continuous Agile"
 
 **A:** Run `bmad-build`. Give it direct intent, an issue, a spec, or a planned story; it uses the available context and chooses the clarification, planning, implementation, and review depth needed.
 :::
@@ -36,24 +36,17 @@ Clone or open the [BMAD-METHOD repo](https://github.com/bmad-code-org/BMAD-METHO
 **Tips for better answers:**
 
 - **Be specific** — "What does step 3 of the PRD workflow do?" beats "How does PRD work?"
-- **Verify surprising claims** — LLMs occasionally get things wrong. Check the source file or ask on Discord.
+- **Verify surprising claims** — LLMs occasionally get things wrong. Check the source file.
 
-### Not using an agent? Use the docs site
+### Not using an agent? Paste the docs in
 
-If your AI can't read local files (ChatGPT, Claude.ai, etc.), fetch [llms-full.txt](https://bmad-code-org.github.io/BMAD-METHOD/llms-full.txt) into your session — it's a single-file snapshot of the BMad documentation.
+If your AI can't read local files (ChatGPT, Claude.ai, etc.), paste the Markdown pages from the repository's `docs/` folder into your session. Running `npm run docs:build` in a checkout writes `build/artifacts/llms-full.txt`, a single-file snapshot of the whole documentation set.
 
 ## 3. Ask Someone
 
-If neither BMad-Help nor the source answered your question, you now have a much better question to ask.
+If neither `bmad-help` nor the source answered your question, you now have a much better question to ask.
 
-| Channel                 | Use For                    |
-| ----------------------- | -------------------------- |
-| `help-requests` forum   | Questions                  |
-| `#suggestions-feedback` | Ideas and feature requests |
-
-**Discord:** [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)
-
-**GitHub Issues:** [github.com/bmad-code-org/BMAD-METHOD/issues](https://github.com/bmad-code-org/BMAD-METHOD/issues)
+**GitHub Issues:** [github.com/jstephenperry/continuous-agile/issues](https://github.com/jstephenperry/continuous-agile/issues)
 
 _You!_  
 &emsp;&emsp;_Stuck_  

@@ -15,7 +15,7 @@ Sửa lỗi, refactor và thay đổi nhỏ có thể đi thẳng vào **Build**
 - Cập nhật dependency
 
 :::note[Điều kiện tiên quyết]
-- Đã cài BMad Method (`npx bmad-method install`)
+- Đã cài Continuous Agile (`npx continuous-agile install`)
 - Một IDE tích hợp AI (Claude Code, Cursor, hoặc tương tự)
 :::
 

@@ -1,10 +1,10 @@
 ---
 title: "既有项目常见问题"
-description: 关于在既有项目上使用 BMad Method 的常见问题
+description: 关于在既有项目上使用 Continuous Agile 的常见问题
 sidebar:
   order: 11
 ---
-关于在 established projects（既有项目）中使用 BMad Method 的高频问题，快速说明如下。
+关于在 established projects（既有项目）中使用 Continuous Agile 的高频问题，快速说明如下。
 
 ## 问题
 
@@ -39,7 +39,7 @@ sidebar:
 - **沿用**：优先保持一致性，降低短期改动风险
 - **升级**：建立新标准，并在 tech-spec 或架构中写明迁移理由与范围
 
-BMad Method 不会强制“立即现代化”，而是把决策权交给你。
+Continuous Agile 不会强制“立即现代化”，而是把决策权交给你。
 
 ### 什么时候需要增加规划？
 
@@ -50,7 +50,7 @@ BMad Method 不会强制“立即现代化”，而是把决策权交给你。
 
 如果你不确定，先让 `bmad-help` 判断当前阶段更稳妥的 workflow。
 
-**还有问题？** 欢迎在 [GitHub Issues](https://github.com/bmad-code-org/BMAD-METHOD/issues) 或 [Discord](https://discord.gg/gk8jAdXWmj) 提问。
+**还有问题？** 欢迎在 [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues) 或 [GitHub Discussions](https://github.com/jstephenperry/continuous-agile/discussions) 提问。
 
 如果你想了解这套接入方式的操作步骤，可继续阅读 [How-to：既有项目](../how-to/established-projects.md) 与 [How-to：项目上下文](../how-to/project-context.md)。想理解统一实施 workflow，可参见 [Build](./build.md)。
 

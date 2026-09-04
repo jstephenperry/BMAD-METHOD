@@ -7,7 +7,7 @@ sidebar:
 
 ## Výchozí agenti
 
-Tato stránka uvádí výchozí BMM (Agile suite) agenty, kteří se instalují s BMad Method, společně s jejich skill ID, spouštěči nabídky a primárními workflow. Každý agent se vyvolává jako skill.
+Tato stránka uvádí výchozí agenty modulu BMM (Agile suite), společně s jejich skill ID, spouštěči nabídky a primárními workflow. Každý agent se vyvolává jako skill.
 
 ## Poznámky
 

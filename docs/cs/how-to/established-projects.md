@@ -1,23 +1,23 @@
 ---
 title: "Existující projekty"
-description: Jak používat BMad Method na existujících kódových bázích
+description: Jak používat Continuous Agile na existujících kódových bázích
 sidebar:
   order: 5
 ---
 
-Používejte BMad Method efektivně při práci na existujících projektech a starších kódových bázích.
+Používejte Continuous Agile efektivně při práci na existujících projektech a starších kódových bázích.
 
-Tento návod pokrývá základní workflow pro zapojení se do existujících projektů s BMad Method.
+Tento návod pokrývá základní workflow pro zapojení se do existujících projektů s Continuous Agile.
 
 :::note[Předpoklady]
-- BMad Method nainstalován (`npx bmad-method install`)
+- Continuous Agile nainstalován (`npx continuous-agile install`)
 - Existující kódová báze, na které chcete pracovat
 - Přístup k AI-powered IDE (Claude Code nebo Cursor)
 :::
 
 ## Krok 1: Vyčistěte dokončené plánovací artefakty
 
-Pokud jste dokončili všechny PRD epicy a stories procesem BMad, vyčistěte tyto soubory. Archivujte je, smažte nebo se spoléhejte na historii verzí. Nenechávejte tyto soubory v:
+Pokud jste dokončili všechny PRD epicy a stories procesem Continuous Agile, vyčistěte tyto soubory. Archivujte je, smažte nebo se spoléhejte na historii verzí. Nenechávejte tyto soubory v:
 
 - `docs/`
 - `_bmad-output/planning-artifacts/`

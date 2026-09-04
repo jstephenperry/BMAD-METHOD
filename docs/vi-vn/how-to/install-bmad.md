@@ -1,17 +1,17 @@
 ---
-title: "Cách cài đặt BMad"
-description: Hướng dẫn từng bước để cài đặt BMad vào dự án của bạn
+title: "Cách cài đặt Continuous Agile"
+description: Hướng dẫn từng bước để cài đặt Continuous Agile vào dự án của bạn
 sidebar:
   order: 1
 ---
 
-Sử dụng lệnh `npx bmad-method install` để thiết lập BMad trong dự án của bạn với các module và công cụ AI theo lựa chọn.
+Sử dụng lệnh `npx continuous-agile install` để thiết lập Continuous Agile trong dự án của bạn với các module và công cụ AI theo lựa chọn.
 
 ## Khi nào nên dùng
 
-- Bắt đầu một dự án mới với BMad
-- Thêm BMad vào một codebase hiện có
-- Cập nhật bản cài đặt BMad hiện tại
+- Bắt đầu một dự án mới với Continuous Agile
+- Thêm Continuous Agile vào một codebase hiện có
+- Cập nhật bản cài đặt Continuous Agile hiện tại
 
 :::note[Điều kiện tiên quyết]
 - **Node.js** 20.12+ (bắt buộc cho trình cài đặt)
@@ -24,13 +24,13 @@ Sử dụng lệnh `npx bmad-method install` để thiết lập BMad trong dự
 ### 1. Chạy trình cài đặt
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 :::tip[Muốn dùng bản prerelease mới nhất?]
 Sử dụng dist-tag `next`:
 ```bash
-npx bmad-method@next install
+npx continuous-agile@next install
 ```
 
 Cách này giúp bạn nhận các thay đổi mới sớm hơn, đổi lại khả năng biến động cao hơn bản cài đặt mặc định.
@@ -39,13 +39,13 @@ Cách này giúp bạn nhận các thay đổi mới sớm hơn, đổi lại kh
 :::tip[Bản rất mới]
 Để cài đặt trực tiếp từ nhánh `main` mới nhất (có thể không ổn định):
 ```bash
-npx github:bmad-code-org/BMAD-METHOD install
+npx github:jstephenperry/continuous-agile install
 ```
 :::
 
 ### 2. Chọn vị trí cài đặt
 
-Trình cài đặt sẽ hỏi bạn muốn đặt các tệp BMad ở đâu:
+Trình cài đặt sẽ hỏi bạn muốn đặt các tệp Continuous Agile ở đâu:
 
 - Thư mục hiện tại (khuyến nghị cho dự án mới nếu bạn tự tạo thư mục và chạy lệnh từ bên trong nó)
 - Đường dẫn tùy chọn
@@ -61,12 +61,12 @@ Chọn các công cụ AI bạn đang dùng:
 Mỗi công cụ có cách tích hợp skill riêng. Trình cài đặt sẽ tạo các tệp prompt nhỏ để kích hoạt workflow và agent, và đặt chúng vào đúng vị trí mà công cụ của bạn mong đợi.
 
 :::note[Kích hoạt skill]
-Một số nền tảng yêu cầu bật skill trong cài đặt trước khi chúng xuất hiện. Nếu bạn đã cài BMad mà chưa thấy skill, hãy kiểm tra cài đặt của nền tảng hoặc hỏi trợ lý AI cách bật skill.
+Một số nền tảng yêu cầu bật skill trong cài đặt trước khi chúng xuất hiện. Nếu bạn đã cài Continuous Agile mà chưa thấy skill, hãy kiểm tra cài đặt của nền tảng hoặc hỏi trợ lý AI cách bật skill.
 :::
 
 ### 4. Chọn module
 
-Trình cài đặt sẽ hiện các module có sẵn. Chọn những module bạn cần - phần lớn người dùng chỉ cần **BMad Method** (module phát triển phần mềm).
+Trình cài đặt sẽ hiện các module có sẵn. Chọn những module bạn cần - phần lớn người dùng chỉ cần **Continuous Agile** (module phát triển phần mềm).
 
 ### 5. Làm theo các prompt
 
@@ -78,8 +78,8 @@ Trình cài đặt sẽ hướng dẫn các bước còn lại - cài đặt, t�
 du-an-cua-ban/
 ├── _bmad/
 │   ├── bmm/            # Các module bạn đã chọn
-│   │   └── config.yaml # Cài đặt module (nếu bạn cần thay đổi sau này)
 │   ├── core/           # Module core bắt buộc
+│   ├── config.toml     # Cấu hình chung do trình cài đặt sinh ra
 │   └── ...
 ├── _bmad-output/       # Các artifact được tạo ra
 ├── .claude/            # Claude Code skills (nếu dùng Claude Code)
@@ -111,4 +111,4 @@ bmad-help Tôi có những lựa chọn nào cho một dự án SaaS?
 
 **Trình cài đặt báo lỗi** - Sao chép toàn bộ output vào trợ lý AI của bạn và để nó phân tích.
 
-**Cài đặt xong nhưng sau đó có thứ không hoạt động** - AI của bạn cần bối cảnh BMad để hỗ trợ. Xem [Cách tìm câu trả lời về BMad](./get-answers-about-bmad.md) để biết cách cho AI truy cập đúng nguồn thông tin.
+**Cài đặt xong nhưng sau đó có thứ không hoạt động** - AI của bạn cần bối cảnh Continuous Agile để hỗ trợ. Xem [Cách tìm câu trả lời về Continuous Agile](./get-answers-about-bmad.md) để biết cách cho AI truy cập đúng nguồn thông tin.

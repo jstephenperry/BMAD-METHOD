@@ -5,11 +5,11 @@ sidebar:
   order: 2
 ---
 
-Sử dụng trình cài đặt BMad để thêm module từ kho cộng đồng (community registry), kho Git của bên thứ ba hoặc đường dẫn file cục bộ.
+Sử dụng trình cài đặt Continuous Agile để thêm module từ kho cộng đồng (community registry), kho Git của bên thứ ba hoặc đường dẫn file cục bộ.
 
 ## Khi nào nên dùng
 
-- Cài một module do cộng đồng đóng góp từ BMad registry
+- Cài một module do cộng đồng đóng góp từ registry của BMad Code, LLC
 - Cài module từ kho Git của bên thứ ba như GitHub, GitLab, Bitbucket hoặc máy chủ tự host
 - Kiểm thử một module bạn đang phát triển cục bộ với BMad Builder
 - Cài module từ máy chủ Git riêng tư hoặc tự host
@@ -25,7 +25,7 @@ Các module cộng đồng được tuyển chọn trong [BMad plugins marketpla
 ### 1. Chạy trình cài đặt
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 ### 2. Duyệt danh mục (catalog) cộng đồng
@@ -81,7 +81,7 @@ Với URL, trình cài đặt sẽ clone repository. Với đường dẫn cục
 Dùng cờ `--custom-source` để cài module tùy chỉnh từ dòng lệnh:
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory . \
   --custom-source /path/to/my-module \
   --tools claude-code \
@@ -91,7 +91,7 @@ npx bmad-method install \
 Khi cung cấp `--custom-source` mà không kèm `--modules`, hệ thống chỉ cài core và các module tùy chỉnh. Nếu muốn cài cả module chính thức, hãy thêm `--modules`:
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory . \
   --modules bmm \
   --custom-source https://gitlab.com/myorg/my-module \
@@ -125,7 +125,7 @@ Discovery là chế độ phát hiện qua manifest. Direct là chế độ qué
 Nếu bạn đang xây một module bằng [BMad Builder](https://github.com/bmad-code-org/bmad-builder), bạn có thể cài trực tiếp từ thư mục đang làm việc:
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory ~/my-project \
   --custom-source ~/my-module-repo/skills \
   --tools claude-code \

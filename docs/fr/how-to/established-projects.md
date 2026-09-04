@@ -1,23 +1,23 @@
 ---
 title: "Projets existants"
-description: Comment utiliser la méthode BMad sur des bases de code existantes
+description: Comment utiliser Continuous Agile sur des bases de code existantes
 sidebar:
   order: 6
 ---
 
-Utilisez la méthode BMad efficacement lorsque vous travaillez sur des projets existants et des bases de code legacy.
+Utilisez Continuous Agile efficacement lorsque vous travaillez sur des projets existants et des bases de code legacy.
 
-Ce guide couvre le flux de travail essentiel pour l’intégration à des projets existants avec la méthode BMad.
+Ce guide couvre le flux de travail essentiel pour l’intégration à des projets existants avec Continuous Agile.
 
 :::note[Prérequis]
-- méthode BMad installée (`npx bmad-method install`)
+- Continuous Agile installé (`npx continuous-agile install`)
 - Une base de code existante sur laquelle vous souhaitez travailler
 - Accès à un IDE IA (Claude Code ou Cursor)
 :::
 
 ## Étape 1 : Nettoyer les artefacts de planification terminés
 
-Si vous avez terminé tous les epics et stories du PRD[^1] via le processus BMad, nettoyez ces fichiers. Archivez-les, supprimez-les, ou appuyez-vous sur l’historique des versions si nécessaire. Ne conservez pas ces fichiers dans :
+Si vous avez terminé tous les epics et stories du PRD[^1] via le processus Continuous Agile, nettoyez ces fichiers. Archivez-les, supprimez-les, ou appuyez-vous sur l’historique des versions si nécessaire. Ne conservez pas ces fichiers dans :
 
 - `docs/`
 - `_bmad-output/planning-artifacts/`

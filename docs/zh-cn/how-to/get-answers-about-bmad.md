@@ -1,13 +1,13 @@
 ---
-title: "如何获取关于 BMad 的答案"
-description: 使用 LLM 快速回答您自己的 BMad 问题
+title: "如何获取关于 Continuous Agile 的答案"
+description: 使用 LLM 快速回答您自己的 Continuous Agile 问题
 sidebar:
   order: 4
 ---
 
 ## 先从 BMad-Help 开始
 
-**获取 BMad 相关答案最快的方式是 `bmad-help` 技能。** 这个智能向导可以覆盖 80% 以上的常见问题，并且你在 IDE 里随时可用。
+**获取 Continuous Agile 相关答案最快的方式是 `bmad-help` 技能。** 这个智能向导可以覆盖 80% 以上的常见问题，并且你在 IDE 里随时可用。
 
 BMad-Help 不只是查表工具，它还能：
 - **检查你的项目状态**，判断哪些步骤已经完成
@@ -45,7 +45,7 @@ BMad-Help 通常会返回：
 ## 何时使用这篇指南
 
 当你遇到以下情况时，可用本指南补充：
-- 想理解 BMad 的架构设计或内部机制
+- 想理解 Continuous Agile 的架构设计或内部机制
 - 需要超出 BMad-Help 覆盖范围的答案
 - 在安装前做技术调研
 - 想直接基于源码进行追问
@@ -58,30 +58,30 @@ BMad-Help 通常会返回：
 | --- | --- | --- |
 | **`_bmad` 文件夹** | 智能体、工作流、提示词如何工作 | “PM 智能体具体做什么？” |
 | **完整 GitHub 仓库** | 版本历史、安装器、整体架构 | “v6 主要改了什么？” |
-| **`llms-full.txt`** | 文档层面的快速全景理解 | “解释 BMad 的四个阶段” |
+| **`llms-full.txt`** | 文档层面的快速全景理解 | “解释 Continuous Agile 的四个阶段” |
 
-安装 BMad 后会生成 `_bmad` 文件夹；如果你还没有安装，可先克隆仓库。
+安装 Continuous Agile 后会生成 `_bmad` 文件夹；如果你还没有安装，可先克隆仓库。
 
 ### 2. 让 AI 读取来源
 
 **如果你的 AI 可以直接读文件（如 Claude Code、Cursor）：**
 
-- **已安装 BMad：** 直接让它读取 `_bmad` 并提问
-- **想看更深上下文：** 克隆[完整仓库](https://github.com/bmad-code-org/BMAD-METHOD)
+- **已安装 Continuous Agile：** 直接让它读取 `_bmad` 并提问
+- **想看更深上下文：** 克隆[完整仓库](https://github.com/jstephenperry/continuous-agile)
 
 **如果你使用 ChatGPT 或 Claude.ai：**
 
 把 `llms-full.txt` 加入会话上下文：
 
 ```text
-https://bmad-code-org.github.io/BMAD-METHOD/llms-full.txt
+https://jstephenperry.github.io/continuous-agile/llms-full.txt
 ```
 
 
 ### 3. 直接提问
 
 :::note[示例]
-**问：** “用 BMad 做一个需求到实现的最短路径是什么？”
+**问：** “用 Continuous Agile 做一个需求到实现的最短路径是什么？”
 
 **答：** 运行 `bmad-build`。输入直接意图、issue、规格或已规划 story；workflow 会利用现有上下文并选择所需的澄清、规划、实现和审查深度。
 :::
@@ -92,7 +92,7 @@ https://bmad-code-org.github.io/BMAD-METHOD/llms-full.txt
 
 ## 提示
 
-- **对“意外答案”做二次核验**：LLM 偶尔会答偏，建议回看源码或到 Discord 确认
+- **对“意外答案”做二次核验**：LLM 偶尔会答偏，建议回看源码或到 GitHub Discussions 确认
 - **问题越具体越好**：例如“PRD 工作流第 3 步在做什么？”比“PRD 怎么用？”更高效
 
 ## 仍然卡住？
@@ -101,13 +101,11 @@ https://bmad-code-org.github.io/BMAD-METHOD/llms-full.txt
 
 | 频道 | 适用场景 |
 | --- | --- |
-| `#bmad-method-help` | 快速问题（实时聊天） |
-| `help-requests` forum | 复杂问题（可检索、可沉淀） |
-| `#suggestions-feedback` | 建议与功能诉求 |
-| `#report-bugs-and-issues` | Bug 报告 |
+| GitHub Discussions | 提问、想法与设计讨论 |
+| GitHub Issues | Bug 报告与功能请求 |
 
-**Discord：** [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)  
-**GitHub Issues：** [github.com/bmad-code-org/BMAD-METHOD/issues](https://github.com/bmad-code-org/BMAD-METHOD/issues)（用于可复现问题）
+**GitHub Discussions：** [github.com/jstephenperry/continuous-agile/discussions](https://github.com/jstephenperry/continuous-agile/discussions)  
+**GitHub Issues：** [github.com/jstephenperry/continuous-agile/issues](https://github.com/jstephenperry/continuous-agile/issues)（用于可复现问题）
 
 *你！*  
 &emsp;&emsp;*卡住*  

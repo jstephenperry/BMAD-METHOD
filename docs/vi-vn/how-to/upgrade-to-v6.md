@@ -1,11 +1,11 @@
 ---
 title: "Cách nâng cấp lên v6"
-description: Di chuyển từ BMad v4 sang v6
+description: Di chuyển từ BMad v4 sang Continuous Agile v6
 sidebar:
   order: 3
 ---
 
-Sử dụng trình cài đặt BMad để nâng cấp từ v4 lên v6, bao gồm khả năng tự động phát hiện bản cài đặt cũ và hỗ trợ di chuyển.
+Sử dụng trình cài đặt Continuous Agile để nâng cấp từ BMad v4 lên v6, bao gồm khả năng tự động phát hiện bản cài đặt cũ và hỗ trợ di chuyển.
 
 ## Khi nào nên dùng
 
@@ -74,7 +74,7 @@ du-an-cua-ban/
 │   ├── _config/         # Các tùy chỉnh của bạn
 │   │   └── agents/      # Tệp tùy chỉnh agent
 │   ├── core/            # Framework core dùng chung
-│   ├── bmm/             # Module BMad Method
+│   ├── bmm/             # Module Continuous Agile
 │   ├── bmb/             # BMad Builder
 │   └── cis/             # Creative Intelligence Suite
 └── _bmad-output/        # Thư mục output (là thư mục docs trong v4)
@@ -94,7 +94,7 @@ du-an-cua-ban/
 
 | Khái niệm | v4 | v6 |
 | --- | --- | --- |
-| **Core** | `_bmad-core` thực chất là BMad Method | `_bmad/core/` là framework dùng chung |
+| **Core** | `_bmad-core` thực chất là chính method đó | `_bmad/core/` là framework dùng chung |
 | **Method** | `_bmad-method` | `_bmad/bmm/` |
-| **Config** | Sửa trực tiếp các tệp | `config.yaml` theo từng module |
+| **Config** | Sửa trực tiếp các tệp | `_bmad/config.toml` dùng chung cho mọi module |
 | **Documents** | Cần thiết lập trước cho bản chia nhỏ hoặc nguyên khối | Linh hoạt hoàn toàn, tự động quét |

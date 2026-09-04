@@ -5,11 +5,11 @@ sidebar:
   order: 2
 ---
 
-Utilisez l’installateur BMad pour ajouter des modules depuis le registre communautaire, des dépôts Git tiers ou des chemins locaux.
+Utilisez l’installateur de Continuous Agile pour ajouter des modules depuis le registre communautaire, des dépôts Git tiers ou des chemins locaux.
 
 ## Quand l’utiliser
 
-- Installer un module contribué par la communauté depuis le registre BMad
+- Installer un module contribué par la communauté depuis le registre communautaire
 - Installer un module depuis un dépôt Git tiers (GitHub, GitLab, Bitbucket, auto-hébergé)
 - Tester un module que vous développez localement avec BMad Builder
 - Installer des modules depuis un serveur Git privé ou auto-hébergé
@@ -20,12 +20,12 @@ Nécessite [Node.js](https://nodejs.org) v20.12+ et `npx` (inclus avec npm). Les
 
 ## Modules communautaires
 
-Les modules communautaires sont regroupés dans le [marketplace de plugins BMad](https://github.com/bmad-code-org/bmad-plugins-marketplace). Ils sont organisés par catégorie et épinglés à un commit approuvé pour des raisons de sécurité.
+Les modules communautaires sont regroupés dans le [marketplace de plugins BMad](https://github.com/bmad-code-org/bmad-plugins-marketplace), publié par BMad Code, LLC. Ils sont organisés par catégorie et épinglés à un commit approuvé pour des raisons de sécurité.
 
 ### 1. Lancer l’installateur
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 ### 2. Parcourir le catalogue communautaire
@@ -81,7 +81,7 @@ L’installateur clone le dépôt (pour les URL) ou lit directement depuis le di
 Utilisez l’option `--custom-source` pour installer des modules personnalisés depuis la ligne de commande :
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory . \
   --custom-source /path/to/my-module \
   --tools claude-code \
@@ -91,7 +91,7 @@ npx bmad-method install \
 Quand `--custom-source` est fourni sans `--modules`, seuls le cœur et les modules personnalisés sont installés. Pour inclure également les modules officiels, ajoutez `--modules` :
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory . \
   --modules bmm \
   --custom-source https://gitlab.com/myorg/my-module \
@@ -125,7 +125,7 @@ Le chemin `.claude-plugin/marketplace.json` est une convention standard adoptée
 Si vous construisez un module avec [BMad Builder](https://github.com/bmad-code-org/bmad-builder), vous pouvez l’installer directement depuis votre répertoire de travail :
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory ~/my-project \
   --custom-source ~/my-module-repo/skills \
   --tools claude-code \
@@ -167,7 +167,7 @@ Les modules personnalisés participent au flux de mise à jour normal :
 
 ## Créer vos propres modules
 
-Utilisez [BMad Builder](https://github.com/bmad-code-org/bmad-builder) pour créer des modules que d’autres pourront installer :
+Utilisez [BMad Builder](https://github.com/bmad-code-org/bmad-builder), publié par BMad Code, LLC, pour créer des modules que d’autres pourront installer :
 
 1. Exécutez `bmad-module-builder` pour générer la structure de votre module
 2. Ajoutez des skills, agents et workflows avec les divers outils BMad Builder

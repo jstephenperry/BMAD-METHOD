@@ -243,7 +243,7 @@ class UI {
     await messageLoader.displayStartMessage();
 
     // Probe for `uv` before any other prompts: it's the runner for the Python
-    // scripts BMAD skills shell out to (`uv run <script>`), and uv provisions
+    // scripts Continuous Agile skills shell out to (`uv run <script>`), and uv provisions
     // the interpreter itself, so it's the single thing worth checking for.
     // As of v6.11.0 `bmad-build` and `bmad-build-auto` HALT without it.
     //
@@ -299,7 +299,7 @@ class UI {
     const installer = new Installer();
     const { bmadDir } = await installer.findBmadDir(confirmedDirectory);
 
-    // Check if there's an existing BMAD installation
+    // Check if there's an existing Continuous Agile installation
     const hasExistingInstall = await fs.pathExists(bmadDir);
 
     // Track action type (only set if there's an existing installation)
@@ -322,7 +322,7 @@ class UI {
       }
 
       // Common actions
-      choices.push({ name: 'Modify BMAD Installation', value: 'update' });
+      choices.push({ name: 'Modify Continuous Agile Installation', value: 'update' });
 
       // Check if action is provided via command-line
       if (options.action) {

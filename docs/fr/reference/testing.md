@@ -5,14 +5,14 @@ sidebar:
   order: 6
 ---
 
-BMad propose deux approches de test : un workflow QA[^1] intégré pour une génération rapide de tests et un module Test Architect installable pour une stratégie de test de qualité entreprise.
+Continuous Agile propose deux approches de test : un workflow QA[^1] intégré pour une génération rapide de tests et un module Test Architect installable pour une stratégie de test de qualité entreprise.
 
 ## Lequel Choisir ?
 
 | Facteur                 | QA Intégré                                   | Module TEA                                                          |
 |-------------------------|----------------------------------------------|---------------------------------------------------------------------|
 | **Idéal pour**          | Projets petits et moyens, couverture rapide  | Grands projets, domaines réglementés ou complexes                   |
-| **Installation**        | Rien à installer — inclus dans BMM           | Installer séparément via `npx bmad-method install`                  |
+| **Installation**        | Rien à installer — inclus dans BMM           | Installer séparément via `npx continuous-agile install`             |
 | **Approche**            | Générer les tests rapidement, itérer ensuite | Planifier d’abord, puis générer avec traçabilité                    |
 | **Types de tests**      | Tests API et E2E                             | API, E2E, ATDD[^2], NFR, et plus                                    |
 | **Stratégie**           | Chemin nominal + cas limites critiques       | Priorisation basée sur les risques (P0-P3)                          |
@@ -66,7 +66,7 @@ Le workflow QA génère uniquement des tests. Pour la revue de code et la valida
 TEA est un module autonome qui fournit un agent expert (Murat) et neuf workflows structurés pour des tests de qualité entreprise. Il va au-delà de la génération de tests pour inclure la stratégie de test, la planification basée sur les risques, les murs de qualité et la traçabilité des exigences.
 
 - **Documentation :** [TEA Module Docs](https://bmad-code-org.github.io/bmad-method-test-architecture-enterprise/)
-- **Installation :** `npx bmad-method install` et sélectionnez le module TEA
+- **Installation :** `npx continuous-agile install` et sélectionnez le module TEA
 - **npm :** [`bmad-method-test-architecture-enterprise`](https://www.npmjs.com/package/bmad-method-test-architecture-enterprise)
 
 ### Ce que TEA Fournit
@@ -95,7 +95,7 @@ TEA supporte également la priorisation basée sur les risques P0-P3 et des int�
 
 ## Comment les Tests S’Intègrent dans les Workflows
 
-Le workflow Automate du QA intégré apparaît dans la Phase 4 (Implémentation) de la carte de workflow méthode BMad. Il est conçu pour s’exécuter **après qu’un epic complet soit terminé** — une fois que toutes les stories d’un epic ont été implémentées et revues. Une séquence typique :
+Le workflow Automate du QA intégré apparaît dans la Phase 4 (Implémentation) de la carte des workflows de Continuous Agile. Il est conçu pour s’exécuter **après qu’un epic complet soit terminé** — une fois que toutes les stories d’un epic ont été implémentées et revues. Une séquence typique :
 
 1. Pour chaque story de l’epic : implémenter avec Build (`BD` / `bmad-build`), puis ajouter Code Review (`CR`) si nécessaire
 2. Après la fin de l’epic : générer les tests avec `QA` (via l’agent Developer) ou le workflow Automate de TEA

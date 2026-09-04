@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-每个 BMad 安装都包含 **核心模块** —— 一小组跨项目、跨模块、跨阶段通用的 skills。本页覆盖这 7 个核心 skills：4 个内核工具，加上 3 个 **思考类 skills**（brainstorming、forge idea、party mode）。
+每个 Continuous Agile 安装都包含 **核心模块** —— 一小组跨项目、跨模块、跨阶段通用的 skills。本页覆盖这 7 个核心 skills：4 个内核工具，加上 3 个 **思考类 skills**（brainstorming、forge idea、party mode）。
 
 :::tip[快速入口]
 在 IDE 中直接输入工具 skill 名（例如 `bmad-help`）即可调用，无需先加载智能体。
@@ -20,7 +20,7 @@ sidebar:
 | [`bmad-help`](#bmad-help)                                 | 基于项目上下文推荐下一步                     |
 | [`bmad-advanced-elicitation`](#bmad-advanced-elicitation) | 通过多轮技法增强 LLM 输出                    |
 | [`bmad-review`](#bmad-review)                             | 多视角批判性审查 —— 对抗、边界条件与验证缺口 |
-| [`bmad-customize`](#bmad-customize)                       | 创建并验证 BMad 自定义覆盖                   |
+| [`bmad-customize`](#bmad-customize)                       | 创建并验证 Continuous Agile 自定义覆盖       |
 
 **思考类 skills：**
 
@@ -104,17 +104,17 @@ sidebar:
 
 ## bmad-customize
 
-**定位：** 无需手写 TOML，即可修改已安装 BMad 智能体或 workflow 的行为。
+**定位：** 无需手写 TOML，即可修改已安装 Continuous Agile 智能体或 workflow 的行为。
 
 **工作机制：**
 
-1. 扫描已安装 BMad skills 的可自定义面
+1. 扫描已安装 Continuous Agile skills 的可自定义面
 2. 为你的变更选择合适的覆盖范围
 3. 在 `_bmad/custom/` 下写入覆盖文件
 4. 验证合并后的配置
 
 **输入：** 用自然语言描述想要的自定义  
-**输出：** `_bmad/custom/` 下的 TOML 覆盖文件。详见[如何自定义 BMad](../how-to/customize-bmad.md)
+**输出：** `_bmad/custom/` 下的 TOML 覆盖文件。详见[如何自定义 Continuous Agile](../how-to/customize-bmad.md)
 
 ## 思考类 skills
 

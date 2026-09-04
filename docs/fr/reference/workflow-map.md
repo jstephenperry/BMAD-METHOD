@@ -1,11 +1,11 @@
 ---
 title: "Carte des Workflows"
-description: Référence visuelle des phases et des livrables des workflows de la méthode BMad
+description: Référence visuelle des phases et des livrables des workflows de Continuous Agile
 sidebar:
   order: 1
 ---
 
-La méthode BMad (BMM) est un module de l’écosystème BMad, conçu pour appliquer les meilleures pratiques d’ingénierie du
+Continuous Agile (BMM) est un module de l’écosystème de modules, conçu pour appliquer les meilleures pratiques d’ingénierie du
 contexte et de planification. Les agents IA sont plus performants lorsqu’ils disposent d’un contexte clair et structuré. Le
 système BMM construit ce contexte de manière progressive, en 4 phases distinctes — chaque phase, ainsi que les workflows
 optionnels qu’elle contient, produit des documents qui nourrissent la phase suivante. Ainsi, les agents savent toujours
@@ -16,14 +16,14 @@ comme cadre de référence.
 
 Si vous ne savez plus où vous en êtes, le skill `bmad-help` vous remettra sur la bonne voie ou vous indiquera la prochaine
 étape. Cette page reste une référence utile, mais `bmad-help` est interactif et bien plus rapide si vous avez déjà installé
-la méthode BMad. Par ailleurs, si vous utilisez des modules ayant étendu la méthode BMad ou ajouté d’autres modules
+Continuous Agile. Par ailleurs, si vous utilisez des modules ayant étendu Continuous Agile ou ajouté d’autres modules
 complémentaires non extensibles, `bmad-help` s’adapte automatiquement pour couvrir tout ce qui est disponible et vous
 fournir les meilleurs conseils en temps réel.
 
 Note importante : chaque workflow ci-dessous peut être exécuté directement via un skill avec l’outil de votre choix, ou
 en chargeant d’abord un agent depuis le menu des agents.
 
-<iframe src="/workflow-map-diagram-fr.html" title="Diagramme de la carte des workflows de la méthode BMad" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
+<iframe src="/workflow-map-diagram-fr.html" title="Diagramme de la carte des workflows de Continuous Agile" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
 
 <p style="font-size: 0.8rem; text-align: right; margin-top: -0.5rem; margin-bottom: 1rem;">
   <a href="/workflow-map-diagram-fr.html" target="_blank" rel="noopener noreferrer">Ouvrir le diagramme dans un nouvel onglet ↗</a>

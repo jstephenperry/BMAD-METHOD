@@ -11,7 +11,7 @@ Make the main point easy to find and act on. These rules apply to every page:
 
 - At the start, make clear what the page is for and what the reader needs from it.
 - Prefer concrete, familiar words and short sentences.
-- Use specialized terms only when readers need them to use BMAD. Define an unfamiliar term at first use.
+- Use specialized terms only when readers need them to use Continuous Agile. Define an unfamiliar term at first use.
 - Use literal language. Avoid decorative metaphors, and do not use a metaphor instead of explaining how something works.
 - Give the gist before qualifications and detailed mechanics.
 - Include implementation details only when they help readers understand or act for that page's purpose. Put exact mechanics and contracts in reference pages or linked deeper material.
@@ -87,7 +87,7 @@ Show in "What You've Accomplished" sections:
 ````md
 ```
 your-project/
-├── _bmad/                                   # BMad configuration
+├── _bmad/                                   # Continuous Agile configuration
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   └── PRD.md                           # Your requirements document
@@ -337,7 +337,7 @@ Starlight generates right-side "On this page" navigation from headers:
 Add italic context at definition start for limited-scope terms:
 
 - `*Direct-entry implementation only.*`
-- `*BMad Method/Enterprise.*`
+- `*Continuous Agile/Enterprise.*`
 - `*Phase N.*`
 - `*BMGD.*`
 - `*Established projects.*`

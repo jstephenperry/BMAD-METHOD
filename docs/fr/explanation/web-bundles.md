@@ -1,17 +1,17 @@
 ---
 title: 'Web Bundles'
-description: Skills BMad empaquetés pour Google Gemini Gems et ChatGPT Custom GPTs
+description: Skills Continuous Agile empaquetés pour Google Gemini Gems et ChatGPT Custom GPTs
 ---
 
-Exécutez la partie planification de BMad dans votre abonnement LLM web, puis ramenez les artefacts dans votre IDE.
+Exécutez la partie planification de Continuous Agile dans votre abonnement LLM web, puis ramenez les artefacts dans votre IDE.
 
 ## Qu’est-ce qu’un Web Bundle ?
 
-Un web bundle est un skill BMad reconditionné pour être installé comme **Google Gemini Gem** ou **ChatGPT Custom GPT**. Chaque bundle inclut un protocole `SKILL.md` que vous téléversez comme fichier de connaissance, un bloc `INSTRUCTIONS.md` que vous collez dans les instructions du Gem ou du GPT, et les fichiers de données dont le skill a besoin (CSV, modèles, listes de contrôle de validation, contenu dévoilé progressivement). Le persona vit dans les instructions collées ; le protocole vit dans le fichier de connaissance. Changez de persona sans toucher au protocole.
+Un web bundle est un skill Continuous Agile reconditionné pour être installé comme **Google Gemini Gem** ou **ChatGPT Custom GPT**. Chaque bundle inclut un protocole `SKILL.md` que vous téléversez comme fichier de connaissance, un bloc `INSTRUCTIONS.md` que vous collez dans les instructions du Gem ou du GPT, et les fichiers de données dont le skill a besoin (CSV, modèles, listes de contrôle de validation, contenu dévoilé progressivement). Le persona vit dans les instructions collées ; le protocole vit dans le fichier de connaissance. Changez de persona sans toucher au protocole.
 
-L’installation ne se fait pas en un clic, mais les étapes sont guidées. **Installez depuis [bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/)**. Le site liste chaque bundle dans une grille, vous montre les étapes d’installation Gemini et ChatGPT directement sur la page, et met le ZIP à disposition. C’est le type d’installation pris en charge ; le schéma est le même dans toute la bibliothèque, donc une fois que vous en avez installé un, le suivant va de soi.
+L’installation ne se fait pas en un clic, mais les étapes sont guidées. **Installez depuis la bibliothèque de web bundles publiée par BMad Code, LLC sur [bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/)**. Le site liste chaque bundle dans une grille, vous montre les étapes d’installation Gemini et ChatGPT directement sur la page, et met le ZIP à disposition. C’est le type d’installation pris en charge ; le schéma est le même dans toute la bibliothèque, donc une fois que vous en avez installé un, le suivant va de soi.
 
-La V4 de BMad a introduit les web bundles. La V6 les réintègre, réécrits pour les plateformes Gem et Custom GPT actuelles et conçus pour Canvas, Deep Research et la génération d’images.
+La V4 a introduit les web bundles. La V6 les réintègre, réécrits pour les plateformes Gem et Custom GPT actuelles et conçus pour Canvas, Deep Research et la génération d’images.
 
 ## Pourquoi les utiliser
 
@@ -36,20 +36,20 @@ Les bundles actuellement disponibles couvrent les phases d’analyse et de plani
 | Bundle                                                         | Phase         | Origine du persona                        |
 |----------------------------------------------------------------|---------------|-------------------------------------------|
 | Coach Brainstorming[^1]                                        | Analyse       | Osborn (par défaut), Minto (substitution) |
-| Coach Product Brief[^2]                                        | Analyse       | Mary (analyste BMad)                      |
+| Coach Product Brief[^2]                                        | Analyse       | Mary (analyste Continuous Agile)          |
 | Coach [PRFAQ](./analysis-phase.md#prfaq-working-backwards)[^3] | Analyse       | Working Backwards (Bezos)                 |
 | Coach PRD[^4]                                                  | Planification | Cagan                                     |
 | Coach UX[^5]                                                   | Planification | Norman                                    |
 | Étude de marché et analyse sectorielle                         | Analyse       | Porter et Christensen                     |
 
-Chaque bundle intègre un persona par défaut hérité de son agent BMad d’origine (lorsqu’il existe) et un exemple de persona alternatif pour illustrer le changement de voix.
+Chaque bundle intègre un persona par défaut hérité de son agent d’origine (lorsqu’il existe) et un exemple de persona alternatif pour illustrer le changement de voix.
 
 ## Comment se déroule une session
 
 1. **Ouvrez le Gem ou le Custom GPT.** Le persona vous salue en restant dans son rôle et ouvre une phase de découverte conversationnelle.
 2. **Découvrir le périmètre.** Le persona vous demande ce que vous essayez d’accomplir, ce que vous avez sous la main, quelles contraintes s’appliquent. Pas de formulaire à remplir.
 3. **Travailler dans Canvas.** Le protocole ouvre Canvas au démarrage de la session et le met à jour en continu. Les diagrammes Mermaid et les tableaux HTML viennent s’ajouter au texte.
-4. **Transmettre.** Quand vous avez terminé, vous avez un document Canvas que vous pouvez exporter, coller dans votre dépôt, ou transmettre à un skill BMad dans votre IDE pour la phase suivante.
+4. **Transmettre.** Quand vous avez terminé, vous avez un document Canvas que vous pouvez exporter, coller dans votre dépôt, ou transmettre à un skill Continuous Agile dans votre IDE pour la phase suivante.
 
 Pour les bundles qui intègrent Deep Research (actuellement Market & Industry Research), le persona rédige un brief Deep Research en milieu de session que vous collez dans le mode Deep Research de Gemini ou ChatGPT, puis il intègre le rapport obtenu.
 
@@ -77,9 +77,9 @@ Substitutions de persona, nom d’utilisateur par défaut, garde-fous spécifiqu
 
 ## Créer le vôtre
 
-Les web bundles sont générés à partir de skills BMad en utilisant le skill utilitaire `bmad-os-skill-to-bundle`. Pointez-le vers n’importe quel dossier de skill BMad et il produit les fichiers du bundle en reprenant le persona hérité de l’agent d’origine.
+Les web bundles sont générés à partir de skills Continuous Agile en utilisant le skill utilitaire `bmad-os-skill-to-bundle`. Pointez-le vers n’importe quel dossier de skill et il produit les fichiers du bundle en reprenant le persona hérité de l’agent d’origine.
 
-Installez n’importe quel bundle depuis [bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/).
+Installez n’importe quel bundle depuis [bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/), la bibliothèque publiée par BMad Code, LLC.
 
 ## Glossaire
 

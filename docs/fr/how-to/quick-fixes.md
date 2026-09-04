@@ -15,7 +15,7 @@ Les corrections de bugs, refactorisations et petites modifications ciblées peuv
 - Mises à jour de dépendances
 
 :::note[Prérequis]
-- Méthode BMad installée (`npx bmad-method install`)
+- Continuous Agile installé (`npx continuous-agile install`)
 - Un IDE IA (Claude Code, Cursor, ou similaire)
 :::
 

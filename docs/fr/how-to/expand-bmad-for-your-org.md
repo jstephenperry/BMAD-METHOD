@@ -1,16 +1,16 @@
 ---
-title: 'Comment étendre BMad pour votre organisation'
-description: Six patterns de personnalisation qui remodèlent BMad sans créer de fork — règles applicables aux agents, conventions de workflow, publication externe, remplacements de templates, modifications du registre des agents et patterns d’intégration avancés
+title: 'Comment étendre Continuous Agile pour votre organisation'
+description: Six patterns de personnalisation qui remodèlent Continuous Agile sans créer de fork — règles applicables aux agents, conventions de workflow, publication externe, remplacements de templates, modifications du registre des agents et patterns d’intégration avancés
 sidebar:
   order: 9
 ---
 
-Le système de personnalisation de BMad permet à une organisation d’adapter les comportements sans modifier les fichiers installés ni forker les skills. Ce guide présente six recettes qui couvrent la plupart des besoins en entreprise.
+Le système de personnalisation de Continuous Agile permet à une organisation d’adapter les comportements sans modifier les fichiers installés ni forker les skills. Ce guide présente six recettes qui couvrent la plupart des besoins en entreprise.
 
 :::note[Prérequis]
 
-- BMad installé dans votre projet (voir [Comment installer BMad](./install-bmad.md))
-- Connaissance du modèle de personnalisation (voir [Comment personnaliser BMad](./customize-bmad.md))
+- Continuous Agile installé dans votre projet (voir [Comment installer Continuous Agile](./install-bmad.md))
+- Connaissance du modèle de personnalisation (voir [Comment personnaliser Continuous Agile](./customize-bmad.md))
 - Python 3.11+ sur le PATH (pour le résolveur — bibliothèque standard uniquement, pas de `pip install`)
 :::
 
@@ -143,7 +143,7 @@ brief_template = "{project-root}/docs/enterprise/brief-template.md"
 
 **Cas d’usage :** Changer *qui sera présent dans la pièce* pour les skills basés sur le registre comme `bmad-party-mode`, `bmad-retrospective` et `bmad-advanced-elicitation`, sans modifier le code source ni forker. Voici trois variantes courantes.
 
-### 5a. Renommer un agent BMad pour toute l’organisation
+### 5a. Renommer un agent Continuous Agile pour toute l’organisation
 
 Chaque agent réel possède un descripteur que l’installateur synthétise à partir de `module.yaml`. Surchargez-le pour changer la voix et le cadrage pour tous les consommateurs du registre :
 
@@ -178,7 +178,7 @@ icon = "⚕️"
 description = "Chaleur du médecin de campagne, caractère explosif. 'Bon sang Jim, je suis un docteur pas un ___.' Contrepoids éthique à Spock."
 ```
 
-Demandez à party-mode d'« inviter l’équipage de l’Enterprise ». Il filtre par `team = "startrek"` et génère Spock et McCoy avec ces descripteurs. Les agents BMad réels (Mary, Amelia) peuvent se retrouver à la même table si vous les invitez.
+Demandez à party-mode d'« inviter l’équipage de l’Enterprise ». Il filtre par `team = "startrek"` et génère Spock et McCoy avec ces descripteurs. Les agents Continuous Agile réels (Mary, Amelia) peuvent se retrouver à la même table si vous les invitez.
 
 ### 5c. Figer les paramètres d’installation de l’équipe
 
@@ -201,7 +201,7 @@ Les paramètres personnels comme `user_name`, `communication_language` ou `user_
 
 ## Renforcer les règles globales dans le fichier de session de votre IDE
 
-Les personnalisations BMad se chargent quand un skill est activé. Beaucoup d’outils IDE chargent aussi un fichier d’instructions global au **début de chaque session**, avant tout skill (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules/`, `.github/copilot-instructions.md`, etc.). Pour les règles qui doivent s’appliquer même en dehors des skills BMad, reproduisez-y les plus critiques.
+Les personnalisations Continuous Agile se chargent quand un skill est activé. Beaucoup d’outils IDE chargent aussi un fichier d’instructions global au **début de chaque session**, avant tout skill (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules/`, `.github/copilot-instructions.md`, etc.). Pour les règles qui doivent s’appliquer même en dehors des skills Continuous Agile, reproduisez-y les plus critiques.
 
 **Quand les utiliser ensemble :**
 - Une règle est suffisamment importante pour qu’une conversation simple (sans skill actif) doive la respecter
@@ -218,18 +218,18 @@ avant de s'appuyer sur les connaissances des données d'entraînement. -->
 
 Une phrase, chargée à chaque session. Elle s’associe à la personnalisation `bmad-agent-dev.toml` pour que la règle s’applique à la fois dans les workflows d’Amelia et lors des chats ad hoc avec l’assistant. Chaque couche possède son propre périmètre :
 
-| Couche                                             | Périmètre                                                | Utilisée pour                                                           |
-|----------------------------------------------------|----------------------------------------------------------|-------------------------------------------------------------------------|
-| Fichier de session IDE (`CLAUDE.md` / `AGENTS.md`) | Chaque session, avant toute activation de skill          | Règles courtes et universelles qui doivent survivre hors de BMad        |
-| Personnalisation d’agent BMad                      | Chaque workflow que l’agent dispatche                    | Comportement spécifique au persona de l’agent                           |
-| Personnalisation de workflow BMad                  | Une exécution de workflow                                | Forme de sortie spécifique au workflow, hooks de publication, templates |
-| Configuration centrale BMad                        | Registre des agents + paramètres d’installation partagés | Qui est dans la pièce et quels chemins partagés l’équipe utilise        |
+| Couche                                             | Périmètre                                                | Utilisée pour                                                                |
+|----------------------------------------------------|----------------------------------------------------------|------------------------------------------------------------------------------|
+| Fichier de session IDE (`CLAUDE.md` / `AGENTS.md`) | Chaque session, avant toute activation de skill          | Règles courtes et universelles qui doivent survivre hors de Continuous Agile |
+| Personnalisation d’agent Continuous Agile          | Chaque workflow que l’agent dispatche                    | Comportement spécifique au persona de l’agent                                |
+| Personnalisation de workflow Continuous Agile      | Une exécution de workflow                                | Forme de sortie spécifique au workflow, hooks de publication, templates      |
+| Configuration centrale Continuous Agile            | Registre des agents + paramètres d’installation partagés | Qui est dans la pièce et quels chemins partagés l’équipe utilise             |
 
 Gardez le fichier IDE **concis**. Une douzaine de lignes bien choisies sont plus efficaces qu’une liste étendue. Les modèles le lisent à chaque tour, et le superflu noie l’information utile.
 
 ## Recette 6 : Patterns d’intégration avancés
 
-Plusieurs workflows BMad exposent une surface de configuration plus riche au-delà des bases couvertes dans les Recettes 1–5. Ces patterns — sources de connaissance à la demande, publication automatique des livrables, standards de documentation à la finalisation et templates interchangeables — apparaissent dans plusieurs workflows. Consultez le `customize.toml` d’un workflow pour voir quels champs il expose ; les exemples ci-dessous utilisent `bmad-prd` car il les expose tous, mais les mêmes patterns s’appliquent partout où le champ apparaît.
+Plusieurs workflows Continuous Agile exposent une surface de configuration plus riche au-delà des bases couvertes dans les Recettes 1–5. Ces patterns — sources de connaissance à la demande, publication automatique des livrables, standards de documentation à la finalisation et templates interchangeables — apparaissent dans plusieurs workflows. Consultez le `customize.toml` d’un workflow pour voir quels champs il expose ; les exemples ci-dessous utilisent `bmad-prd` car il les expose tous, mais les mêmes patterns s’appliquent partout où le champ apparaît.
 
 ### Sources de connaissance à la demande (`external_sources`)
 
@@ -317,11 +317,11 @@ on_complete = """ ... """
 persistent_facts = ["Toujours inclure une section 'Revue réglementaire' quand le domaine implique la santé, la finance ou les données d'enfants."]
 ```
 
-Résultat : Mary charge la règle de revue réglementaire à l’activation de son persona. Quand l’utilisateur choisit le product brief dans le menu, le workflow charge ses propres conventions par-dessus, écrit avec le template enterprise et publie vers Confluence à la fin. Chaque couche contribue, et aucune n’a nécessité de modifier le code source de BMad.
+Résultat : Mary charge la règle de revue réglementaire à l’activation de son persona. Quand l’utilisateur choisit le product brief dans le menu, le workflow charge ses propres conventions par-dessus, écrit avec le template enterprise et publie vers Confluence à la fin. Chaque couche contribue, et aucune n’a nécessité de modifier le code source de Continuous Agile.
 
 ## Dépannage
 
-**L’override ne prend pas effet ?** Vérifiez que le fichier se trouve sous `_bmad/custom/` avec le nom exact du répertoire du skill (ex. `bmad-agent-dev.toml`, pas `bmad-dev.toml`). Voir [Comment personnaliser BMad](./customize-bmad.md#dépannage).
+**L’override ne prend pas effet ?** Vérifiez que le fichier se trouve sous `_bmad/custom/` avec le nom exact du répertoire du skill (ex. `bmad-agent-dev.toml`, pas `bmad-dev.toml`). Voir [Comment personnaliser Continuous Agile](./customize-bmad.md#dépannage).
 
 **Nom d’outil MCP inconnu ?** Utilisez le nom exact que le serveur MCP expose dans la session en cours. Demandez à Claude Code de lister les outils MCP disponibles en cas de doute. Les noms codés en dur dans `persistent_facts` ou `on_complete` ne fonctionneront pas si le serveur MCP n’est pas connecté.
 

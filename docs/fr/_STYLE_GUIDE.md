@@ -75,7 +75,7 @@ Avertissements critiques uniquement — perte de données, problèmes de sécuri
 ````md
 ```
 votre-projet/
-├── _bmad/                                   # Configuration BMad
+├── _bmad/                                   # Configuration Continuous Agile
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   └── PRD.md                           # Votre document d’exigences
@@ -326,7 +326,7 @@ Starlight génère la navigation « Sur cette page » à droite à partir de
 Ajouter un contexte en italique au début de la définition pour les termes à portée limitée :
 
 - `*Implémentation en entrée directe uniquement.*`
-- `*méthode BMad/Enterprise.*`
+- `*Continuous Agile/Enterprise.*`
 - `*Phase N.*`
 - `*BMGD.*`
 - `*Projets établis.*`

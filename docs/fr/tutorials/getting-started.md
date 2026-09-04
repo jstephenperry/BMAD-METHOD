@@ -1,13 +1,13 @@
 ---
 title: "Premiers pas"
-description: Installer BMad et développer votre premier projet
+description: Installer Continuous Agile et développer votre premier projet
 ---
 
 Accélérez le développement de vos applications grâce à des workflows alimentés par l’IA et des agents spécialisés qui vous guident dans la planification, l’architecture et l’implémentation.
 
 ## Ce que vous allez apprendre
 
-- Installer et initialiser la méthode BMad pour un nouveau projet
+- Installer et initialiser Continuous Agile pour un nouveau projet
 - Utiliser **BMad-Help** — votre guide intelligent qui sait quoi faire ensuite
 - Choisir la profondeur de planification adaptée à votre travail
 - Progresser dans les phases, de la définition des exigences au code fonctionnel
@@ -21,14 +21,14 @@ Accélérez le développement de vos applications grâce à des workflows alimen
 :::
 
 :::tip[Le chemin le plus rapide]
-**Installer** → `npx bmad-method install`
+**Installer** → `npx continuous-agile install`
 **Demander** → `bmad-help que dois-je faire en premier ?`
 **Développez** → Laissez BMad-Help vous guider, workflow par workflow
 :::
 
 ## Découvrez BMad-Help : votre guide intelligent
 
-**BMad-Help est le moyen le plus rapide de démarrer avec BMad.** Pas besoin de mémoriser les workflows ou les phases — posez simplement votre question et BMad-Help saura :
+**BMad-Help est le moyen le plus rapide de démarrer avec Continuous Agile.** Pas besoin de mémoriser les workflows ou les phases — posez simplement votre question et BMad-Help saura :
 
 - **Inspecter votre projet** pour voir ce qui a déjà été fait
 - **Vous présenter vos options** en fonction des modules installés
@@ -63,9 +63,9 @@ BMad-Help ne se contente pas de répondre aux questions — **il se lance automa
 Après avoir installé BMad, invoquez immédiatement le skill `bmad-help`. Il détectera les modules que vous avez installés et vous orientera vers le bon point de départ pour votre projet.
 :::
 
-## Comprendre BMad
+## Comprendre Continuous Agile
 
-BMad vous aide à développer des logiciels grâce à des workflows guidés par des agents IA spécialisés. Le processus s’articule en quatre phases :
+Continuous Agile vous aide à développer des logiciels grâce à des workflows guidés par des agents IA spécialisés. Le processus s’articule en quatre phases :
 
 | Phase | Nom            | Ce qui se passe                                                |
 |-------|----------------|----------------------------------------------------------------|
@@ -93,12 +93,12 @@ Il ne s’agit pas de voies d’implémentation distinctes. Tous les points d’
 Ouvrez un terminal dans le répertoire de votre projet et exécutez :
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
-Si vous préférez la dernière version préliminaire au lieu du canal de publication par défaut, utilisez `npx bmad-method@next install`.
+Si vous préférez la dernière version préliminaire au lieu du canal de publication par défaut, utilisez `npx continuous-agile@next install`.
 
-À l’invite de sélection des modules, choisissez **BMad Method**.
+À l’invite de sélection des modules, choisissez le module **bmm**.
 
 L’installateur crée deux dossiers :
 
@@ -206,9 +206,9 @@ Après avoir terminé toutes les stories d’un epic, invoquez l'**agent Dévelo
 
 ## Ce que vous avez accompli
 
-Vous maîtrisez maintenant les bases du développement avec BMad :
+Vous maîtrisez maintenant les bases du développement avec Continuous Agile :
 
-- Installation et configuration de BMad pour votre IDE
+- Installation et configuration de Continuous Agile pour votre IDE
 - Choix d’une profondeur de planification adaptée au travail
 - Création des documents de planification (PRD, Architecture, Epics & Stories)
 - Compréhension du cycle de développement pour l’implémentation
@@ -217,7 +217,7 @@ Votre projet contient désormais :
 
 ```text
 your-project/
-├── _bmad/                                   # Configuration BMad
+├── _bmad/                                   # Configuration Continuous Agile
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   ├── PRD.md                           # Document d’exigences
@@ -269,7 +269,7 @@ BMad-Help inspecte votre projet, détecte ce que vous avez accompli et vous indi
 :::
 
 - **Pendant les workflows** — Les agents vous guident à l’aide de questions et d’explications
-- **Communauté** — [Discord](https://discord.gg/gk8jAdXWmj) (#bmad-method-help, #report-bugs-and-issues)
+- **Communauté** — [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues)
 
 ## Points clés à retenir
 
@@ -280,7 +280,7 @@ BMad-Help inspecte votre projet, détecte ce que vous avez accompli et vous indi
 - **BMad-Help se lance automatiquement** — Chaque workflow se termine par des conseils sur la prochaine étape
 :::
 
-Prêt à commencer ? Installez BMad, invoquez `bmad-help`, et laissez votre guide intelligent vous accompagner.
+Prêt à commencer ? Installez Continuous Agile, invoquez `bmad-help`, et laissez votre guide intelligent vous accompagner.
 
 ## Glossaire
 

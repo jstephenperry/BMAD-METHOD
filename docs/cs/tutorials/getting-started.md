@@ -1,13 +1,13 @@
 ---
 title: "Začínáme"
-description: Nainstalujte BMad a vytvořte svůj první projekt
+description: Nainstalujte Continuous Agile a vytvořte svůj první projekt
 ---
 
 Vytvářejte software rychleji pomocí pracovních postupů řízených AI se specializovanými agenty, kteří vás provedou plánováním, architekturou a implementací.
 
 ## Co se naučíte
 
-- Nainstalovat a inicializovat BMad Method pro nový projekt
+- Nainstalovat a inicializovat Continuous Agile pro nový projekt
 - Používat **BMad-Help** — vašeho inteligentního průvodce, který ví, co dělat dál
 - Zvolit správnou hloubku plánování pro vaši práci
 - Postupovat fázemi od požadavků k fungujícímu kódu
@@ -21,14 +21,14 @@ Vytvářejte software rychleji pomocí pracovních postupů řízených AI se sp
 :::
 
 :::tip[Nejsnadnější cesta]
-**Instalace** → `npx bmad-method install`
+**Instalace** → `npx continuous-agile install`
 **Zeptejte se** → `bmad-help what should I do first?`
 **Tvořte** → Nechte BMad-Help vás provést workflow po workflow
 :::
 
 ## Seznamte se s BMad-Help: Váš inteligentní průvodce
 
-**BMad-Help je nejrychlejší způsob, jak začít s BMad.** Nemusíte si pamatovat workflow nebo fáze — prostě se zeptejte a BMad-Help:
+**BMad-Help je nejrychlejší způsob, jak začít s Continuous Agile.** Nemusíte si pamatovat workflow nebo fáze — prostě se zeptejte a BMad-Help:
 
 - **Prozkoumá váš projekt** a zjistí, co už bylo uděláno
 - **Ukáže vaše možnosti** na základě nainstalovaných modulů
@@ -59,12 +59,12 @@ BMad-Help odpoví s:
 BMad-Help nejen odpovídá na otázky — **automaticky se spouští na konci každého workflow** a řekne vám přesně, co dělat dál. Žádné hádání, žádné prohledávání dokumentace — jen jasné pokyny k dalšímu povinnému workflow.
 
 :::tip[Začněte zde]
-Po instalaci BMad okamžitě vyvolejte skill `bmad-help`. Detekuje, jaké moduly máte nainstalované, a navede vás ke správnému výchozímu bodu pro váš projekt.
+Po instalaci Continuous Agile okamžitě vyvolejte skill `bmad-help`. Detekuje, jaké moduly máte nainstalované, a navede vás ke správnému výchozímu bodu pro váš projekt.
 :::
 
-## Pochopení BMad
+## Pochopení Continuous Agile
 
-BMad vám pomáhá vytvářet software prostřednictvím řízených pracovních postupů se specializovanými AI agenty. Proces probíhá ve čtyřech fázích:
+Continuous Agile vám pomáhá vytvářet software prostřednictvím řízených pracovních postupů se specializovanými AI agenty. Proces probíhá ve čtyřech fázích:
 
 | Fáze | Název          | Co se děje                                              |
 | ---- | -------------- | ------------------------------------------------------- |
@@ -92,12 +92,12 @@ Nejde o oddělené implementační cesty. Všechny vstupy se sbíhají do `bmad-
 Otevřete terminál v adresáři vašeho projektu a spusťte:
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
-Pokud chcete nejnovější prereleaseový build místo výchozího release kanálu, použijte `npx bmad-method@next install`.
+Pokud chcete nejnovější prereleaseový build místo výchozího release kanálu, použijte `npx continuous-agile@next install`.
 
-Při výzvě k výběru modulů zvolte **BMad Method**.
+Při výzvě k výběru modulů zvolte **Continuous Agile**.
 
 Instalátor vytvoří dvě složky:
 - `_bmad/` — agenti, workflow, úkoly a konfigurace
@@ -193,9 +193,9 @@ Po dokončení všech stories v epicu vyvolejte **Developer agenta** (`bmad-agen
 
 ## Co jste dosáhli
 
-Naučili jste se základy budování s BMad:
+Naučili jste se základy budování s Continuous Agile:
 
-- Nainstalovali BMad a nakonfigurovali ho pro vaše IDE
+- Nainstalovali Continuous Agile a nakonfigurovali ho pro vaše IDE
 - Zvolili hloubku plánování odpovídající vaší práci
 - Vytvořili plánovací dokumenty (PRD, architektura, epicy a stories)
 - Pochopili cyklus vývoje pro implementaci
@@ -204,7 +204,7 @@ Váš projekt nyní obsahuje:
 
 ```text
 váš-projekt/
-├── _bmad/                                   # Konfigurace BMad
+├── _bmad/                                   # Konfigurace Continuous Agile
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   ├── PRD.md                           # Váš dokument požadavků
@@ -255,7 +255,7 @@ BMad-Help prozkoumá váš projekt, detekuje, co jste dokončili, a řekne vám 
 :::
 
 - **Během workflow** — Agenti vás provázejí otázkami a vysvětleními
-- **Komunita** — [Discord](https://discord.gg/gk8jAdXWmj) (#bmad-method-help, #report-bugs-and-issues)
+- **Komunita** — [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues)
 
 ## Klíčové poznatky
 
@@ -266,4 +266,4 @@ BMad-Help prozkoumá váš projekt, detekuje, co jste dokončili, a řekne vám 
 - **BMad-Help se spouští automaticky** — Každý workflow končí pokyny, co dělat dál
 :::
 
-Jste připraveni začít? Nainstalujte BMad, vyvolejte `bmad-help` a nechte svého inteligentního průvodce ukázat cestu.
+Jste připraveni začít? Nainstalujte Continuous Agile, vyvolejte `bmad-help` a nechte svého inteligentního průvodce ukázat cestu.

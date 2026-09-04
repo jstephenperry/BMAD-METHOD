@@ -5,7 +5,7 @@ sidebar:
   order: 6
 ---
 
-BMad 有两条测试路径：
+Continuous Agile 有两条测试路径：
 - **内置 QA workflow**：快速生成可运行测试
 - **TEA（可选模块）**：企业级测试策略与治理能力
 
@@ -65,7 +65,7 @@ TEA 提供专家测试 agent（Murat）与 9 个结构化 workflow，覆盖策�
 - 文档: [TEA Module Docs](https://bmad-code-org.github.io/bmad-method-test-architecture-enterprise/)
 - npm: [`bmad-method-test-architecture-enterprise`](https://www.npmjs.com/package/bmad-method-test-architecture-enterprise)
 
-**安装：** `npx bmad-method install` 后选择 TEA 模块。
+**安装：** `npx continuous-agile install` 后选择 TEA 模块。
 
 ### TEA 的 9 个 workflow
 
@@ -90,7 +90,7 @@ TEA 提供专家测试 agent（Murat）与 9 个结构化 workflow，覆盖策�
 
 ## 测试放在流程的哪个位置
 
-按 BMad workflow-map，测试位于阶段 4（实施）：
+按 Continuous Agile 的 workflow-map，测试位于阶段 4（实施）：
 
 1. epic 内逐个 story：使用 Build（`BD` / `bmad-build`）实施，并按需追加代码审查（`CR` / `bmad-code-review`）
 2. epic 完成后：用 `QA`（通过 Developer 智能体）或 TEA 的 Automate 统一生成/补齐测试

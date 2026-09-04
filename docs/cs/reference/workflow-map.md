@@ -1,19 +1,19 @@
 ---
 title: "Mapa pracovních postupů"
-description: Vizuální reference fází workflow BMad Method a jejich výstupů
+description: Vizuální reference fází workflow BMM a jejich výstupů
 sidebar:
   order: 1
 ---
 
-BMad Method (BMM) je modul v ekosystému BMad, zaměřený na dodržování osvědčených postupů context engineeringu a plánování. AI agenti fungují nejlépe s jasným, strukturovaným kontextem. Systém BMM buduje tento kontext progresivně napříč 4 odlišnými fázemi — každá fáze a volitelně více workflow v každé fázi produkují dokumenty, které informují další, takže agenti vždy vědí, co budovat a proč.
+BMM (Agile suite) je jeden z modulů Continuous Agile, zaměřený na dodržování osvědčených postupů context engineeringu a plánování. AI agenti fungují nejlépe s jasným, strukturovaným kontextem. Systém BMM buduje tento kontext progresivně napříč 4 odlišnými fázemi — každá fáze a volitelně více workflow v každé fázi produkují dokumenty, které informují další, takže agenti vždy vědí, co budovat a proč.
 
 Zdůvodnění a koncepty vycházejí z agilních metodik, které byly v průmyslu úspěšně používány jako mentální framework.
 
-Pokud si kdykoli nejste jisti, co dělat, skill `bmad-help` vám pomůže zůstat na cestě nebo vědět, co dělat dál. Vždy se můžete odkázat sem — ale `bmad-help` je plně interaktivní a mnohem rychlejší, pokud již máte nainstalovaný BMad Method. Navíc, pokud používáte různé moduly, které rozšířily BMad Method nebo přidaly další komplementární moduly — `bmad-help` se vyvíjí a zná vše, co je dostupné, aby vám dal nejlepší radu v daném okamžiku.
+Pokud si kdykoli nejste jisti, co dělat, skill `bmad-help` vám pomůže zůstat na cestě nebo vědět, co dělat dál. Vždy se můžete odkázat sem — ale `bmad-help` je plně interaktivní a mnohem rychlejší, pokud již máte nainstalovaný modul BMM. Navíc, pokud používáte různé moduly, které rozšířily BMM nebo přidaly další komplementární moduly — `bmad-help` se vyvíjí a zná vše, co je dostupné, aby vám dal nejlepší radu v daném okamžiku.
 
 Důležitá poznámka: Každý workflow níže lze spustit přímo vaším nástrojem přes skill nebo načtením agenta a použitím záznamu z nabídky agenta.
 
-<iframe src="/workflow-map-diagram.html" title="Diagram mapy workflow BMad Method" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
+<iframe src="/workflow-map-diagram.html" title="Diagram mapy workflow BMM" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
 
 <p style="font-size: 0.8rem; text-align: right; margin-top: -0.5rem; margin-bottom: 1rem;">
   <a href="/workflow-map-diagram.html" target="_blank" rel="noopener noreferrer">Otevřít diagram v novém panelu ↗</a>

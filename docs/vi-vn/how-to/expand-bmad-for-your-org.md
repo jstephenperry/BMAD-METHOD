@@ -1,16 +1,16 @@
 ---
-title: 'Cách mở rộng BMad cho tổ chức của bạn'
-description: Năm mẫu tùy chỉnh giúp thay đổi BMad mà không cần fork, gồm quy tắc ở cấp agent, quy ước workflow, xuất bản ra hệ thống ngoài, thay template và điều chỉnh danh sách agent
+title: 'Cách mở rộng Continuous Agile cho tổ chức của bạn'
+description: Năm mẫu tùy chỉnh giúp thay đổi Continuous Agile mà không cần fork, gồm quy tắc ở cấp agent, quy ước workflow, xuất bản ra hệ thống ngoài, thay template và điều chỉnh danh sách agent
 sidebar:
   order: 9
 ---
 
-Bề mặt tùy chỉnh của BMad cho phép một tổ chức định hình lại hành vi mà không phải sửa file đã cài hay fork skill. Hướng dẫn này trình bày năm công thức mẫu (recipe) bao phủ phần lớn nhu cầu ở môi trường doanh nghiệp.
+Bề mặt tùy chỉnh của Continuous Agile cho phép một tổ chức định hình lại hành vi mà không phải sửa file đã cài hay fork skill. Hướng dẫn này trình bày năm công thức mẫu (recipe) bao phủ phần lớn nhu cầu ở môi trường doanh nghiệp.
 
 :::note[Điều kiện tiên quyết]
 
-- BMad đã được cài trong dự án của bạn (xem [Cách cài đặt BMad](./install-bmad.md))
-- Đã quen với mô hình tùy chỉnh (xem [Cách tùy chỉnh BMad](./customize-bmad.md))
+- Continuous Agile đã được cài trong dự án của bạn (xem [Cách cài đặt Continuous Agile](./install-bmad.md))
+- Đã quen với mô hình tùy chỉnh (xem [Cách tùy chỉnh Continuous Agile](./customize-bmad.md))
 - Python 3.11+ có trên PATH để chạy resolver, chỉ dùng stdlib, không cần `pip install`
 :::
 
@@ -150,7 +150,7 @@ brief_template = "{project-root}/docs/enterprise/brief-template.md"
 
 **Trường hợp dùng (use case):** Thay đổi *ai đang ngồi trong phòng* cho những skill dựa trên roster như `bmad-party-mode`, `bmad-retrospective` và `bmad-advanced-elicitation`, mà không cần sửa source hay fork. Dưới đây là ba biến thể thường gặp.
 
-### 5a. Rebrand một agent của BMad trên toàn tổ chức
+### 5a. Rebrand một agent của Continuous Agile trên toàn tổ chức
 
 Mỗi agent thật đều có một descriptor được installer tổng hợp từ `module.yaml`. Bạn có thể override descriptor này để đổi giọng điệu và framing ở mọi roster consumer:
 
@@ -185,7 +185,7 @@ icon = "⚕️"
 description = "Sự ấm áp của một bác sĩ miền quê, đi kèm với tính nóng nảy. 'Dammit Jim, I'm a doctor not a ___.' Là đối trọng đạo đức với Spock."
 ```
 
-Khi bạn yêu cầu party-mode "mời nhóm Star Trek" hoặc "mời phi hành đoàn Enterprise", nó sẽ lọc theo `team = "startrek"` và spawn Spock cùng McCoy dựa trên các descriptor đó. Các agent thật của BMad như Mary hay Amelia vẫn có thể ngồi cùng bàn nếu bạn muốn.
+Khi bạn yêu cầu party-mode "mời nhóm Star Trek" hoặc "mời phi hành đoàn Enterprise", nó sẽ lọc theo `team = "startrek"` và spawn Spock cùng McCoy dựa trên các descriptor đó. Các agent thật của Continuous Agile như Mary hay Amelia vẫn có thể ngồi cùng bàn nếu bạn muốn.
 
 ### 5c. Ghim thiết lập cài đặt dùng chung cho cả team
 
@@ -208,11 +208,11 @@ Những thiết lập cá nhân như `user_name`, `communication_language` hoặ
 
 ## Củng cố các quy tắc toàn cục trong file hướng dẫn phiên của IDE
 
-Tùy chỉnh của BMad chỉ được nạp khi một skill được kích hoạt. Trong khi đó, nhiều công cụ IDE còn nạp một file hướng dẫn toàn cục ở **đầu mọi phiên**, trước cả khi skill nào chạy, như `CLAUDE.md`, `AGENTS.md`, `.cursor/rules/` hay `.github/copilot-instructions.md`. Với những quy tắc phải đúng cả khi bạn đang chat thường, hãy lặp lại phiên bản rút gọn của chúng trong file đó nữa.
+Tùy chỉnh của Continuous Agile chỉ được nạp khi một skill được kích hoạt. Trong khi đó, nhiều công cụ IDE còn nạp một file hướng dẫn toàn cục ở **đầu mọi phiên**, trước cả khi skill nào chạy, như `CLAUDE.md`, `AGENTS.md`, `.cursor/rules/` hay `.github/copilot-instructions.md`. Với những quy tắc phải đúng cả khi bạn đang chat thường, hãy lặp lại phiên bản rút gọn của chúng trong file đó nữa.
 
 **Khi nào nên "đánh đôi"**
 
-- Quy tắc đó đủ quan trọng đến mức một cuộc chat thường, chưa kích hoạt BMad skill nào, cũng vẫn phải tuân theo
+- Quy tắc đó đủ quan trọng đến mức một cuộc chat thường, chưa kích hoạt skill nào, cũng vẫn phải tuân theo
 - Bạn muốn áp dụng kiểu "gia cố hai lớp" (belt-and-suspenders) vì hành vi mặc định từ dữ liệu huấn luyện (training data) có thể kéo model đi chệch
 - Quy tắc đủ ngắn để lặp lại mà không làm file hướng dẫn đầu phiên trở nên phình to
 
@@ -228,10 +228,10 @@ Chỉ một câu, nhưng được nạp ở mọi phiên. Nó kết hợp với 
 
 | Lớp | Phạm vi | Dùng cho |
 |---|---|---|
-| File hướng dẫn phiên của IDE như `CLAUDE.md` hoặc `AGENTS.md` | Mọi phiên, trước khi bất kỳ skill nào chạy | Quy tắc ngắn, phổ quát, phải sống cả ngoài BMad |
-| Tùy chỉnh agent của BMad | Mọi workflow mà agent đó dispatch | Hành vi riêng theo persona/agent |
-| Tùy chỉnh workflow của BMad | Một lần chạy workflow | Dạng đầu ra, hook publish, template và logic riêng của workflow |
-| Cấu hình trung tâm của BMad | Agent roster và thiết lập cài đặt dùng chung | Ai đang ngồi trong phòng và đường dẫn nào cả team dùng chung |
+| File hướng dẫn phiên của IDE như `CLAUDE.md` hoặc `AGENTS.md` | Mọi phiên, trước khi bất kỳ skill nào chạy | Quy tắc ngắn, phổ quát, phải sống cả ngoài Continuous Agile |
+| Tùy chỉnh agent của Continuous Agile | Mọi workflow mà agent đó dispatch | Hành vi riêng theo persona/agent |
+| Tùy chỉnh workflow của Continuous Agile | Một lần chạy workflow | Dạng đầu ra, hook publish, template và logic riêng của workflow |
+| Cấu hình trung tâm của Continuous Agile | Agent roster và thiết lập cài đặt dùng chung | Ai đang ngồi trong phòng và đường dẫn nào cả team dùng chung |
 
 Hãy giữ file hướng dẫn của IDE **ngắn gọn**. Một tá dòng được chọn kỹ sẽ hiệu quả hơn một danh sách dài lê thê. Model phải đọc file đó ở mọi lượt, và càng nhiều nhiễu thì càng ít tín hiệu.
 
@@ -255,11 +255,11 @@ on_complete = """ ... """
 persistent_facts = ["Luôn thêm mục 'Regulatory Review' khi domain liên quan tới healthcare, finance hoặc dữ liệu trẻ em."]
 ```
 
-Kết quả là Mary nạp quy tắc review pháp lý ngay ở lúc kích hoạt persona. Khi người dùng chọn menu item product-brief, workflow sẽ nạp các convention riêng của nó chồng lên, ghi ra template của doanh nghiệp và publish lên Confluence khi hoàn tất. Mỗi lớp đều đóng góp một phần và không lớp nào đòi hỏi sửa source của BMad.
+Kết quả là Mary nạp quy tắc review pháp lý ngay ở lúc kích hoạt persona. Khi người dùng chọn menu item product-brief, workflow sẽ nạp các convention riêng của nó chồng lên, ghi ra template của doanh nghiệp và publish lên Confluence khi hoàn tất. Mỗi lớp đều đóng góp một phần và không lớp nào đòi hỏi sửa source của Continuous Agile.
 
 ## Khắc phục sự cố
 
-**Override không có tác dụng?** Hãy kiểm tra file có nằm trong `_bmad/custom/` và dùng đúng tên thư mục skill không, ví dụ `bmad-agent-dev.toml`, chứ không phải `bmad-dev.toml`. Nếu cần, xem lại [Cách tùy chỉnh BMad](./customize-bmad.md).
+**Override không có tác dụng?** Hãy kiểm tra file có nằm trong `_bmad/custom/` và dùng đúng tên thư mục skill không, ví dụ `bmad-agent-dev.toml`, chứ không phải `bmad-dev.toml`. Nếu cần, xem lại [Cách tùy chỉnh Continuous Agile](./customize-bmad.md).
 
 **Không chắc tên MCP tool?** Hãy dùng đúng tên mà MCP server hiện tại expose trong phiên của bạn. Nếu chưa chắc, hãy yêu cầu Claude Code liệt kê các MCP tool đang có. Những tên hardcode trong `persistent_facts` hay `on_complete` sẽ không chạy nếu MCP server chưa được kết nối.
 

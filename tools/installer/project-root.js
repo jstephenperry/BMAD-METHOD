@@ -4,8 +4,8 @@ const yaml = require('yaml');
 const fs = require('./fs-native');
 
 /**
- * Find the BMAD project root directory by looking for package.json
- * or specific BMAD markers
+ * Find the project root directory by looking for package.json
+ * or specific Continuous Agile markers
  */
 function findProjectRoot(startPath = __dirname) {
   let currentPath = path.resolve(startPath);
@@ -17,7 +17,7 @@ function findProjectRoot(startPath = __dirname) {
     if (fs.existsSync(packagePath)) {
       try {
         const pkg = fs.readJsonSync(packagePath);
-        // Check if this is the BMAD project
+        // Check if this is the Continuous Agile project
         if (pkg.name === 'bmad-method' || fs.existsSync(path.join(currentPath, 'src', 'core-skills'))) {
           return currentPath;
         }

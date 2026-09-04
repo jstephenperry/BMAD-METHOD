@@ -29,7 +29,7 @@ LLM hiện tại vẫn thất bại theo những cách dễ đoán: hiểu sai �
 
 Quy trình bắt đầu bằng việc để con người và mô hình nén yêu cầu thành một mục tiêu thống nhất. Đầu vào có thể bắt đầu như một ý định thô, nhưng trước khi quy trình tự vận hành thì nó phải đủ nhỏ, đủ rõ ràng, và đủ ít mâu thuẫn để có thể thực thi.
 
-Ý định có thể đến từ nhiều dạng: vài cụm từ, liên kết trình theo dõi lỗi, đầu ra từ chế độ lập kế hoạch, đoạn văn bản sao chép từ phiên chat, hoặc story đã lập kế hoạch từ epic hoặc thư mục spec của BMad. Workflow sử dụng mọi ngữ cảnh upstream hiện có và giải quyết các khoảng trống cần thiết để triển khai an toàn.
+Ý định có thể đến từ nhiều dạng: vài cụm từ, liên kết trình theo dõi lỗi, đầu ra từ chế độ lập kế hoạch, đoạn văn bản sao chép từ phiên chat, hoặc story đã lập kế hoạch từ epic hoặc thư mục spec của Continuous Agile. Workflow sử dụng mọi ngữ cảnh upstream hiện có và giải quyết các khoảng trống cần thiết để triển khai an toàn.
 
 Quy trình này không loại bỏ quyền kiểm soát của con người. Nó chuyển nó về một số thời điểm có giá trị cao:
 

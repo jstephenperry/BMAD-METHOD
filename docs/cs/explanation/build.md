@@ -29,7 +29,7 @@ Současné LLM stále selhávají předvídatelnými způsoby: chybně čtou zá
 
 Workflow začíná tím, že člověk a model zkomprimují požadavek do jednoho koherentního cíle. Vstup může začínat jako hrubé vyjádření záměru, ale předtím, než workflow poběží autonomně, musí být dostatečně malý, jasný a bez protimluvů pro provedení.
 
-Záměr může přijít v mnoha formách: pár frází, odkaz na bug tracker, výstup z plan mode, text zkopírovaný z chatové relace nebo naplánovaná story z epiců nebo spec složky BMad. Workflow použije veškerý dostupný upstream kontext a vyřeší mezery potřebné pro bezpečnou implementaci.
+Záměr může přijít v mnoha formách: pár frází, odkaz na bug tracker, výstup z plan mode, text zkopírovaný z chatové relace nebo naplánovaná story z epiců nebo spec složky Continuous Agile. Workflow použije veškerý dostupný upstream kontext a vyřeší mezery potřebné pro bezpečnou implementaci.
 
 Tento workflow neodstraňuje lidskou kontrolu. Přemisťuje ji na malý počet vysoce hodnotných momentů:
 

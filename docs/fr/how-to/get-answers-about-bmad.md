@@ -1,11 +1,11 @@
 ---
-title: 'Comment obtenir des réponses à propos de BMad'
-description: Utiliser un LLM pour répondre rapidement à vos questions sur BMad
+title: 'Comment obtenir des réponses à propos de Continuous Agile'
+description: Utiliser un LLM pour répondre rapidement à vos questions sur Continuous Agile
 sidebar:
   order: 4
 ---
 
-Utilisez l’aide intégrée de BMad, la documentation source ou la communauté pour obtenir des réponses — du plus rapide au plus approfondi.
+Utilisez l’aide intégrée de Continuous Agile, la documentation source ou la communauté pour obtenir des réponses — du plus rapide au plus approfondi.
 
 ## 1. Demandez à BMad-Help
 
@@ -23,12 +23,12 @@ Vous pouvez également utiliser `/bmad-help` ou `$bmad-help` selon votre platefo
 
 ## 2. Approfondissez avec les sources
 
-BMad-Help s’appuie sur votre configuration installée. Pour les questions sur les éléments internes de BMad, son historique ou son architecture — ou si vous faites des recherches sur BMad avant de l’installer — pointez votre IA directement vers les sources.
+BMad-Help s’appuie sur votre configuration installée. Pour les questions sur les éléments internes de Continuous Agile, son historique ou son architecture — ou si vous faites des recherches sur Continuous Agile avant de l’installer — pointez votre IA directement vers les sources.
 
-Clonez ou ouvrez le [dépôt BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) et posez vos questions à votre IA. Tout outil capable d’utiliser des agents (Claude Code, Cursor, Windsurf, etc.) peut lire les sources et répondre directement à vos questions.
+Clonez ou ouvrez le [dépôt Continuous Agile](https://github.com/jstephenperry/continuous-agile) et posez vos questions à votre IA. Tout outil capable d’utiliser des agents (Claude Code, Cursor, Windsurf, etc.) peut lire les sources et répondre directement à vos questions.
 
 :::note[Exemple]
-**Q :** « Quel est le moyen le plus rapide de construire quelque chose avec BMad ? »
+**Q :** « Quel est le moyen le plus rapide de construire quelque chose avec Continuous Agile ? »
 
 **R :** Lancez `bmad-build`. Donnez-lui une intention directe, une issue, une spécification ou une story planifiée ; il utilise le contexte disponible et choisit la profondeur de clarification, de planification, d’implémentation et de revue nécessaire.
 :::
@@ -36,24 +36,21 @@ Clonez ou ouvrez le [dépôt BMAD-METHOD](https://github.com/bmad-code-org/BMAD-
 **Conseils pour de meilleures réponses :**
 
 - **Soyez précis** — « Que fait l’étape 3 du workflow PRD ? » est mieux que « Comment fonctionne le PRD ? »
-- **Vérifiez les affirmations surprenantes** — Les LLM font parfois des erreurs. Consultez le fichier source ou posez la question sur Discord.
+- **Vérifiez les affirmations surprenantes** — Les LLM font parfois des erreurs. Consultez le fichier source ou ouvrez un ticket sur GitHub.
 
 ### Vous n’utilisez pas d’agent ? Utilisez le site de documentation
 
-Si votre IA ne peut pas lire des fichiers locaux (ChatGPT, Claude.ai, etc.), importez [llms-full.txt](https://bmad-code-org.github.io/BMAD-METHOD/llms-full.txt) dans votre session — c’est un instantané en un seul fichier de la documentation BMad.
+Si votre IA ne peut pas lire des fichiers locaux (ChatGPT, Claude.ai, etc.), importez le fichier `llms-full.txt` publié par le site de documentation dans votre session — c’est un instantané en un seul fichier de la documentation de Continuous Agile.
 
 ## 3. Demandez à quelqu’un
 
 Si ni BMad-Help ni la source n’ont répondu à votre question, vous avez maintenant une bien meilleure question à poser.
 
-| Canal                   | Utilisé pour                         |
-| ----------------------- | ------------------------------------ |
-| Forum `help-requests`   | Questions                            |
-| `#suggestions-feedback` | Idées et demandes de fonctionnalités |
+| Canal         | Utilisé pour                                               |
+| ------------- | ---------------------------------------------------------- |
+| GitHub Issues | Questions, rapports de bugs et demandes de fonctionnalités |
 
-**Discord :** [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)
-
-**GitHub Issues :** [github.com/bmad-code-org/BMAD-METHOD/issues](https://github.com/bmad-code-org/BMAD-METHOD/issues)
+**GitHub Issues :** [github.com/jstephenperry/continuous-agile/issues](https://github.com/jstephenperry/continuous-agile/issues)
 
 _Toi !_  
 &emsp;&emsp;_Bloqué_  

@@ -1,8 +1,8 @@
 code: core
-name: "BMad Core Module"
+name: "Continuous Agile Core"
 description: "Shared utilities across modules"
 
-header: "BMad Core Configuration"
+header: "Continuous Agile Core Configuration"
 subheader: "Configure the core settings for your BMad installation.\nThese settings will be used across all installed bmad skills, workflows, and agents."
 
 user_name:

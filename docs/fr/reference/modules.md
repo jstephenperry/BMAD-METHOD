@@ -5,10 +5,10 @@ sidebar:
   order: 5
 ---
 
-BMad s’étend via des modules officiels que vous sélectionnez lors de l’installation. Ces modules additionnels fournissent des agents, des workflows et des tâches spécialisés pour des domaines spécifiques, au-delà du noyau intégré et de BMM (suite Agile).
+Continuous Agile s’étend via des modules officiels que vous sélectionnez lors de l’installation. Ces modules additionnels — publiés par BMad Code, LLC — fournissent des agents, des workflows et des tâches spécialisés pour des domaines spécifiques, au-delà du noyau intégré et de BMM (suite Agile).
 
 :::tip[Installer des Modules]
-Exécutez `npx bmad-method install` et sélectionnez les modules souhaités. L’installateur gère automatiquement le téléchargement, la configuration et l’intégration IDE.
+Exécutez `npx continuous-agile install` et sélectionnez les modules souhaités. L’installateur gère automatiquement le téléchargement, la configuration et l’intégration IDE.
 :::
 
 ## BMad Builder
@@ -73,7 +73,7 @@ Stratégie de test de niveau entreprise, conseils d’automatisation et décisio
 
 ## Modules Communautaires
 
-Les modules communautaires et une marketplace de modules sont à venir. Consultez l'[organisation GitHub BMad](https://github.com/bmad-code-org) pour les mises à jour.
+Les modules communautaires et une marketplace de modules sont à venir. Consultez l'[organisation GitHub BMad Code](https://github.com/bmad-code-org) pour les mises à jour.
 
 ## Glossaire
 

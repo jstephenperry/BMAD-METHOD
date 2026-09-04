@@ -29,7 +29,7 @@ Current LLMs still fail in predictable ways: they misread intent, fill gaps with
 
 The workflow starts by having the human and the model compress the request into one coherent goal. The input can begin as a rough expression of intent, but before the workflow runs autonomously it has to become small enough, clear enough, and contradiction-free enough to execute.
 
-Intent can come in many forms: a couple of phrases, a bug tracker link, output from plan mode, text copied from a chat session, or a planned story from BMad's own epics or spec folders. The workflow uses whatever upstream context exists and resolves any gaps it needs to implement safely.
+Intent can come in many forms: a couple of phrases, a bug tracker link, output from plan mode, text copied from a chat session, or a planned story from Continuous Agile's own epics or spec folders. The workflow uses whatever upstream context exists and resolves any gaps it needs to implement safely.
 
 This workflow does not eliminate human control. It relocates it to a small number of high-value moments:
 

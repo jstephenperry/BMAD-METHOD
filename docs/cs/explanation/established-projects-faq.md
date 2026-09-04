@@ -1,10 +1,10 @@
 ---
 title: "FAQ pro existující projekty"
-description: Časté otázky o používání BMad Method na existujících projektech
+description: Časté otázky o používání Continuous Agile na existujících projektech
 sidebar:
   order: 9
 ---
-Rychlé odpovědi na časté otázky o práci na existujících projektech s BMad Method (BMM).
+Rychlé odpovědi na časté otázky o práci na existujících projektech s Continuous Agile (modul BMM).
 
 ## Otázky
 
@@ -47,4 +47,4 @@ Build detekuje vaše konvence a zeptá se: „Mám dodržovat tyto existující 
 
 BMM respektuje vaši volbu — nevynucuje modernizaci, ale nabídne ji.
 
-**Máte otázku, na kterou jste zde nenašli odpověď?** Prosím [vytvořte issue](https://github.com/bmad-code-org/BMAD-METHOD/issues) nebo se zeptejte na [Discordu](https://discord.gg/gk8jAdXWmj), abychom ji mohli přidat!
+**Máte otázku, na kterou jste zde nenašli odpověď?** Prosím [vytvořte issue](https://github.com/jstephenperry/continuous-agile/issues), abychom ji mohli přidat!

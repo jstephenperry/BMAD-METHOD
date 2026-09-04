@@ -1,5 +1,5 @@
 ---
-title: 'How to Customize BMad'
+title: 'How to Customize Continuous Agile'
 description: Customize agents and workflows while preserving update compatibility
 sidebar:
   order: 7
@@ -21,8 +21,8 @@ The `bmad-customize` skill is a guided authoring helper for the **per-skill agen
 
 :::note[Prerequisites]
 
-- BMad installed in your project (see [How to Install BMad](./install-bmad.md))
-- [`uv`](https://docs.astral.sh/uv/) on your PATH — BMad runs the resolver script with `uv run`, and uv provisions a suitable Python for you, so you don't need to install one yourself. The script uses only stdlib `tomllib`, so there's nothing to `pip install`.
+- Continuous Agile installed in your project (see [How to Install Continuous Agile](./install-bmad.md))
+- [`uv`](https://docs.astral.sh/uv/) on your PATH — Continuous Agile runs the resolver script with `uv run`, and uv provisions a suitable Python for you, so you don't need to install one yourself. The script uses only stdlib `tomllib`, so there's nothing to `pip install`.
 - A text editor for TOML files
 :::
 
@@ -40,7 +40,7 @@ Priority 3 (last): the skill's own customize.toml        (org defaults, shipped)
 
 The `_bmad/custom/` folder starts empty. Files only appear when someone actively customizes.
 
-**Where the org layer lives.** This repository is a hard fork of BMad, so the shipped `customize.toml` *is* the org layer. An org owner changes a default for everyone by editing that file in the fork — or a prompt's `default:` in the module's `module.yaml` — and cutting a release; every project that installs from the fork picks the new default up. Teams and individuals never edit installed files: they layer `_bmad/custom/` overrides on top.
+**Where the org layer lives.** This repository is a hard fork of BMAD-METHOD, so the shipped `customize.toml` *is* the org layer. An org owner changes a default for everyone by editing that file in the fork — or a prompt's `default:` in the module's `module.yaml` — and cutting a release; every project that installs from the fork picks the new default up. Teams and individuals never edit installed files: they layer `_bmad/custom/` overrides on top.
 
 ### Merge Rules (by shape, not by field name)
 
@@ -55,7 +55,7 @@ The resolver applies four structural rules. Field names are never special-cased 
 
 **No removal mechanism.** Overrides cannot delete base items — the resolver only overrides, deep-merges and appends. Inside a project, suppress a default menu item by overriding it by `code` with a no-op description or prompt. To take an item out of the list for real, or to restructure an array more deeply, edit the shipped array in the fork's `customize.toml`: that is the org layer, and the only place an item can actually leave.
 
-**The `code` / `id` convention.** BMad uses `code` (short identifier like `"BP"` or `"R1"`) and `id` (longer stable identifier) as merge keys on arrays of tables. If you author a custom array-of-tables that should be replaceable-by-key rather than append-only, pick **one** convention (either `code` on every item, or `id` on every item) and stick with it across the whole array. Mixing `code` on some items and `id` on others falls back to append — the resolver won't guess which key to merge on.
+**The `code` / `id` convention.** Continuous Agile uses `code` (short identifier like `"BP"` or `"R1"`) and `id` (longer stable identifier) as merge keys on arrays of tables. If you author a custom array-of-tables that should be replaceable-by-key rather than append-only, pick **one** convention (either `code` on every item, or `id` on every item) and stick with it across the whole array. Mixing `code` on some items and `id` on others falls back to append — the resolver won't guess which key to merge on.
 
 ### Some agent fields are read-only
 
@@ -108,7 +108,7 @@ This appends the new principle to the defaults (leaving the shipped principles i
 
 ### 3. Customize What You Need
 
-All examples below assume BMad's flat agent schema. Fields live directly under `[agent]` — no nested `metadata` or `persona` sub-tables.
+All examples below assume Continuous Agile's flat agent schema. Fields live directly under `[agent]` — no nested `metadata` or `persona` sub-tables.
 
 **Scalars (icon, role, identity, communication_style).** Scalar overrides win. You only need to set the fields you're changing:
 
@@ -160,7 +160,7 @@ activation_steps_append = [
 
 **The two hooks do different jobs.** Prepend runs before greeting so the agent can load context it needs to personalize the greeting itself. Append runs after greeting so the user isn't staring at a blank terminal while heavy scans complete.
 
-**Menu customization (merge by `code`).** The menu is an array of tables. Each item has a `code` field (BMad convention), so the resolver merges by code: matching codes replace in place, new codes append.
+**Menu customization (merge by `code`).** The menu is an array of tables. Each item has a `code` field (Continuous Agile convention), so the resolver merges by code: matching codes replace in place, new codes append.
 
 TOML array-of-tables syntax uses `[[agent.menu]]` for each item:
 
@@ -203,7 +203,7 @@ persistent_facts = [
 
 ## How Resolution Works
 
-On activation, the agent's SKILL.md runs a shared Python script that does the three-layer merge and returns the resolved block as JSON. The script uses only the Python standard library's `tomllib` module (no external dependencies). BMad invokes it with `uv run`, which provisions a suitable Python for you:
+On activation, the agent's SKILL.md runs a shared Python script that does the three-layer merge and returns the resolved block as JSON. The script uses only the Python standard library's `tomllib` module (no external dependencies). Continuous Agile invokes it with `uv run`, which provisions a suitable Python for you:
 
 ```bash
 uv run {project-root}/_bmad/scripts/resolve_customization.py \
@@ -372,7 +372,7 @@ Use both surfaces in the same project as needed.
 
 ## Worked Examples
 
-For enterprise-oriented recipes (shaping an agent across every workflow it dispatches, enforcing org conventions, publishing outputs to Confluence and Jira, customizing the agent roster, and swapping in your own output templates), see [How to Expand BMad for Your Organization](./expand-bmad-for-your-org.md).
+For enterprise-oriented recipes (shaping an agent across every workflow it dispatches, enforcing org conventions, publishing outputs to Confluence and Jira, customizing the agent roster, and swapping in your own output templates), see [How to Expand Continuous Agile for Your Organization](./expand-bmad-for-your-org.md).
 
 ## Troubleshooting
 

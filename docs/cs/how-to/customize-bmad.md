@@ -1,5 +1,5 @@
 ---
-title: "Jak přizpůsobit BMad"
+title: "Jak přizpůsobit Continuous Agile"
 description: Přizpůsobení agentů, workflow a modulů se zachováním kompatibility s aktualizacemi
 sidebar:
   order: 6
@@ -15,7 +15,7 @@ Použijte soubory `.customize.yaml` k přizpůsobení chování agentů, person 
 - Chcete, aby agenti prováděli specifické akce při každém spuštění
 
 :::note[Předpoklady]
-- BMad nainstalován ve vašem projektu (viz [Jak nainstalovat BMad](./install-bmad.md))
+- Continuous Agile nainstalován ve vašem projektu (viz [Jak nainstalovat Continuous Agile](./install-bmad.md))
 - Textový editor pro YAML soubory
 :::
 
@@ -131,7 +131,7 @@ prompts:
 Po editaci přeinstalujte pro aplikaci změn:
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 Instalátor detekuje existující instalaci a nabídne tyto možnosti:
@@ -147,7 +147,7 @@ Pro změny pouze přizpůsobení je **Quick Update** nejrychlejší možnost.
 
 **Změny se nezobrazují?**
 
-- Spusťte `npx bmad-method install` a vyberte **Quick Update** pro aplikaci změn
+- Spusťte `npx continuous-agile install` a vyberte **Quick Update** pro aplikaci změn
 - Zkontrolujte, že vaše YAML syntaxe je platná (na odsazení záleží)
 - Ověřte, že jste upravili správný soubor `.customize.yaml` pro daného agenta
 
@@ -160,11 +160,11 @@ Pro změny pouze přizpůsobení je **Quick Update** nejrychlejší možnost.
 **Potřebujete resetovat agenta?**
 
 - Vymažte nebo smažte soubor `.customize.yaml` agenta
-- Spusťte `npx bmad-method install` a vyberte **Quick Update** pro obnovení výchozích hodnot
+- Spusťte `npx continuous-agile install` a vyberte **Quick Update** pro obnovení výchozích hodnot
 
 ## Přizpůsobení workflow
 
-Přizpůsobení existujících BMad Method workflow a skills přijde brzy.
+Přizpůsobení existujících workflow a skills Continuous Agile přijde brzy.
 
 ## Přizpůsobení modulů
 

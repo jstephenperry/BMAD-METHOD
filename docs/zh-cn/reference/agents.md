@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-本页列出 BMad Method 默认提供的 BMM（Agile 套件）智能体，包括它们的 skill ID、菜单触发器和主要 workflow。
+本页列出 Continuous Agile 默认提供的 BMM（Agile 套件）智能体，包括它们的 skill ID、菜单触发器和主要 workflow。
 
 ## 默认智能体列表
 

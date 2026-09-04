@@ -1,23 +1,23 @@
 ---
 title: "Dự án đã tồn tại"
-description: Cách sử dụng BMad Method trên các codebase hiện có
+description: Cách sử dụng Continuous Agile trên các codebase hiện có
 sidebar:
   order: 6
 ---
 
-Sử dụng BMad Method hiệu quả khi làm việc với các dự án hiện có và codebase legacy.
+Sử dụng Continuous Agile hiệu quả khi làm việc với các dự án hiện có và codebase legacy.
 
-Tài liệu này mô tả workflow cốt lõi để on-board vào các dự án đã tồn tại bằng BMad Method.
+Tài liệu này mô tả workflow cốt lõi để on-board vào các dự án đã tồn tại bằng Continuous Agile.
 
 :::note[Điều kiện tiên quyết]
-- Đã cài BMad Method (`npx bmad-method install`)
+- Đã cài Continuous Agile (`npx continuous-agile install`)
 - Một codebase hiện có mà bạn muốn làm việc cùng
 - Quyền truy cập vào một IDE tích hợp AI (Claude Code hoặc Cursor)
 :::
 
 ## Bước 1: Dọn dẹp các tài liệu lập kế hoạch đã hoàn tất
 
-Nếu bạn đã hoàn thành toàn bộ epic và story trong PRD theo quy trình BMad, hãy dọn dẹp những tệp đó. Bạn có thể lưu trữ, xóa đi, hoặc dựa vào lịch sử phiên bản nếu cần. Không nên giữ các tệp này trong:
+Nếu bạn đã hoàn thành toàn bộ epic và story trong PRD theo quy trình Continuous Agile, hãy dọn dẹp những tệp đó. Bạn có thể lưu trữ, xóa đi, hoặc dựa vào lịch sử phiên bản nếu cần. Không nên giữ các tệp này trong:
 
 - `docs/`
 - `_bmad-output/planning-artifacts/`

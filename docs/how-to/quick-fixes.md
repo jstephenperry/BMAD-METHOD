@@ -16,7 +16,7 @@ Bug fixes, refactorings, and small targeted changes can enter **Build** directly
 
 :::note[Prerequisites]
 
-- BMad Method installed (`npx bmad-method install`)
+- Continuous Agile installed (`npx continuous-agile install`)
 - An AI-powered IDE (Claude Code, Cursor, or similar)
   :::
 

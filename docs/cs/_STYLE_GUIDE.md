@@ -75,7 +75,7 @@ Zobrazujte v sekcích „Co jste dosáhli“:
 ````md
 ```
 váš-projekt/
-├── _bmad/                                   # Konfigurace BMad
+├── _bmad/                                   # Konfigurace Continuous Agile
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   └── PRD.md                           # Váš dokument požadavků

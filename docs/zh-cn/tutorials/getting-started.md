@@ -1,13 +1,13 @@
 ---
 title: "快速入门"
-description: 安装 BMad 并构建你的第一个项目
+description: 安装 Continuous Agile 并构建你的第一个项目
 ---
 
 使用 AI 驱动的工作流更快地构建软件，通过专门的智能体引导你完成规划、架构设计和实现。
 
 ## 你将学到
 
-- 为新项目安装并初始化 BMad Method
+- 为新项目安装并初始化 Continuous Agile
 - 使用 **BMad-Help** —— 你的智能向导，它知道下一步该做什么
 - 为当前工作选择合适的规划深度
 - 从需求到可用代码，逐步推进各个阶段
@@ -21,14 +21,14 @@ description: 安装 BMad 并构建你的第一个项目
 :::
 
 :::tip[最简单的路径]
-**安装** → `npx bmad-method install`
+**安装** → `npx continuous-agile install`
 **询问** → `bmad-help 我应该先做什么？`
 **构建** → 让 BMad-Help 逐个工作流地引导你
 :::
 
 ## 认识 BMad-Help：你的智能向导
 
-**BMad-Help 是开始使用 BMad 的最快方式。** 你不需要记住工作流或阶段 —— 只需询问，BMad-Help 就会：
+**BMad-Help 是开始使用 Continuous Agile 的最快方式。** 你不需要记住工作流或阶段 —— 只需询问，BMad-Help 就会：
 
 - **检查你的项目**，看看已经完成了什么
 - **根据你安装的模块显示你的选项**
@@ -59,12 +59,12 @@ BMad-Help 将回应：
 BMad-Help 不仅回答问题 —— **它会在每个工作流结束时自动运行**，告诉你确切地下一步该做什么。无需猜测，无需搜索文档 —— 只需对下一个必需工作流的清晰指导。
 
 :::tip[从这里开始]
-安装 BMad 后，立即运行 `bmad-help`。它将检测你安装了哪些模块，并引导你找到项目的正确起点。
+安装 Continuous Agile 后，立即运行 `bmad-help`。它将检测你安装了哪些模块，并引导你找到项目的正确起点。
 :::
 
-## 了解 BMad
+## 了解 Continuous Agile
 
-BMad 通过带有专门 AI 智能体的引导工作流帮助你构建软件。该过程遵循四个阶段：
+Continuous Agile 通过带有专门 AI 智能体的引导工作流帮助你构建软件。该过程遵循四个阶段：
 
 | 阶段 | 名称           | 发生什么                                           |
 | ---- | -------------- | -------------------------------------------------- |
@@ -92,12 +92,12 @@ BMad 通过带有专门 AI 智能体的引导工作流帮助你构建软件。�
 在项目目录中打开终端并运行：
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
-如果你想使用最新预发布版本（而不是默认发布通道），可以改用 `npx bmad-method@next install`。
+如果你想使用最新预发布版本（而不是默认发布通道），可以改用 `npx continuous-agile@next install`。
 
-当提示选择模块时，选择 **BMad Method**。
+当提示选择模块时，选择 **`bmm`**（敏捷开发）模块。
 
 安装程序会创建两个文件夹：
 - `_bmad/` — 智能体、工作流、任务和配置
@@ -192,9 +192,9 @@ Build 的审查是每次运行的一部分。`bmad-code-review` 是在全新上�
 
 ## 你已完成的工作
 
-你已经学习了使用 BMad 构建的基础：
+你已经学习了使用 Continuous Agile 构建的基础：
 
-- 安装了 BMad 并为你的 IDE 进行了配置
+- 安装了 Continuous Agile 并为你的 IDE 进行了配置
 - 为当前工作选择了合适的规划深度
 - 创建了规划文档（PRD、架构、史诗和故事）
 - 了解了实现的构建周期
@@ -203,7 +203,7 @@ Build 的审查是每次运行的一部分。`bmad-code-review` 是在全新上�
 
 ```text
 your-project/
-├── _bmad/                                   # BMad 配置
+├── _bmad/                                   # Continuous Agile 配置
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   ├── PRD.md                           # 你的需求文档
@@ -254,7 +254,7 @@ BMad-Help 检查你的项目，检测你已完成的内容，并确切地告诉�
 :::
 
 - **在工作流期间** — 智能体通过问题和解释引导你
-- **社区** — [Discord](https://discord.gg/gk8jAdXWmj) (#bmad-method-help, #report-bugs-and-issues)
+- **社区** — [GitHub Discussions](https://github.com/jstephenperry/continuous-agile/discussions) 与 [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues)
 
 ## 关键要点
 
@@ -265,4 +265,4 @@ BMad-Help 检查你的项目，检测你已完成的内容，并确切地告诉�
 - **BMad-Help 自动运行** — 每个工作流结束时都会提供下一步的指导
 :::
 
-准备好开始了吗？安装 BMad，运行 `bmad-help`，让你的智能向导为你引路。
+准备好开始了吗？安装 Continuous Agile，运行 `bmad-help`，让你的智能向导为你引路。

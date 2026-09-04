@@ -1,23 +1,23 @@
 ---
 title: "既有项目"
-description: 如何在现有代码库中使用 BMad Method
+description: 如何在现有代码库中使用 Continuous Agile
 sidebar:
   order: 6
 ---
 
-当你在现有项目或遗留代码库上工作时，本指南帮助你更稳妥地使用 BMad Method。
+当你在现有项目或遗留代码库上工作时，本指南帮助你更稳妥地使用 Continuous Agile。
 
 如果你是从零开始的新项目，建议先看[快速入门](../tutorials/getting-started.md)；本文主要面向既有项目接入场景。
 
 :::note[前置条件]
-- 已安装 BMad Method（`npx bmad-method install`）
+- 已安装 Continuous Agile（`npx continuous-agile install`）
 - 一个你想要处理的现有代码库
 - 访问 AI 驱动的 IDE（Claude Code 或 Cursor）
 :::
 
 ## 步骤 1：清理已完成的规划产物
 
-如果你通过 BMad 流程完成了所有 PRD 史诗和用户故事，请清理这些文件。归档它们、删除它们，或者在需要时依赖版本历史。不要将这些文件保留在：
+如果你通过 Continuous Agile 流程完成了所有 PRD 史诗和用户故事，请清理这些文件。归档它们、删除它们，或者在需要时依赖版本历史。不要将这些文件保留在：
 
 - `docs/`
 - `_bmad-output/planning-artifacts/`

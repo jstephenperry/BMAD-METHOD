@@ -1,15 +1,15 @@
 ---
 title: Skills
-description: Reference BMad skills — co to je, jak fungují a kde je najít.
+description: Reference skills Continuous Agile — co to je, jak fungují a kde je najít.
 sidebar:
   order: 4
 ---
 
-Skills jsou předpřipravené prompty, které načítají agenty, spouštějí workflow nebo provádějí úkoly ve vašem IDE. Instalátor BMad je generuje z vašich nainstalovaných modulů při instalaci. Pokud později přidáte, odeberete nebo změníte moduly, přeinstalujte pro synchronizaci skills (viz [Řešení problémů](#řešení-problémů)).
+Skills jsou předpřipravené prompty, které načítají agenty, spouštějí workflow nebo provádějí úkoly ve vašem IDE. Instalátor Continuous Agile je generuje z vašich nainstalovaných modulů při instalaci. Pokud později přidáte, odeberete nebo změníte moduly, přeinstalujte pro synchronizaci skills (viz [Řešení problémů](#řešení-problémů)).
 
 ## Skills vs. spouštěče nabídky agentů
 
-BMad nabízí dva způsoby zahájení práce a slouží k různým účelům.
+Continuous Agile nabízí dva způsoby zahájení práce a slouží k různým účelům.
 
 | Mechanismus | Jak se vyvolává | Co se stane |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Spouštěče nabídky agentů vyžadují aktivní relaci agenta. Používejte sk
 
 ## Jak se skills generují
 
-Když spustíte `npx bmad-method install`, instalátor čte manifesty každého vybraného modulu a zapíše jeden skill na agenta, workflow, úkol a nástroj. Každý skill je adresář obsahující soubor `SKILL.md`, který instruuje AI k načtení odpovídajícího zdrojového souboru a následování jeho instrukcí.
+Když spustíte `npx continuous-agile install`, instalátor čte manifesty každého vybraného modulu a zapíše jeden skill na agenta, workflow, úkol a nástroj. Každý skill je adresář obsahující soubor `SKILL.md`, který instruuje AI k načtení odpovídajícího zdrojového souboru a následování jeho instrukcí.
 
 Instalátor používá šablony pro každý typ skillu:
 

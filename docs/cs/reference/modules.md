@@ -5,10 +5,10 @@ sidebar:
   order: 5
 ---
 
-BMad se rozšiřuje prostřednictvím oficiálních modulů, které vyberete během instalace. Tyto doplňkové moduly poskytují specializované agenty, workflow a úkoly pro specifické domény nad rámec vestavěného jádra a BMM (Agile suite).
+Continuous Agile se rozšiřuje prostřednictvím oficiálních modulů, které vyberete během instalace. Tyto doplňkové moduly, publikované společností BMad Code, LLC, poskytují specializované agenty, workflow a úkoly pro specifické domény nad rámec vestavěného jádra a BMM (Agile suite).
 
 :::tip[Instalace modulů]
-Spusťte `npx bmad-method install` a vyberte požadované moduly. Instalátor se postará o stažení, konfiguraci a integraci s IDE automaticky.
+Spusťte `npx continuous-agile install` a vyberte požadované moduly. Instalátor se postará o stažení, konfiguraci a integraci s IDE automaticky.
 :::
 
 ## BMad Builder

@@ -1,14 +1,14 @@
 ---
-title: Các Module Chính Thức
+title: Các Module Bổ Sung
 description: Các module bổ sung để xây agent tùy chỉnh, tăng cường sáng tạo, phát triển game và kiểm thử
 sidebar:
   order: 5
 ---
 
-BMad được mở rộng thông qua các module chính thức mà bạn chọn trong quá trình cài đặt. Những module bổ sung này cung cấp agent, workflow và task chuyên biệt cho các lĩnh vực cụ thể, vượt ra ngoài phần lõi tích hợp sẵn và BMM (Agile suite).
+Continuous Agile được mở rộng thông qua các module bổ sung mà bạn chọn trong quá trình cài đặt. Các module dưới đây do BMad Code, LLC phát hành và vẫn cài được trong Continuous Agile; chúng được liệt kê ở đây để mô tả khả năng tương thích, không phải quan hệ liên kết. Chúng cung cấp agent, workflow và task chuyên biệt cho các lĩnh vực cụ thể, vượt ra ngoài phần lõi tích hợp sẵn và BMM (Agile suite).
 
 :::tip[Cài đặt module]
-Chạy `npx bmad-method install` rồi chọn những module bạn muốn. Trình cài đặt sẽ tự xử lý phần tải về, cấu hình và tích hợp vào IDE.
+Chạy `npx continuous-agile install` rồi chọn những module bạn muốn. Trình cài đặt sẽ tự xử lý phần tải về, cấu hình và tích hợp vào IDE.
 :::
 
 ## BMad Builder

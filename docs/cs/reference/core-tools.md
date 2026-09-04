@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Každá instalace BMad zahrnuje **základní modul** — malou sadu skills, které fungují napříč všemi projekty, všemi moduly a všemi fázemi. Tato stránka pokrývá těchto sedm základních skills: čtyři jádrové nástroje plus tři **myšlenkové skills** (brainstorming, forge idea, party mode).
+Každá instalace Continuous Agile zahrnuje **základní modul** — malou sadu skills, které fungují napříč všemi projekty, všemi moduly a všemi fázemi. Tato stránka pokrývá těchto sedm základních skills: čtyři jádrové nástroje plus tři **myšlenkové skills** (brainstorming, forge idea, party mode).
 
 :::tip[Rychlá cesta]
 Spusťte jakýkoli nástroj zadáním jeho názvu skillu (např. `bmad-help`) ve vašem IDE. Nevyžaduje relaci agenta.
@@ -20,7 +20,7 @@ Spusťte jakýkoli nástroj zadáním jeho názvu skillu (např. `bmad-help`) ve
 | [`bmad-help`](#bmad-help)                                 | Kontextové poradenství, co dělat dál                                                                                      |
 | [`bmad-advanced-elicitation`](#bmad-advanced-elicitation) | Iterativní zdokonalování LLM výstupu                                                                                      |
 | [`bmad-review`](#bmad-review)                             | Revize z více perspektiv — adversariální, hraniční případy a mezery ve verifikaci pro kód; struktura a text pro dokumenty |
-| [`bmad-customize`](#bmad-customize)                       | Vytváření a ověřování přizpůsobení BMad                                                                                   |
+| [`bmad-customize`](#bmad-customize)                       | Vytváření a ověřování přizpůsobení Continuous Agile                                                                       |
 
 **Myšlenkové skills:**
 
@@ -41,7 +41,7 @@ Spusťte jakýkoli nástroj zadáním jeho názvu skillu (např. `bmad-help`) ve
 **Použijte když:**
 
 - Dokončili jste workflow a chcete vědět, co dál
-- Jste noví v BMad a potřebujete orientaci
+- Jste noví v Continuous Agile a potřebujete orientaci
 - Jste uvízlí a chcete kontextovou radu
 - Nainstalovali jste nové moduly a chcete vidět, co je dostupné
 
@@ -58,7 +58,7 @@ Spusťte jakýkoli nástroj zadáním jeho názvu skillu (např. `bmad-help`) ve
 
 ## bmad-advanced-elicitation
 
-**Přiměje LLM přehodnotit, zdokonalit a vylepšit svůj nedávný výstup.** — Sdílený zdokonalovací checkpoint BMad: ostatní skills jej vyvolávají při přirozených pauzách a vy jej můžete zavolat přímo na cokoli nedávného v konverzaci.
+**Přiměje LLM přehodnotit, zdokonalit a vylepšit svůj nedávný výstup.** — Sdílený zdokonalovací checkpoint Continuous Agile: ostatní skills jej vyvolávají při přirozených pauzách a vy jej můžete zavolat přímo na cokoli nedávného v konverzaci.
 
 **Použijte když:**
 
@@ -123,7 +123,7 @@ Sada není pevná: přepis v `customize.toml` může perspektivy přidat nebo na
 
 ## bmad-customize
 
-**Vytváření a ověřování přizpůsobení.** — Pomůže vám změnit chování nainstalovaného BMad agenta nebo workflow bez ručního psaní TOML.
+**Vytváření a ověřování přizpůsobení.** — Pomůže vám změnit chování nainstalovaného agenta nebo workflow bez ručního psaní TOML.
 
 **Použijte když:**
 
@@ -133,14 +133,14 @@ Sada není pevná: přepis v `customize.toml` může perspektivy přidat nebo na
 
 **Jak to funguje:**
 
-1. Skenuje nainstalované BMad skills pro přizpůsobitelné plochy
+1. Skenuje nainstalované skills pro přizpůsobitelné plochy
 2. Vybere správný rozsah pro požadovanou změnu
 3. Zapíše přepisové soubory pod `_bmad/custom/`
 4. Ověří sloučenou konfiguraci
 
 **Vstup:** Popis požadovaného přizpůsobení v přirozeném jazyce
 
-**Výstup:** TOML přepisové soubory pod `_bmad/custom/`. Podrobný návod viz [Jak přizpůsobit BMad](../how-to/customize-bmad.md)
+**Výstup:** TOML přepisové soubory pod `_bmad/custom/`. Podrobný návod viz [Jak přizpůsobit Continuous Agile](../how-to/customize-bmad.md)
 
 ## Myšlenkové skills
 
@@ -195,7 +195,7 @@ Kouzlo se děje v nápadech 50–100. Workflow povzbuzuje generování 100+ náp
 
 ### bmad-party-mode
 
-**Orchestrace skupinových diskuzí více agentů.** — Načte všechny nainstalované BMad agenty a facilituje přirozenou konverzaci, kde každý agent přispívá svou unikátní odborností a osobností.
+**Orchestrace skupinových diskuzí více agentů.** — Načte všechny nainstalované agenty a facilituje přirozenou konverzaci, kde každý agent přispívá svou unikátní odborností a osobností.
 
 **Použijte když:**
 

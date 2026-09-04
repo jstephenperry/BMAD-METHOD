@@ -38,7 +38,7 @@ Every rule the skill applies is written out in `references/best-practices.md`, w
 
 ## How agents load it
 
-`AGENTS.md` at the repo root, which every major coding harness reads. BMad owns only the region between `<!-- bmad:context -->` and `<!-- /bmad:context -->`; everything you write outside those markers is preserved byte for byte, and a refresh never touches it.
+`AGENTS.md` at the repo root, which every major coding harness reads. Continuous Agile owns only the region between `<!-- bmad:context -->` and `<!-- /bmad:context -->`; everything you write outside those markers is preserved byte for byte, and a refresh never touches it.
 
 Monorepo components and nested repositories get their own file under the same rules, listed as pointers in the parent. A large rule set that only applies to one directory can move into an `AGENTS.md` file in that directory — but only after checking that the tools you use actually read it there. If they don't, the rules stay in the root file, each naming the directory it applies to.
 

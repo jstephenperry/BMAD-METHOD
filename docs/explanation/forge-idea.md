@@ -13,7 +13,7 @@ Run `bmad-forge-idea` and an exacting interrogator goes to work on your idea, on
 
 What you walk away with is sharper thinking. A distilled `forged-idea.md` is only ever one possible exit, and the session never herds you toward "shall we build it?"
 
-Forge Idea is one of the core module's thinking skills, so it is present in every BMad installation.
+Forge Idea is one of the core module's thinking skills, so it is present in every Continuous Agile installation.
 
 ## Why Pressure-Test Early
 

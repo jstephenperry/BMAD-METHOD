@@ -1,26 +1,26 @@
 ---
 title: 'Getting Started'
-description: Install BMad and build a small Python program
+description: Install Continuous Agile and build a small Python program
 sidebar:
   order: 1
 ---
 
-BMad can help you plan and build anything from a small bug fix to a project with
-a million lines of code. Let's start with something small.
+Continuous Agile can help you plan and build anything from a small bug fix to a
+project with a million lines of code. Let's start with something small.
 
 Already have a repository and a small change you want to make?
-[Install BMad there](../how-to/install-bmad.md), open your coding tool in the
-repository, and run the installed `bmad-build` skill. Talk to it about the
-change you want, and it will make it happen.
+[Install Continuous Agile there](../how-to/install-bmad.md), open your coding
+tool in the repository, and run the installed `bmad-build` skill. Talk to it
+about the change you want, and it will make it happen.
 
 Otherwise, start here. You will make a working Python program in an empty
 project.
 
 :::note[Before You Start]
 Use a macOS or Linux shell with Node.js 20.12+, Python 3, and a coding tool
-supported by BMad. The exact install and launch commands below are for Claude
-Code. If you use another supported tool, select it when installing BMad and run
-the `bmad-build` skill there instead.
+supported by Continuous Agile. The exact install and launch commands below are
+for Claude Code. If you use another supported tool, select it when installing
+Continuous Agile and run the `bmad-build` skill there instead.
 :::
 
 ## Create an Empty Project
@@ -30,11 +30,11 @@ mkdir bmad-first-project
 cd bmad-first-project
 ```
 
-Install the current stable version of BMad Method. This command sets it up for
-Claude Code:
+Install the current stable version of Continuous Agile. This command sets it up
+for Claude Code:
 
 ```bash
-npx bmad-method install --directory . --modules bmm --tools claude-code --yes
+npx continuous-agile install --directory . --modules bmm --tools claude-code --yes
 ```
 
 Open your coding tool in this directory. For Claude Code, run:
@@ -97,10 +97,11 @@ rover> Mission control signing off.
 
 Open the files listed in the final message to look at your finished program.
 
-## Ask BMad Help
+## Ask for Help
 
-The `bmad-help` skill answers questions about BMad. Use it to understand what
-happened, decide what to do next, or solve a problem. Try it now:
+The `bmad-help` skill answers questions about Continuous Agile. Use it to
+understand what happened, decide what to do next, or solve a problem. Try it
+now:
 
 ```text
 /bmad-help Explain what bmad-build just did.
@@ -114,7 +115,7 @@ the program, and checked its work before showing you the result.
 
 ## Keep Building
 
-1. [Install BMad in your own repository](../how-to/install-bmad.md), then run
-   the `bmad-build` skill with a short description of a small change.
+1. [Install Continuous Agile in your own repository](../how-to/install-bmad.md),
+   then run the `bmad-build` skill with a short description of a small change.
 2. Continue to [Getting Deeper](./getting-deeper.md) for a small change in a
    mature codebase, followed by a larger change using a written spec.

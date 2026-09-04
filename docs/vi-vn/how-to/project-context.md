@@ -8,7 +8,7 @@ sidebar:
 Sử dụng tệp `project-context.md` để đảm bảo các agent AI tuân theo ưu tiên kỹ thuật và quy tắc triển khai của dự án trong suốt mọi workflow. Để đảm bảo tệp này luôn sẵn có, bạn cũng có thể thêm dòng `Important project context and conventions are located in [path to project context]/project-context.md` vào file context của công cụ hoặc file always rules của bạn (như `AGENTS.md`).
 
 :::note[Điều kiện tiên quyết]
-- Đã cài BMad Method
+- Đã cài Continuous Agile
 - Hiểu stack công nghệ và các quy ước của dự án
 :::
 

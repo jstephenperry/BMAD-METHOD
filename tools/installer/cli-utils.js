@@ -2,40 +2,29 @@ const prompts = require('./prompts');
 
 const CLIUtils = {
   /**
-   * Display BMAD logo and version using @clack intro + box
+   * Display the Continuous Agile logo and version using @clack intro + box
    */
   async displayLogo() {
     const color = await prompts.getColor();
     const termWidth = process.stdout.columns || 80;
 
-    // Full "BMad Method" logo for wide terminals, "BMad" only for narrow
-    const logoWide = [
-      ' ██████╗ ███╗   ███╗ █████╗ ██████╗     ███╗   ███╗███████╗████████╗██╗  ██╗ ██████╗ ██████╗ ™',
-      '██╔══██╗████╗ ████║██╔══██╗██╔══██╗    ████╗ ████║██╔════╝╚══██╔══╝██║  ██║██╔═══██╗██╔══██╗',
-      '██████╔╝██╔████╔██║███████║██║  ██║    ██╔████╔██║█████╗     ██║   ███████║██║   ██║██║  ██║',
-      '██╔══██╗██║╚██╔╝██║██╔══██║██║  ██║    ██║╚██╔╝██║██╔══╝     ██║   ██╔══██║██║   ██║██║  ██║',
-      '██████╔╝██║ ╚═╝ ██║██║  ██║██████╔╝    ██║ ╚═╝ ██║███████╗   ██║   ██║  ██║╚██████╔╝██████╔╝',
-      '╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝     ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ',
+    // A "CA" monogram. Deliberately compact: it fits every terminal width, so
+    // there is no wide/narrow variant to keep in sync.
+    const monogram = [
+      ' ██████╗ █████╗ ',
+      '██╔════╝██╔══██╗',
+      '██║     ███████║',
+      '██║     ██╔══██║',
+      '╚██████╗██║  ██║',
+      ' ╚═════╝╚═╝  ╚═╝',
     ];
 
-    const logoNarrow = [
-      '    ██████╗ ███╗   ███╗ █████╗ ██████╗ ™',
-      '    ██╔══██╗████╗ ████║██╔══██╗██╔══██╗',
-      '    ██████╔╝██╔████╔██║███████║██║  ██║',
-      '    ██╔══██╗██║╚██╔╝██║██╔══██║██║  ██║',
-      '    ██████╔╝██║ ╚═╝ ██║██║  ██║██████╔╝',
-      '    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝',
-    ];
+    const logo = monogram.map((line) => color.blue(line)).join('\n');
+    // The monogram carries the initials, so the line below spells the name out.
+    const wordmark = color.white(termWidth >= 95 ? '    C O N T I N U O U S   A G I L E' : '    Continuous Agile');
+    const tagline = color.dim('    Full-lifecycle agentic development');
 
-    const logoLines = termWidth >= 95 ? logoWide : logoNarrow;
-    const logo = logoLines.map((line) => color.blue(line)).join('\n');
-    // The wordmark supplies "BMad Method", so the lines below read as its
-    // tagline, then its positioning, then the company credit.
-    const tagline = color.white('    Agile Ai Driven Development');
-    const slogan = color.dim('    the agile way to do AiDD');
-    const credit = color.dim('    Build More, Architect Dreams · © BMad Code');
-
-    await prompts.box(`${logo}\n${tagline}\n${slogan}\n${credit}`, '', {
+    await prompts.box(`${logo}\n${wordmark}\n${tagline}`, '', {
       contentAlign: 'center',
       rounded: true,
       formatBorder: color.blue,

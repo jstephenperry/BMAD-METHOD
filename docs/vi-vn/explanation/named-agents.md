@@ -1,17 +1,17 @@
 ---
 title: "Agent có tên riêng (Named Agents)"
-description: Vì sao các agent của BMad có tên, persona và bề mặt tùy chỉnh riêng, và điều đó mở khóa điều gì so với cách tiếp cận dựa trên menu hoặc prompt trống
+description: Vì sao các agent của Continuous Agile có tên, persona và bề mặt tùy chỉnh riêng, và điều đó mở khóa điều gì so với cách tiếp cận dựa trên menu hoặc prompt trống
 sidebar:
   order: 1
 ---
 
 Bạn nói: "Hey Mary, brainstorm với tôi nhé", và Mary được kích hoạt. Cô ấy chào bạn theo tên, bằng ngôn ngữ bạn đã cấu hình, với persona đặc trưng của riêng mình. Cô ấy nhắc rằng `bmad-help` luôn sẵn sàng. Rồi cô ấy bỏ qua menu và đi thẳng vào brainstorming vì ý định của bạn đã đủ rõ.
 
-Trang này giải thích điều gì thực sự đang diễn ra và vì sao BMad được thiết kế theo cách đó.
+Trang này giải thích điều gì thực sự đang diễn ra và vì sao Continuous Agile được thiết kế theo cách đó.
 
 ## Chiếc ghế ba chân
 
-Mô hình agent của BMad đứng trên ba primitive kết hợp với nhau:
+Mô hình agent của Continuous Agile đứng trên ba primitive kết hợp với nhau:
 
 | Thành phần nền (primitive) | Nó cung cấp gì | Nó nằm ở đâu |
 |---|---|---|
@@ -27,7 +27,7 @@ Chỉ cần bỏ đi một chân là trải nghiệm sẽ sụp:
 
 ## Named agents mang lại điều gì
 
-BMad hiện có năm named agent, mỗi agent gắn với một phase trong BMad Method:
+Continuous Agile hiện có năm named agent, mỗi agent gắn với một phase:
 
 | Agent | Phase | Module |
 |---|---|---|
@@ -86,8 +86,8 @@ Ngoài ra còn có một bề mặt tùy chỉnh thứ hai cho các mối quan t
 
 Để xem toàn bộ bề mặt tùy chỉnh và ví dụ thực tế:
 
-- [Cách tùy chỉnh BMad](../how-to/customize-bmad.md): tài liệu tham chiếu cho những gì có thể tùy chỉnh và merge diễn ra thế nào
-- [Cách mở rộng BMad cho tổ chức của bạn](../how-to/expand-bmad-for-your-org.md): năm recipe hoàn chỉnh trải từ quy tắc ở cấp agent, convention workflow, publish ra hệ thống ngoài, thay template đầu ra đến tùy chỉnh roster agent
+- [Cách tùy chỉnh Continuous Agile](../how-to/customize-bmad.md): tài liệu tham chiếu cho những gì có thể tùy chỉnh và merge diễn ra thế nào
+- [Cách mở rộng Continuous Agile cho tổ chức của bạn](../how-to/expand-bmad-for-your-org.md): năm recipe hoàn chỉnh trải từ quy tắc ở cấp agent, convention workflow, publish ra hệ thống ngoài, thay template đầu ra đến tùy chỉnh roster agent
 - Skill `bmad-customize`: trợ lý soạn cấu hình (authoring helper) có hướng dẫn để biến ý định thành một file override đúng chỗ và đã được kiểm chứng
 
 ## Ý tưởng lớn hơn phía sau

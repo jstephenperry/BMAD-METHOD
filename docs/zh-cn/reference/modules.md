@@ -1,28 +1,28 @@
 ---
 title: "官方模块"
-description: BMad 可选模块参考：能力边界、适用场景与外部资源
+description: Continuous Agile 可选模块参考：能力边界、适用场景与外部资源
 sidebar:
   order: 5
 ---
 
-BMad 通过可选模块扩展能力。你可以在安装时按需选择模块，为当前项目增加特定领域的 `agent`、`workflow` 与 `skill`。
+Continuous Agile 通过可选模块扩展能力。你可以在安装时按需选择模块，为当前项目增加特定领域的 `agent`、`workflow` 与 `skill`。下列附加模块由 BMad Code, LLC 发布，在 Continuous Agile 中仍可安装；此处列出是为了说明兼容性，不代表任何隶属关系。
 
 :::tip[安装模块]
-运行 `npx bmad-method install`，在交互步骤中勾选所需模块。安装器会自动生成对应 skills 并写入当前 IDE 的 skills 目录。
+运行 `npx continuous-agile install`，在交互步骤中勾选所需模块。安装器会自动生成对应 skills 并写入当前 IDE 的 skills 目录。
 :::
 
 ## 先看总览
 
 | 模块 | 代码 | 最适合 | 核心能力 |
 | --- | --- | --- | --- |
-| BMad Builder | `bmb` | 扩展 BMad 本身 | 构建自定义 agent / workflow / module |
+| BMad Builder | `bmb` | 扩展 Continuous Agile 本身 | 构建自定义 agent / workflow / module |
 | Creative Intelligence Suite | `cis` | 前期创意与问题探索 | 头脑风暴、设计思维、创新策略 |
 | Game Dev Studio | `gds` | 游戏方向研发 | 游戏设计文档、原型推进、叙事支持 |
 | Test Architect（TEA） | `tea` | 企业级测试治理 | 测试策略、可追溯性、质量门控 |
 
 ## BMad Builder（`bmb`）
 
-用于“构建 BMad”的元模块，重点是把你的方法沉淀成可复用能力。
+用于“构建 Continuous Agile”的元模块，重点是把你的方法沉淀成可复用能力。
 
 **你会得到：**
 - Agent Builder：创建具备特定专业能力的 agent

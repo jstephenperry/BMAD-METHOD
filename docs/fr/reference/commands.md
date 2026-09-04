@@ -1,15 +1,15 @@
 ---
 title: Skills
-description: Référence des skills BMad — ce qu’ils sont, comment ils fonctionnent et où les trouver.
+description: Référence des skills Continuous Agile — ce qu’ils sont, comment ils fonctionnent et où les trouver.
 sidebar:
   order: 4
 ---
 
-Les skills sont des prompts pré-construits qui chargent des agents, exécutent des workflows ou lancent des tâches dans votre IDE. L’installateur BMad les génère à partir de vos modules installés au moment de l’installation. Si vous ajoutez, supprimez ou modifiez des modules ultérieurement, relancez l’installateur pour garder les skills synchronisés (voir [Dépannage](#dépannage)).
+Les skills sont des prompts pré-construits qui chargent des agents, exécutent des workflows ou lancent des tâches dans votre IDE. L’installateur de Continuous Agile les génère à partir de vos modules installés au moment de l’installation. Si vous ajoutez, supprimez ou modifiez des modules ultérieurement, relancez l’installateur pour garder les skills synchronisés (voir [Dépannage](#dépannage)).
 
 ## Skills vs. Déclencheurs du menu Agent
 
-BMad offre deux façons de démarrer un travail, chacune ayant un usage différent.
+Continuous Agile offre deux façons de démarrer un travail, chacune ayant un usage différent.
 
 | Mécanisme                     | Comment l’invoquer                                            | Ce qui se passe                                                                                |
 |-------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------|
@@ -20,7 +20,7 @@ Les déclencheurs du menu agent nécessitent une session agent active. Utilisez 
 
 ## Comment les skills sont générés
 
-Lorsque vous exécutez `npx bmad-method install`, l’installateur lit les manifests de chaque module sélectionné et écrit un skill par agent, workflow, tâche et outil. Chaque skill est un répertoire contenant un fichier `SKILL.md` qui indique à l’IA de charger le fichier source correspondant et de suivre ses instructions.
+Lorsque vous exécutez `npx continuous-agile install`, l’installateur lit les manifests de chaque module sélectionné et écrit un skill par agent, workflow, tâche et outil. Chaque skill est un répertoire contenant un fichier `SKILL.md` qui indique à l’IA de charger le fichier source correspondant et de suivre ses instructions.
 
 L’installateur utilise des modèles pour chaque type de skill :
 
@@ -129,12 +129,12 @@ Tous les skills utilisent le préfixe `bmad-` suivi d’un nom descriptif (ex. `
 
 **Les skills n’apparaissent pas après l’installation.** Certaines plateformes nécessitent d’activer explicitement les skills dans les paramètres. Consultez la documentation de votre IDE ou demandez à votre assistant IA comment activer les skills. Vous devrez peut-être aussi redémarrer votre IDE ou recharger la fenêtre.
 
-**Des skills attendus sont manquants.** L’installateur génère uniquement les skills pour les modules que vous avez sélectionnés. Exécutez à nouveau `npx bmad-method install` et vérifiez votre sélection de modules. Vérifiez que les fichiers de skill existent dans le répertoire attendu.
+**Des skills attendus sont manquants.** L’installateur génère uniquement les skills pour les modules que vous avez sélectionnés. Exécutez à nouveau `npx continuous-agile install` et vérifiez votre sélection de modules. Vérifiez que les fichiers de skill existent dans le répertoire attendu.
 
 **Des skills d’un module supprimé apparaissent encore.** L’installateur ne supprime pas automatiquement les anciens fichiers de skill. Supprimez les répertoires obsolètes du répertoire de skills de votre IDE, ou supprimez tout le répertoire de skills et relancez l’installateur pour obtenir un ensemble propre.
 
 ## Glossaire
 
 [^1]: PRD (Product Requirements Document) : document de référence qui décrit les objectifs du produit, les besoins utilisateurs, les fonctionnalités attendues, les contraintes et les critères de succès, afin d’aligner les équipes sur ce qui doit être construit et pourquoi.
-[^2]: Persona : dans le contexte de BMad, un persona désigne un agent IA avec un rôle défini, un style de communication et une expertise spécifiques (ex. Mary l’analyste, Winston l’architecte). Chaque persona garde son « caractère » pendant les interactions.
+[^2]: Persona : dans le contexte de Continuous Agile, un persona désigne un agent IA avec un rôle défini, un style de communication et une expertise spécifiques (ex. Mary l’analyste, Winston l’architecte). Chaque persona garde son « caractère » pendant les interactions.
 [^3]: Brief : document synthétique qui formalise le contexte, les objectifs, le périmètre et les contraintes d’un projet ou d’une demande, afin d’aligner rapidement les parties prenantes avant le travail détaillé.

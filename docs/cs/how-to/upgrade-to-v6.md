@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-Použijte instalátor BMad pro upgrade z v4 na v6, který zahrnuje automatickou detekci starších instalací a asistenci při migraci.
+Použijte instalátor Continuous Agile pro upgrade z v4 na v6, který zahrnuje automatickou detekci starších instalací a asistenci při migraci.
 
 ## Kdy to použít
 
@@ -96,5 +96,5 @@ váš-projekt/
 | --------------- | ------------------------------------ | -------------------------------------- |
 | **Core**        | `_bmad-core` byl vlastně BMad Method | `_bmad/core/` je univerzální framework |
 | **Method**      | `_bmad-method`                       | `_bmad/bmm/`                           |
-| **Konfigurace** | Přímá editace souborů                | `config.yaml` pro každý modul          |
+| **Konfigurace** | Přímá editace souborů                | `_bmad/config.toml` pro všechno        |
 | **Dokumenty**   | Vyžadované nastavení shardů          | Plně flexibilní, auto-skenování        |

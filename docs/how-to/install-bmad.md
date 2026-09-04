@@ -1,15 +1,15 @@
 ---
-title: 'How to Install BMad'
-description: Install, update, and pin BMad for local development, teams, and CI
+title: 'How to Install Continuous Agile'
+description: Install, update, and pin Continuous Agile for local development, teams, and CI
 sidebar:
   order: 1
 ---
 
-Use `npx bmad-method install` to set up BMad in your project. One command handles first installs, upgrades, channel switching, and scripted CI runs. This page covers all of it.
+Use `npx continuous-agile install` to set up Continuous Agile in your project. One command handles first installs, upgrades, channel switching, and scripted CI runs. This page covers all of it.
 
 ## When to Use This
 
-- Starting a new project with BMad
+- Starting a new project with Continuous Agile
 - Adding or removing modules on an existing install
 - Switching a module to main-HEAD or pinning to a specific release
 - Scripting installs for CI pipelines, Dockerfiles, or enterprise rollouts
@@ -18,14 +18,14 @@ Use `npx bmad-method install` to set up BMad in your project. One command handle
 
 - **Node.js** 20.12+ (the installer requires it)
 - **Git** (for cloning external modules)
-- **An AI tool** such as Claude Code or Cursor (run `npx bmad-method install --list-tools` to see all supported tools)
+- **An AI tool** such as Claude Code or Cursor (run `npx continuous-agile install --list-tools` to see all supported tools)
 
 :::
 
 ## First-time install (the fast path)
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 The interactive flow asks you six things when the selected modules still ship deprecated compatibility shims:
@@ -44,7 +44,7 @@ Quick Update asks the same question whenever the project still has shims install
 :::tip[Just want the newest prerelease?]
 
 ```bash
-npx bmad-method@next install
+npx continuous-agile@next install
 ```
 
 Runs the prerelease installer, which ships a newer snapshot of core and bmm. More churn, fewer delays between development and release.
@@ -68,12 +68,12 @@ Channels are per-module. You can run bmb on `next` while leaving cis on `stable`
 
 ### Axis 2: installer binary version
 
-The `bmad-method` npm package itself has two dist-tags:
+The `continuous-agile` npm package itself has two dist-tags:
 
-| Command                               | What you get                                                      |
-| ------------------------------------- | ----------------------------------------------------------------- |
-| `npx bmad-method install` (`@latest`) | Latest stable installer release                                   |
-| `npx bmad-method@next install`        | Latest prerelease installer, auto-published on every push to main |
+| Command                                    | What you get                                                      |
+| ------------------------------------------ | ----------------------------------------------------------------- |
+| `npx continuous-agile install` (`@latest`) | Latest stable installer release                                   |
+| `npx continuous-agile@next install`        | Latest prerelease installer, auto-published on every push to main |
 
 **The installer binary determines your core and bmm versions.** Those two modules ship bundled inside the installer package rather than being cloned from separate repos.
 
@@ -81,15 +81,15 @@ The `bmad-method` npm package itself has two dist-tags:
 
 They're stapled to the installer binary you ran:
 
-- `npx bmad-method install` → latest stable core and bmm
-- `npx bmad-method@next install` → prerelease core and bmm
+- `npx continuous-agile install` → latest stable core and bmm
+- `npx continuous-agile@next install` → prerelease core and bmm
 - `node /path/to/local-checkout/tools/installer/bmad-cli.js install` → whatever your local checkout has
 
 `--pin bmm=v6.3.0` and `--next=bmm` are silently ineffective against bundled modules, and the installer warns you when you try. A future release extracts bmm from the installer package; once that ships, bmm gets a proper channel selector like bmb has today.
 
 ## Updating an existing install
 
-Running `npx bmad-method install` in a directory that already contains `_bmad/` gives you a menu:
+Running `npx continuous-agile install` in a directory that already contains `_bmad/` gives you a menu:
 
 | Choice             | What it does                                                                                                                                                |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -151,13 +151,13 @@ Precedence when flags overlap: `--pin` beats `--next=` beats `--channel` / `--al
 **Default install — latest stable for everything:**
 
 ```bash
-npx bmad-method install --yes --modules bmm,bmb,cis --tools claude-code
+npx continuous-agile install --yes --modules bmm,bmb,cis --tools claude-code
 ```
 
 **Enterprise pin — reproducible byte-for-byte:**
 
 ```bash
-npx bmad-method install --yes \
+npx continuous-agile install --yes \
   --modules bmm,bmb,cis \
   --pin bmb=v1.7.0 --pin cis=v0.2.0 \
   --tools claude-code
@@ -166,13 +166,13 @@ npx bmad-method install --yes \
 **Bleeding edge — externals on main HEAD:**
 
 ```bash
-npx bmad-method install --yes --modules bmm,bmb --all-next --tools claude-code
+npx continuous-agile install --yes --modules bmm,bmb --all-next --tools claude-code
 ```
 
 **Add a module to an existing install** (keep everything else):
 
 ```bash
-npx bmad-method install --yes --action update \
+npx continuous-agile install --yes --action update \
   --modules bmm,bmb,gds
 ```
 
@@ -181,7 +181,7 @@ npx bmad-method install --yes --action update \
 **Mix channels — bmb on next, gds on stable:**
 
 ```bash
-npx bmad-method install --yes --action update \
+npx continuous-agile install --yes --action update \
   --modules bmm,bmb,cis,gds \
   --next=bmb
 ```
@@ -193,7 +193,7 @@ npx bmad-method install --yes --action update \
 **Example — install bmm with explicit project knowledge and skill level:**
 
 ```bash
-npx bmad-method install --yes \
+npx continuous-agile install --yes \
   --modules bmm \
   --tools claude-code \
   --set bmm.project_knowledge=research \
@@ -203,7 +203,7 @@ npx bmad-method install --yes \
 **Discover available keys for a module:**
 
 ```bash
-npx bmad-method install --list-options bmm
+npx continuous-agile install --list-options bmm
 ```
 
 `--list-options` (no argument) lists every key the installer can find locally — built-in modules (`core`, `bmm`) plus any currently cached official modules. The cache is per-machine and can be cleared, so previously installed officials won't appear on a fresh checkout or an ephemeral CI worker until they're installed again. Community and custom modules aren't enumerated here; read the module's `module.yaml` directly to see what keys it declares.
@@ -220,7 +220,7 @@ npx bmad-method install --list-options bmm
 The legacy core shortcuts (`--user-name`, `--output-folder`, etc.) still work and remain documented for backward compatibility, but `--set core.user_name=...` is equivalent.
 
 :::note[Works with quick-update]
-`--set` is a post-install patch, so it applies the same way regardless of action type. Under `bmad install --action quick-update` (or `--yes` against an existing install, where quick-update is the default), `--set` patches the central config files at the end just like a regular install.
+`--set` is a post-install patch, so it applies the same way regardless of action type. Under `continuous-agile install --action quick-update` (or `--yes` against an existing install, where quick-update is the default), `--set` patches the central config files at the end just like a regular install.
 :::
 
 :::caution[Rate limit on shared IPs]
@@ -248,7 +248,7 @@ The `sha` field is written for git-backed modules (external, community, and URL-
 For cross-machine reproducibility, don't rely on rerunning the same `--modules` command. Stable-channel installs resolve to the highest released tag **at install time**, so a later rerun lands on whatever has been released since. Convert the recorded tags from `manifest.yaml` into explicit `--pin` flags on the target machine, e.g.:
 
 ```bash
-npx bmad-method install --yes --modules bmb,cis \
+npx continuous-agile install --yes --modules bmb,cis \
   --pin bmb=v1.7.0 --pin cis=v0.4.2 --tools claude-code
 ```
 
@@ -268,4 +268,4 @@ Pinned installs don't upgrade. Quick-update applies patches and minors on stable
 
 ### `--pin bmm=X` didn't do anything
 
-bmm is a bundled module — `--pin` and `--next=` don't apply. Use `npx bmad-method@next install` for a prerelease core/bmm, or check out the bmad-bmm repo and run the installer locally to get unreleased changes.
+bmm is a bundled module — `--pin` and `--next=` don't apply. Use `npx continuous-agile@next install` for a prerelease core/bmm, or check out the bmad-bmm repo and run the installer locally to get unreleased changes.

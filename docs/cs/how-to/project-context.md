@@ -8,7 +8,7 @@ sidebar:
 Použijte soubor `project-context.md` k zajištění toho, aby AI agenti dodržovali technické preference a pravidla implementace vašeho projektu ve všech workflow. Aby byl vždy dostupný, můžete také přidat řádek `Important project context and conventions are located in [cesta k project context]/project-context.md` do souboru kontextu nebo pravidel vašeho nástroje (jako je `AGENTS.md`).
 
 :::note[Předpoklady]
-- BMad Method nainstalován
+- Continuous Agile nainstalován
 - Znalost technologického stacku a konvencí vašeho projektu
 :::
 

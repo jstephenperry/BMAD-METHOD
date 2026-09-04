@@ -1,19 +1,19 @@
 ---
 title: "Sơ đồ workflow"
-description: Tài liệu trực quan về các giai đoạn, quy trình và đầu ra của BMad Method
+description: Tài liệu trực quan về các giai đoạn, quy trình và đầu ra của Continuous Agile
 sidebar:
   order: 1
 ---
 
-BMad Method (BMM) là một module trong hệ sinh thái BMad, tập trung vào các thực hành tốt nhất của kỹ nghệ ngữ cảnh và lập kế hoạch. AI agent hoạt động hiệu quả nhất khi có ngữ cảnh rõ ràng và có cấu trúc. Hệ thống BMM xây dựng ngữ cảnh đó theo tiến trình qua 4 giai đoạn riêng biệt. Mỗi giai đoạn, cùng với nhiều quy trình tùy chọn bên trong nó, tạo ra các tài liệu làm đầu vào cho giai đoạn kế tiếp, nhờ vậy agent luôn biết phải xây gì và vì sao.
+Continuous Agile (BMM) là một module trong hệ sinh thái module, tập trung vào các thực hành tốt nhất của kỹ nghệ ngữ cảnh và lập kế hoạch. AI agent hoạt động hiệu quả nhất khi có ngữ cảnh rõ ràng và có cấu trúc. Hệ thống BMM xây dựng ngữ cảnh đó theo tiến trình qua 4 giai đoạn riêng biệt. Mỗi giai đoạn, cùng với nhiều quy trình tùy chọn bên trong nó, tạo ra các tài liệu làm đầu vào cho giai đoạn kế tiếp, nhờ vậy agent luôn biết phải xây gì và vì sao.
 
 Lý do và các khái niệm nền tảng ở đây đến từ các phương pháp Agile đã được áp dụng rất thành công trong toàn ngành như một khung tư duy.
 
-Nếu có lúc nào bạn không chắc nên làm gì, skill `bmad-help` sẽ giúp bạn giữ đúng hướng hoặc biết bước tiếp theo. Bạn vẫn có thể dùng trang này để tham chiếu, nhưng `bmad-help` mang tính tương tác đầy đủ và nhanh hơn nhiều nếu bạn đã cài BMad Method. Ngoài ra, nếu bạn đang dùng thêm các module mở rộng BMad Method hoặc các module bổ sung khác, `bmad-help` cũng sẽ mở rộng theo để biết mọi thứ đang có sẵn và đưa ra lời khuyên tốt nhất tại thời điểm đó.
+Nếu có lúc nào bạn không chắc nên làm gì, skill `bmad-help` sẽ giúp bạn giữ đúng hướng hoặc biết bước tiếp theo. Bạn vẫn có thể dùng trang này để tham chiếu, nhưng `bmad-help` mang tính tương tác đầy đủ và nhanh hơn nhiều nếu bạn đã cài Continuous Agile. Ngoài ra, nếu bạn đang dùng thêm các module mở rộng Continuous Agile hoặc các module bổ sung khác, `bmad-help` cũng sẽ mở rộng theo để biết mọi thứ đang có sẵn và đưa ra lời khuyên tốt nhất tại thời điểm đó.
 
 Lưu ý quan trọng cuối cùng: mọi quy trình dưới đây đều có thể chạy trực tiếp bằng công cụ bạn chọn thông qua skill, hoặc bằng cách nạp agent trước rồi chọn mục tương ứng trong menu agent.
 
-<iframe src="/workflow-map-diagram.html" title="Sơ đồ Workflow Map của BMad Method" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
+<iframe src="/workflow-map-diagram.html" title="Sơ đồ Workflow Map của Continuous Agile" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
 
 <p style="font-size: 0.8rem; text-align: right; margin-top: -0.5rem; margin-bottom: 1rem;">
   <a href="/workflow-map-diagram.html" target="_blank" rel="noopener noreferrer">Mở sơ đồ trong tab mới ↗</a>

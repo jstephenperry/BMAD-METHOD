@@ -1,5 +1,5 @@
 ---
-title: "Comment personnaliser BMad"
+title: "Comment personnaliser Continuous Agile"
 description: Personnalisez les agents et les workflows tout en préservant la compatibilité avec les mises à jour
 sidebar:
   order: 7
@@ -21,8 +21,8 @@ Le skill `bmad-customize` est un assistant de rédaction guidée pour les **opti
 
 :::note[Prérequis]
 
-- BMad installé dans votre projet (voir [Comment installer BMad](./install-bmad.md))
-- Un moyen d’exécuter le script de résolution — BMad adopte `uv` comme standard (`uv run`, qui provisionne Python pour vous) ; un simple `python3` 3.11+ sur votre PATH fonctionne toujours pendant la transition. Le script n’utilise que `tomllib` de la bibliothèque standard, il n’y a donc rien à `pip install`.
+- Continuous Agile installé dans votre projet (voir [Comment installer Continuous Agile](./install-bmad.md))
+- Un moyen d’exécuter le script de résolution — Continuous Agile adopte `uv` comme standard (`uv run`, qui provisionne Python pour vous) ; un simple `python3` 3.11+ sur votre PATH fonctionne toujours pendant la transition. Le script n’utilise que `tomllib` de la bibliothèque standard, il n’y a donc rien à `pip install`.
 - Un éditeur de texte pour les fichiers TOML
 :::
 
@@ -53,7 +53,7 @@ Le résolveur applique quatre règles structurelles. Les noms de champ n’ont p
 
 **Pas de mécanisme de suppression.** Les overrides ne peuvent pas effacer les éléments de base. Si vous devez supprimer un élément de menu par défaut, surchargez-le via son `code` avec une description ou un prompt sans effet. Si vous devez restructurer un tableau plus en profondeur, forkez le skill.
 
-**La convention `code` / `id`.** BMad utilise `code` (code court comme `"BP"` ou `"R1"`) et `id` (identifiant stable plus long) comme clés de fusion dans les tableaux de tables. Si vous rédigez un tableau de tables personnalisé destiné à être fusionné par clé plutôt que par simple ajout, choisissez **une** convention (soit `code` sur chaque élément, soit `id` sur chaque élément) et respectez-la dans tout le tableau. Mélanger `code` sur certains éléments et `id` sur d’autres revient à un simple ajout — le résolveur ne devinera pas quelle clé utiliser pour la fusion.
+**La convention `code` / `id`.** Continuous Agile utilise `code` (code court comme `"BP"` ou `"R1"`) et `id` (identifiant stable plus long) comme clés de fusion dans les tableaux de tables. Si vous rédigez un tableau de tables personnalisé destiné à être fusionné par clé plutôt que par simple ajout, choisissez **une** convention (soit `code` sur chaque élément, soit `id` sur chaque élément) et respectez-la dans tout le tableau. Mélanger `code` sur certains éléments et `id` sur d’autres revient à un simple ajout — le résolveur ne devinera pas quelle clé utiliser pour la fusion.
 
 ### Certains champs d’agent sont en lecture seule
 
@@ -106,7 +106,7 @@ Ceci ajoute le nouveau principe aux valeurs par défaut (en laissant les princip
 
 ### 3. Personnaliser selon vos besoins
 
-Tous les exemples ci-dessous supposent le schéma d’agent plat de BMad. Les champs se trouvent directement sous `[agent]` — pas de sous-tables `metadata` ou `persona` imbriquées.
+Tous les exemples ci-dessous supposent le schéma d’agent plat de Continuous Agile. Les champs se trouvent directement sous `[agent]` — pas de sous-tables `metadata` ou `persona` imbriquées.
 
 **Scalaires (icon, role, identity, communication_style).** Les overrides scalaires prévalent. Vous n’avez besoin de définir que les champs que vous modifiez :
 
@@ -201,7 +201,7 @@ persistent_facts = [
 
 ## Comment fonctionne la résolution
 
-À l’activation, le SKILL.md de l’agent exécute un script Python partagé qui effectue la fusion à trois couches et renvoie le bloc résolu en JSON. Le script utilise uniquement le module `tomllib` de la bibliothèque standard Python (aucune dépendance externe). BMad adopte `uv run` comme standard pour exécuter ces scripts (uv provisionne un Python adapté pour vous) ; un simple `python3` fonctionne toujours pendant la transition :
+À l’activation, le SKILL.md de l’agent exécute un script Python partagé qui effectue la fusion à trois couches et renvoie le bloc résolu en JSON. Le script utilise uniquement le module `tomllib` de la bibliothèque standard Python (aucune dépendance externe). Continuous Agile adopte `uv run` comme standard pour exécuter ces scripts (uv provisionne un Python adapté pour vous) ; un simple `python3` fonctionne toujours pendant la transition :
 
 ```bash
 uv run {project-root}/_bmad/scripts/resolve_customization.py \
@@ -269,7 +269,7 @@ Les workflows personnalisables exécutent leur activation dans une séquence fix
 1. Résoudre le bloc `[workflow]` (fusion base → équipe → utilisateur)
 2. Exécuter `activation_steps_prepend` dans l’ordre
 3. Charger `persistent_facts` comme contexte fondamental pour l’exécution
-4. Charger la configuration (`_bmad/bmm/config.yaml`) et résoudre les variables standard (nom du projet, langues, chemins, date)
+4. Résoudre la configuration centrale (`uv run _bmad/scripts/resolve_config.py`, la fusion TOML à quatre couches décrite dans la section Configuration centrale ci-dessous) et résoudre les variables standard (nom du projet, langues, chemins, date)
 5. Saluer l’utilisateur
 6. Exécuter `activation_steps_append` dans l’ordre
 
@@ -370,7 +370,7 @@ Utilisez les deux espaces dans le même projet selon vos besoins.
 
 ## Exemples concrets
 
-Pour des recettes orientées entreprise (façonner un agent à travers tous les workflows qu’il gère, imposer les conventions d’organisation, publier les livrables vers Confluence et Jira, personnaliser le registre des agents et remplacer vos propres templates de sortie), consultez [Comment étendre BMad pour votre organisation](./expand-bmad-for-your-org.md).
+Pour des recettes orientées entreprise (façonner un agent à travers tous les workflows qu’il gère, imposer les conventions d’organisation, publier les livrables vers Confluence et Jira, personnaliser le registre des agents et remplacer vos propres templates de sortie), consultez [Comment étendre Continuous Agile pour votre organisation](./expand-bmad-for-your-org.md).
 
 ## Dépannage
 

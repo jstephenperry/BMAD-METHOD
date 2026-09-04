@@ -1,15 +1,15 @@
 ---
 title: "工作流地图"
-description: BMad Method 各阶段 workflow 与产出速查
+description: Continuous Agile 各阶段 workflow 与产出速查
 sidebar:
   order: 1
 ---
 
-BMad Method（BMM）通过分阶段 workflow 逐步构建上下文，让智能体始终知道“做什么、为什么做、如何做”。这张地图用于快速查阅阶段目标、关键 workflow 和对应产出。
+Continuous Agile（BMM）通过分阶段 workflow 逐步构建上下文，让智能体始终知道“做什么、为什么做、如何做”。这张地图用于快速查阅阶段目标、关键 workflow 和对应产出。
 
 如果你不确定下一步，优先运行 `bmad-help`。它会基于你当前项目状态和已安装模块给出实时建议。
 
-<iframe src="/workflow-map-diagram.html" title="BMad Method Workflow Map Diagram" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
+<iframe src="/workflow-map-diagram.html" title="Continuous Agile Workflow Map Diagram" width="100%" height="100%" style="border-radius: 8px; border: 1px solid #334155; min-height: 900px;"></iframe>
 
 <p style="font-size: 0.8rem; text-align: right; margin-top: -0.5rem; margin-bottom: 1rem;">
   <a href="/workflow-map-diagram.html" target="_blank" rel="noopener noreferrer">在新标签页打开图表 ↗</a>

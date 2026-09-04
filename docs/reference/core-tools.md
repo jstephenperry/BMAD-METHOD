@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Every BMad installation includes the **core module** — a small set of skills that work across all projects, all modules, and all phases. This page covers those seven core skills: the four kernel tools plus the three **thinking skills** (brainstorming, forge idea, party mode).
+Every Continuous Agile installation includes the **core module** — a small set of skills that work across all projects, all modules, and all phases. This page covers those seven core skills: the four kernel tools plus the three **thinking skills** (brainstorming, forge idea, party mode).
 
 :::tip[Quick Path]
 Run any tool by typing its skill name (e.g., `bmad-help`) in your IDE. No agent session required.
@@ -20,7 +20,7 @@ Run any tool by typing its skill name (e.g., `bmad-help`) in your IDE. No agent 
 | [`bmad-help`](#bmad-help)                                 | Get context-aware guidance on what to do next                                                                |
 | [`bmad-advanced-elicitation`](#bmad-advanced-elicitation) | Push LLM output through iterative refinement methods                                                         |
 | [`bmad-review`](#bmad-review)                             | Multi-lens review — adversarial, edge-case, and verification-gap for code; structure and prose for documents |
-| [`bmad-customize`](#bmad-customize)                       | Create and verify BMad customization overrides                                                               |
+| [`bmad-customize`](#bmad-customize)                       | Create and verify Continuous Agile customization overrides                                                   |
 
 **Thinking skills:**
 
@@ -42,7 +42,7 @@ Run any tool by typing its skill name (e.g., `bmad-help`) in your IDE. No agent 
 **Use it when:**
 
 - You finished a workflow and want to know what's next
-- You're new to BMad and need orientation
+- You're new to Continuous Agile and need orientation
 - You're stuck and want context-aware advice
 - You installed new modules and want to see what's available
 
@@ -59,7 +59,7 @@ Run any tool by typing its skill name (e.g., `bmad-help`) in your IDE. No agent 
 
 ## bmad-advanced-elicitation
 
-**Push the LLM to reconsider, refine, and improve its recent output.** — BMad's shared refinement checkpoint: other skills invoke it at natural pauses, and you can call it directly on anything recent in the conversation.
+**Push the LLM to reconsider, refine, and improve its recent output.** — Continuous Agile's shared refinement checkpoint: other skills invoke it at natural pauses, and you can call it directly on anything recent in the conversation.
 
 **Use it when:**
 
@@ -128,7 +128,7 @@ Code Review workflows in other modules run the code lenses automatically, and th
 
 ## bmad-customize
 
-**Create and verify customization overrides.** — Helps you change how an installed BMad agent or workflow behaves without hand-authoring TOML.
+**Create and verify customization overrides.** — Helps you change how an installed agent or workflow behaves without hand-authoring TOML.
 
 **Use it when:**
 
@@ -138,7 +138,7 @@ Code Review workflows in other modules run the code lenses automatically, and th
 
 **How it works:**
 
-1. Scans installed BMad skills for customizable surfaces
+1. Scans installed skills for customizable surfaces
 2. Selects the right scope for your requested change
 3. Writes override files under `_bmad/custom/`
 4. Verifies the merged configuration
@@ -147,7 +147,7 @@ Code Review workflows in other modules run the code lenses automatically, and th
 
 **Output:** TOML override files under `_bmad/custom/`
 
-For a detailed guide on customizing BMad, see [How to Customize BMad](../how-to/customize-bmad.md).
+For a detailed guide on customizing Continuous Agile, see [How to Customize Continuous Agile](../how-to/customize-bmad.md).
 
 ## Thinking Skills
 
@@ -228,7 +228,7 @@ For the three modes, how to choose between them, and what happens inside a run, 
 
 ### bmad-party-mode
 
-**Orchestrate multi-agent group discussions.** — Loads all installed BMad agents and facilitates a natural conversation where each agent contributes from their unique expertise and personality.
+**Orchestrate multi-agent group discussions.** — Loads all installed agents and facilitates a natural conversation where each agent contributes from their unique expertise and personality.
 
 **Use it when:**
 

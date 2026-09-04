@@ -1,24 +1,24 @@
 ---
 title: 'Established Projects'
-description: How to use BMad Method on existing codebases
+description: How to use Continuous Agile on existing codebases
 sidebar:
   order: 6
 ---
 
-Use BMad Method effectively when working on existing projects and legacy codebases.
+Use Continuous Agile effectively when working on existing projects and legacy codebases.
 
-This guide covers the essential workflow for onboarding to existing projects with BMad Method.
+This guide covers the essential workflow for onboarding to existing projects with Continuous Agile.
 
 :::note[Prerequisites]
 
-- BMad Method installed (`npx bmad-method install`)
+- Continuous Agile installed (`npx continuous-agile install`)
 - An existing codebase you want to work on
 - Access to an AI-powered IDE (Claude Code or Cursor)
   :::
 
 ## Step 1: Clean Up Completed Planning Artifacts
 
-If you have completed all PRD epics and stories through the BMad process, clean up those files. Archive them, delete them, or rely on version history if needed. Do not keep these files in:
+If you have completed all PRD epics and stories through the Continuous Agile process, clean up those files. Archive them, delete them, or rely on version history if needed. Do not keep these files in:
 
 - `docs/`
 - `_bmad-output/planning-artifacts/`
@@ -53,7 +53,7 @@ Your `docs/` folder should contain succinct, well-organized documentation that a
 
 ## Step 3: Get Help
 
-### BMad-Help: Your Starting Point
+### `bmad-help`: Your Starting Point
 
 **Run `bmad-help` anytime you're unsure what to do next.** This intelligent guide:
 
@@ -67,7 +67,7 @@ bmad-help How much planning does this change need before implementation?
 bmad-help Show me what workflows are available
 ```
 
-BMad-Help also **automatically runs at the end of every workflow**, providing clear guidance on exactly what to do next.
+`bmad-help` also **automatically runs at the end of every workflow**, providing clear guidance on exactly what to do next.
 
 ### Choose Planning Depth
 

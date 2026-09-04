@@ -1,10 +1,10 @@
 ---
 title: "FAQ Projets Existants"
-description: Questions courantes sur l’utilisation de la méthode BMad sur des projets existants
+description: Questions courantes sur l’utilisation de Continuous Agile sur des projets existants
 sidebar:
   order: 11
 ---
-Réponses rapides aux questions courantes sur l’utilisation de la méthode BMad (BMM) sur des projets existants.
+Réponses rapides aux questions courantes sur l’utilisation de Continuous Agile (BMM) sur des projets existants.
 
 ## Questions
 
@@ -47,4 +47,4 @@ Build détecte vos conventions et demande : « Dois-je suivre ces conventions
 
 BMM respecte votre choix — il ne forcera pas la modernisation, mais la proposera.
 
-**Une question sans réponse ici ?** Veuillez [ouvrir un ticket](https://github.com/bmad-code-org/BMAD-METHOD/issues) ou poser votre question sur [Discord](https://discord.gg/gk8jAdXWmj) afin que nous puissions l’ajouter !
+**Une question sans réponse ici ?** Veuillez [ouvrir un ticket](https://github.com/jstephenperry/continuous-agile/issues) afin que nous puissions l’ajouter !

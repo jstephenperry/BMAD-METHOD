@@ -1,10 +1,10 @@
 ---
 title: "Established Projects FAQ"
-description: Common questions about using BMad Method on established projects
+description: Common questions about using Continuous Agile on established projects
 sidebar:
   order: 12
 ---
-Quick answers to common questions about working on established projects with the BMad Method (BMM).
+Quick answers to common questions about working on established projects with the Agile suite (BMM).
 
 ## Questions
 
@@ -47,4 +47,4 @@ Build detects your conventions and asks: "Should I follow these existing convent
 
 BMM respects your choice — it won't force modernization, but it will offer it.
 
-**Have a question not answered here?** Please [open an issue](https://github.com/bmad-code-org/BMAD-METHOD/issues) or ask in [Discord](https://discord.gg/gk8jAdXWmj) so we can add it!
+**Have a question not answered here?** Please [open an issue](https://github.com/jstephenperry/continuous-agile/issues) so we can add it!

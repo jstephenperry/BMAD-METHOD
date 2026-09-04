@@ -75,7 +75,7 @@ Hiển thị trong phần "Bạn đã hoàn thành những gì":
 ````md
 ```
 your-project/
-├── _bmad/                                   # Cấu hình BMad
+├── _bmad/                                   # Cấu hình Continuous Agile
 ├── _bmad-output/
 │   ├── planning-artifacts/
 │   │   └── PRD.md                           # Tài liệu yêu cầu của bạn
@@ -325,7 +325,7 @@ Starlight tạo phần điều hướng "On this page" từ các tiêu đề:
 Thêm ngữ cảnh in nghiêng ở đầu định nghĩa với các thuật ngữ có phạm vi hẹp:
 
 - `*Chỉ dành cho đầu vào triển khai trực tiếp.*`
-- `*BMad Method/Enterprise.*`
+- `*Continuous Agile/Enterprise.*`
 - `*Phase N.*`
 - `*BMGD.*`
 - `*Dự án hiện có.*`
@@ -355,7 +355,7 @@ Chỉ dành cho công việc cần kiến trúc. Công việc rõ ràng có th�
 
 Có. Workflow `bmad-correct-course` xử lý thay đổi phạm vi giữa chừng.
 
-**Có câu hỏi chưa được trả lời ở đây?** [Mở issue](...) hoặc hỏi trên [Discord](...).
+**Có câu hỏi chưa được trả lời ở đây?** [Mở issue](...).
 ```
 
 ## Các Lệnh Kiểm Tra

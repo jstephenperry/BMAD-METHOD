@@ -5,11 +5,11 @@ sidebar:
   order: 2
 ---
 
-使用 BMad 安装程序从社区注册表、第三方 Git 仓库或本地文件路径添加模块。
+使用 Continuous Agile 安装程序从社区注册表、第三方 Git 仓库或本地文件路径添加模块。
 
 ## 何时使用
 
-- 从 BMad 注册表安装社区贡献的模块
+- 从 BMad 插件市场安装社区贡献的模块
 - 从第三方 Git 仓库安装模块（GitHub、GitLab、Bitbucket、自托管）
 - 使用 BMad Builder 测试本地开发中的模块
 - 从私有或自托管 Git 服务器安装模块
@@ -20,12 +20,12 @@ sidebar:
 
 ## 社区模块
 
-社区模块收录在 [BMad 插件市场](https://github.com/bmad-code-org/bmad-plugins-marketplace)。它们按类别组织，并锁定在经过审核的 commit 上以确保安全。
+社区模块收录在 [BMad 插件市场](https://github.com/bmad-code-org/bmad-plugins-marketplace)（由 BMad Code, LLC 维护）。它们按类别组织，并锁定在经过审核的 commit 上以确保安全。
 
 ### 1. 运行安装程序
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 ### 2. 浏览社区目录
@@ -81,7 +81,7 @@ Would you like to install from a custom source (Git URL or local path)?
 使用 `--custom-source` 标志从命令行安装自定义模块：
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory . \
   --custom-source /path/to/my-module \
   --tools claude-code \
@@ -91,7 +91,7 @@ npx bmad-method install \
 提供 `--custom-source` 但未指定 `--modules` 时，只安装 core 和自定义模块。要同时包含官方模块，需添加 `--modules`：
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory . \
   --modules bmm \
   --custom-source https://gitlab.com/myorg/my-module \
@@ -125,7 +125,7 @@ npx bmad-method install \
 如果你正在使用 [BMad Builder](https://github.com/bmad-code-org/bmad-builder) 构建模块，可以直接从工作目录安装：
 
 ```bash
-npx bmad-method install \
+npx continuous-agile install \
   --directory ~/my-project \
   --custom-source ~/my-module-repo/skills \
   --tools claude-code \

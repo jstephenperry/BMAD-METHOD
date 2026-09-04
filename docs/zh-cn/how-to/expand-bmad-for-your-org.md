@@ -1,16 +1,16 @@
 ---
-title: "如何为组织扩展 BMad"
-description: 五个自定义方案，无需 fork 即可重塑 BMad——涵盖智能体全局规则、工作流约定、外部发布、模板替换和花名册变更
+title: "如何为组织扩展 Continuous Agile"
+description: 五个自定义方案，无需 fork 即可重塑 Continuous Agile——涵盖智能体全局规则、工作流约定、外部发布、模板替换和花名册变更
 sidebar:
   order: 9
 ---
 
-BMad 的自定义机制让组织无需编辑已安装文件或 fork 技能就能重塑行为。本指南介绍五个方案，覆盖大部分企业级需求。
+Continuous Agile 的自定义机制让组织无需编辑已安装文件或 fork 技能就能重塑行为。本指南介绍五个方案，覆盖大部分企业级需求。
 
 :::note[前置条件]
 
-- 已在项目中安装 BMad（参见[如何安装 BMad](./install-bmad.md)）
-- 熟悉自定义模型（参见[如何自定义 BMad](./customize-bmad.md)）
+- 已在项目中安装 Continuous Agile（参见[如何安装 Continuous Agile](./install-bmad.md)）
+- 熟悉自定义模型（参见[如何自定义 Continuous Agile](./customize-bmad.md)）
 - PATH 中有 Python 3.11+（解析器只用标准库，不需要 `pip install`）
 :::
 
@@ -143,7 +143,7 @@ brief_template = "{project-root}/docs/enterprise/brief-template.md"
 
 **场景：** 改变 `bmad-party-mode`、`bmad-retrospective` 和 `bmad-advanced-elicitation` 等花名册驱动技能中*谁在场*，无需编辑源码或 fork。以下是三种常见变体。
 
-### 5a. 在全组织范围内重塑 BMad 智能体
+### 5a. 在全组织范围内重塑 Continuous Agile 智能体
 
 每个真实智能体都有一段安装器从 `module.yaml` 合成的描述符。覆盖它可以在所有花名册消费者中改变语气和定位：
 
@@ -178,7 +178,7 @@ icon = "⚕️"
 description = "Country doctor's warmth, short fuse. 'Dammit Jim, I'm a doctor not a ___.' Ethics-driven counterweight to Spock."
 ```
 
-让 party-mode "邀请企业号船员"，它会按 `team = "startrek"` 过滤并生成 Spock 和 McCoy。真实的 BMad 智能体（Mary、Amelia）也可以同桌。
+让 party-mode "邀请企业号船员"，它会按 `team = "startrek"` 过滤并生成 Spock 和 McCoy。真实的 Continuous Agile 智能体（Mary、Amelia）也可以同桌。
 
 ### 5c. 锁定团队安装设置
 
@@ -201,7 +201,7 @@ document_output_language = "English"
 
 ## 在 IDE 会话文件中强化全局规则
 
-BMad 的自定义在技能激活时加载。许多 IDE 工具还会在**每次会话开始时**加载一个全局指令文件，在任何技能运行之前（`CLAUDE.md`、`AGENTS.md`、`.cursor/rules/`、`.github/copilot-instructions.md` 等）。对于即使在 BMad 技能之外也应生效的规则，请在全局指令中也声明一份。
+Continuous Agile 的自定义在技能激活时加载。许多 IDE 工具还会在**每次会话开始时**加载一个全局指令文件，在任何技能运行之前（`CLAUDE.md`、`AGENTS.md`、`.cursor/rules/`、`.github/copilot-instructions.md` 等）。对于即使在 Continuous Agile 技能之外也应生效的规则，请在全局指令中也声明一份。
 
 **何时需要"双重声明"：**
 - 规则足够重要，即使在普通对话（没有激活技能）中也应遵守
@@ -220,10 +220,10 @@ before relying on training-data knowledge. -->
 
 | 层 | 作用范围 | 用途 |
 |---|---|---|
-| IDE 会话文件（`CLAUDE.md` / `AGENTS.md`） | 每次会话，在任何技能激活之前 | 简短的、应在 BMad 之外也生效的通用规则 |
-| BMad 智能体自定义 | 该智能体分发的每个工作流 | 智能体人设相关的行为 |
-| BMad 工作流自定义 | 单次工作流运行 | 工作流特定的输出格式、发布钩子、模板 |
-| BMad 中央配置 | 花名册 + 共享安装设置 | 谁在场、团队使用的共享路径 |
+| IDE 会话文件（`CLAUDE.md` / `AGENTS.md`） | 每次会话，在任何技能激活之前 | 简短的、应在 Continuous Agile 之外也生效的通用规则 |
+| 智能体自定义 | 该智能体分发的每个工作流 | 智能体人设相关的行为 |
+| 工作流自定义 | 单次工作流运行 | 工作流特定的输出格式、发布钩子、模板 |
+| 中央配置 | 花名册 + 共享安装设置 | 谁在场、团队使用的共享路径 |
 
 IDE 会话文件要**精简**。十几行精挑细选的规则比长篇大论有效得多。模型每轮都会读取它，噪声会淹没信号。
 
@@ -247,11 +247,11 @@ on_complete = """ ... """
 persistent_facts = ["Always include a 'Regulatory Review' section when the domain involves healthcare, finance, or children's data."]
 ```
 
-效果：Mary 在人设激活时加载监管评审规则。当用户选择 product-brief 菜单项时，工作流加载自己的规范、写入企业模板，完成后发布到 Confluence。每一层各有贡献，且无一需要编辑 BMad 源码。
+效果：Mary 在人设激活时加载监管评审规则。当用户选择 product-brief 菜单项时，工作流加载自己的规范、写入企业模板，完成后发布到 Confluence。每一层各有贡献，且无一需要编辑 Continuous Agile 源码。
 
 ## 故障排查
 
-**覆盖没有生效？** 检查文件是否在 `_bmad/custom/` 下且使用了准确的技能目录名（如 `bmad-agent-dev.toml`，而非 `bmad-dev.toml`）。参见[如何自定义 BMad](./customize-bmad.md)。
+**覆盖没有生效？** 检查文件是否在 `_bmad/custom/` 下且使用了准确的技能目录名（如 `bmad-agent-dev.toml`，而非 `bmad-dev.toml`）。参见[如何自定义 Continuous Agile](./customize-bmad.md)。
 
 **MCP 工具名称不确定？** 使用 MCP 服务器在当前会话中暴露的准确名称。如果不确定，让 Claude Code 列出可用的 MCP 工具。在 `persistent_facts` 或 `on_complete` 中硬编码的名称，在 MCP 服务器未连接时不会生效。
 

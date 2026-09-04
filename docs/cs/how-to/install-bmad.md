@@ -1,17 +1,17 @@
 ---
-title: "Jak nainstalovat BMad"
-description: Průvodce instalací BMad ve vašem projektu krok za krokem
+title: "Jak nainstalovat Continuous Agile"
+description: Průvodce instalací Continuous Agile ve vašem projektu krok za krokem
 sidebar:
   order: 1
 ---
 
-Použijte příkaz `npx bmad-method install` k nastavení BMad ve vašem projektu s výběrem modulů a AI nástrojů.
+Použijte příkaz `npx continuous-agile install` k nastavení Continuous Agile ve vašem projektu s výběrem modulů a AI nástrojů.
 
 ## Kdy to použít
 
-- Začínáte nový projekt s BMad
-- Přidáváte BMad do existující kódové báze
-- Aktualizujete stávající instalaci BMad
+- Začínáte nový projekt s Continuous Agile
+- Přidáváte Continuous Agile do existující kódové báze
+- Aktualizujete stávající instalaci Continuous Agile
 
 :::note[Předpoklady]
 - **Node.js** 20.12+ (vyžadováno pro instalátor)
@@ -24,13 +24,13 @@ Použijte příkaz `npx bmad-method install` k nastavení BMad ve vašem projekt
 ### 1. Spusťte instalátor
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 :::tip[Chcete nejnovější prereleaseový build?]
 Použijte dist-tag `next`:
 ```bash
-npx bmad-method@next install
+npx continuous-agile@next install
 ```
 
 Získáte novější změny dříve, s vyšší šancí na nestabilitu oproti výchozí instalaci.
@@ -39,13 +39,13 @@ Získáte novější změny dříve, s vyšší šancí na nestabilitu oproti v�
 :::tip[Bleeding edge]
 Pro instalaci nejnovější verze z hlavní větve (může být nestabilní):
 ```bash
-npx github:bmad-code-org/BMAD-METHOD install
+npx github:jstephenperry/continuous-agile install
 ```
 :::
 
 ### 2. Zvolte umístění instalace
 
-Instalátor se zeptá, kam nainstalovat soubory BMad:
+Instalátor se zeptá, kam nainstalovat soubory Continuous Agile:
 
 - Aktuální adresář (doporučeno pro nové projekty, pokud jste adresář vytvořili sami a spouštíte z něj)
 - Vlastní cesta
@@ -61,12 +61,12 @@ Vyberte, které AI nástroje používáte:
 Každý nástroj má svůj vlastní způsob integrace skills. Instalátor vytvoří drobné prompt soubory pro aktivaci workflow a agentů — jednoduše je umístí tam, kde je váš nástroj očekává.
 
 :::note[Povolení skills]
-Některé platformy vyžadují explicitní povolení skills v nastavení, než se zobrazí. Pokud nainstalujete BMad a nevidíte skills, zkontrolujte nastavení vaší platformy nebo se zeptejte svého AI asistenta, jak skills povolit.
+Některé platformy vyžadují explicitní povolení skills v nastavení, než se zobrazí. Pokud nainstalujete Continuous Agile a nevidíte skills, zkontrolujte nastavení vaší platformy nebo se zeptejte svého AI asistenta, jak skills povolit.
 :::
 
 ### 4. Zvolte moduly
 
-Instalátor zobrazí dostupné moduly. Vyberte ty, které potřebujete — většina uživatelů chce pouze **BMad Method** (modul pro vývoj softwaru).
+Instalátor zobrazí dostupné moduly. Vyberte ty, které potřebujete — většina uživatelů chce pouze **Continuous Agile** (modul pro vývoj softwaru).
 
 ### 5. Následujte výzvy
 
@@ -77,8 +77,8 @@ Instalátor vás provede zbytkem — vlastní obsah, nastavení atd.
 ```text
 váš-projekt/
 ├── _bmad/
+│   ├── config.toml     # Nastavení instalace (pokud byste ho někdy potřebovali změnit)
 │   ├── bmm/            # Vaše vybrané moduly
-│   │   └── config.yaml # Nastavení modulu (pokud byste ho někdy potřebovali změnit)
 │   ├── core/           # Povinný základní modul
 │   └── ...
 ├── _bmad-output/       # Generované artefakty
@@ -111,4 +111,4 @@ bmad-help What are my options for a SaaS project?
 
 **Instalátor vyhodí chybu** — Zkopírujte výstup do svého AI asistenta a nechte ho to vyřešit.
 
-**Instalátor fungoval, ale něco nefunguje později** — Vaše AI potřebuje kontext BMad, aby pomohla. Podívejte se na [Jak získat odpovědi o BMad](./get-answers-about-bmad.md) pro návod, jak nasměrovat AI na správné zdroje.
+**Instalátor fungoval, ale něco nefunguje později** — Vaše AI potřebuje kontext Continuous Agile, aby pomohla. Podívejte se na [Jak získat odpovědi o Continuous Agile](./get-answers-about-bmad.md) pro návod, jak nasměrovat AI na správné zdroje.

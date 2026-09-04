@@ -1,16 +1,16 @@
 ---
-title: 'How to Expand BMad for Your Organization'
-description: Six customization patterns that reshape BMad without editing installed files — agent-wide rules, workflow conventions, external publishing, template swaps, agent roster changes, and advanced integration patterns
+title: 'How to Expand Continuous Agile for Your Organization'
+description: Six customization patterns that reshape Continuous Agile without editing installed files — agent-wide rules, workflow conventions, external publishing, template swaps, agent roster changes, and advanced integration patterns
 sidebar:
   order: 9
 ---
 
-BMad's customization surface lets a team reshape behavior without editing installed files. This guide walks through six recipes that cover most enterprise needs. Where the change belongs to the org that owns this fork instead — a shipped default rather than a per-project override — Recipe 5c says where it goes.
+Continuous Agile's customization surface lets a team reshape behavior without editing installed files. This guide walks through six recipes that cover most enterprise needs. Where the change belongs to the org that owns this fork instead — a shipped default rather than a per-project override — Recipe 5c says where it goes.
 
 :::note[Prerequisites]
 
-- BMad installed in your project (see [How to Install BMad](./install-bmad.md))
-- Familiarity with the customization model (see [How to Customize BMad](./customize-bmad.md))
+- Continuous Agile installed in your project (see [How to Install Continuous Agile](./install-bmad.md))
+- Familiarity with the customization model (see [How to Customize Continuous Agile](./customize-bmad.md))
 - Python 3.11+ on PATH (for the resolver — stdlib only, no `pip install`)
 :::
 
@@ -143,7 +143,7 @@ brief_template = "{project-root}/docs/enterprise/brief-template.md"
 
 **Use case:** Change *who's in the room* for roster-driven skills like `bmad-party-mode`, `bmad-retrospective`, and `bmad-advanced-elicitation`, without editing any source or forking. Three common variants follow.
 
-### 5a. Rebrand a BMad Agent Org-Wide
+### 5a. Rebrand a Built-In Agent Org-Wide
 
 Every real agent has a descriptor the installer synthesizes from `module.yaml`. Override it to shift voice and framing across every roster consumer:
 
@@ -178,13 +178,13 @@ icon = "⚕️"
 description = "Country doctor's warmth, short fuse. 'Dammit Jim, I'm a doctor not a ___.' Ethics-driven counterweight to Spock."
 ```
 
-Ask party-mode to "invite the Enterprise crew." It filters by `team = "startrek"` and spawns Spock and McCoy with those descriptors. Real BMad agents (Mary, Amelia) can sit at the same table if you ask them to.
+Ask party-mode to "invite the Enterprise crew." It filters by `team = "startrek"` and spawns Spock and McCoy with those descriptors. The built-in agents (Mary, Amelia) can sit at the same table if you ask them to.
 
 ### 5c. Pin Install Settings
 
 The installer prompts each developer for values like the `planning_artifacts` path. There are two places to fix an answer, and they belong to different owners.
 
-**The org, in the fork.** BMad here is a hard fork, so the shipped defaults are yours to edit. Change the prompt's `default:` in the module's `module.yaml`, or a skill's default in its `customize.toml`, then cut a release: every project installing from the fork is offered the new answer first. Use this when the value is a genuine org default that a project may still decline.
+**The org, in the fork.** Continuous Agile is a hard fork, so the shipped defaults are yours to edit. Change the prompt's `default:` in the module's `module.yaml`, or a skill's default in its `customize.toml`, then cut a release: every project installing from the fork is offered the new answer first. Use this when the value is a genuine org default that a project may still decline.
 
 **A team, in its own repo.** Pin the value in central config. It wins over whatever each developer answered locally, and it is committed next to the code it applies to:
 
@@ -207,7 +207,7 @@ Personal settings like `user_name`, `communication_language`, or `user_skill_lev
 
 ## Reinforce Global Rules in Your IDE's Session File
 
-BMad customizations load when a skill is activated. Many IDE tools also load a global instruction file at the **start of every session**, before any skill runs (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules/`, `.github/copilot-instructions.md`, etc). For rules that should hold even outside BMad skills, restate the critical ones there too.
+Continuous Agile customizations load when a skill is activated. Many IDE tools also load a global instruction file at the **start of every session**, before any skill runs (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules/`, `.github/copilot-instructions.md`, etc). For rules that should hold even outside Continuous Agile skills, restate the critical ones there too.
 
 **When to double up:**
 - A rule is important enough that a plain chat conversation (no skill active) should still follow it
@@ -226,16 +226,16 @@ One sentence, loaded every session. It pairs with the `bmad-agent-dev.toml` cust
 
 | Layer | Scope | Use for |
 |---|---|---|
-| IDE session file (`CLAUDE.md` / `AGENTS.md`) | Every session, before any skill activates | Short, universal rules that should survive outside BMad |
-| BMad agent customization | Every workflow the agent dispatches | Agent-persona-specific behavior |
-| BMad workflow customization | One workflow run | Workflow-specific output shape, publishing hooks, templates |
-| BMad central config | Agent roster + shared install settings | Who's in the room and what shared paths the team uses |
+| IDE session file (`CLAUDE.md` / `AGENTS.md`) | Every session, before any skill activates | Short, universal rules that should survive outside Continuous Agile |
+| Agent customization | Every workflow the agent dispatches | Agent-persona-specific behavior |
+| Workflow customization | One workflow run | Workflow-specific output shape, publishing hooks, templates |
+| Central config | Agent roster + shared install settings | Who's in the room and what shared paths the team uses |
 
 Keep the IDE file **succinct**. A dozen well-chosen lines are more effective than a sprawling list. Models read it every turn, and noise crowds out signal.
 
 ## Recipe 6: Advanced Integration Patterns
 
-Several BMad workflows expose a richer configuration surface beyond the basics covered in Recipes 1–5. These patterns — on-demand knowledge sources, automatic output publishing, finalize-time doc standards, and swappable templates — appear across multiple workflows. Check a workflow's `customize.toml` to see which fields it exposes; the examples below use `bmad-prd` because it exposes all of them, but the same patterns apply wherever the field appears.
+Several workflows expose a richer configuration surface beyond the basics covered in Recipes 1–5. These patterns — on-demand knowledge sources, automatic output publishing, finalize-time doc standards, and swappable templates — appear across multiple workflows. Check a workflow's `customize.toml` to see which fields it exposes; the examples below use `bmad-prd` because it exposes all of them, but the same patterns apply wherever the field appears.
 
 ### On-demand knowledge sources (`external_sources`)
 
@@ -323,11 +323,11 @@ on_complete = """ ... """
 persistent_facts = ["Always include a 'Regulatory Review' section when the domain involves healthcare, finance, or children's data."]
 ```
 
-Result: Mary loads the regulatory-review rule at persona activation. When the user picks the product-brief menu item, the workflow loads its own conventions on top, writes to the enterprise template, and publishes to Confluence on completion. Every layer contributes, and none of them required editing BMad source.
+Result: Mary loads the regulatory-review rule at persona activation. When the user picks the product-brief menu item, the workflow loads its own conventions on top, writes to the enterprise template, and publishes to Confluence on completion. Every layer contributes, and none of them required editing Continuous Agile source.
 
 ## Troubleshooting
 
-**Override not taking effect?** Check that the file is under `_bmad/custom/` with the exact skill directory name (e.g. `bmad-agent-dev.toml`, not `bmad-dev.toml`). See [How to Customize BMad](./customize-bmad.md#troubleshooting).
+**Override not taking effect?** Check that the file is under `_bmad/custom/` with the exact skill directory name (e.g. `bmad-agent-dev.toml`, not `bmad-dev.toml`). See [How to Customize Continuous Agile](./customize-bmad.md#troubleshooting).
 
 **MCP tool name unknown?** Use the exact name the MCP server exposes in the current session. Ask Claude Code to list available MCP tools if unsure. Hardcoded names in `persistent_facts` or `on_complete` won't work if the MCP server isn't connected.
 

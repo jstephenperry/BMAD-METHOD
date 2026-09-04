@@ -1,22 +1,22 @@
 ---
 title: 'How to Upgrade to v6'
-description: Migrate from BMad v4 to v6
+description: Migrate a legacy BMad Method v4 installation to Continuous Agile v6
 sidebar:
   order: 3
 ---
 
-Use the BMad installer to upgrade from v4 to v6, which includes automatic detection of legacy installations and migration assistance.
+Use the Continuous Agile installer to upgrade from v4 to v6, which includes automatic detection of legacy installations and migration assistance.
 
 ## When to Use This
 
-- You have BMad v4 installed (`.bmad-method` folder)
+- You have a BMad Method v4 installation (`.bmad-method` folder)
 - You want to migrate to the new v6 architecture
 - You have existing planning artifacts to preserve
 
 :::note[Prerequisites]
 
 - Node.js 20.12+
-- Existing BMad v4 installation
+- Existing BMad Method v4 installation
   :::
 
 ## Steps
@@ -32,7 +32,7 @@ When v4 is detected, you can:
 - Allow the installer to back up and remove `.bmad-method`
 - Exit and handle cleanup manually
 
-If you named your bmad method folder something else - you will need to manually remove the folder yourself.
+If you named your v4 installation folder something else - you will need to manually remove the folder yourself.
 
 ### 3. Clean Up IDE Skills
 
@@ -75,7 +75,7 @@ your-project/
 │   ├── _config/         # Your customizations
 │   │   └── agents/      # Agent customization files
 │   ├── core/            # Universal core framework
-│   ├── bmm/             # BMad Method module
+│   ├── bmm/             # Continuous Agile method module
 │   ├── bmb/             # BMad Builder
 │   └── cis/             # Creative Intelligence Suite
 └── _bmad-output/        # Output folder (was doc folder in v4)

@@ -5,14 +5,14 @@ sidebar:
   order: 6
 ---
 
-BMad poskytuje dvě testovací cesty: vestavěného QA agenta pro rychlé generování testů a instalovatelný modul Test Architect pro podnikovou testovací strategii.
+Continuous Agile poskytuje dvě testovací cesty: vestavěného QA agenta pro rychlé generování testů a instalovatelný modul Test Architect pro podnikovou testovací strategii.
 
 ## Který byste měli použít?
 
 | Faktor | Quinn (vestavěný QA) | Modul TEA |
 | --- | --- | --- |
 | **Nejlepší pro** | Malé až střední projekty, rychlé pokrytí | Velké projekty, regulované nebo složité domény |
-| **Nastavení** | Nic k instalaci — součástí BMM | Instalace zvlášť přes `npx bmad-method install` |
+| **Nastavení** | Nic k instalaci — součástí BMM | Instalace zvlášť přes `npx continuous-agile install` |
 | **Přístup** | Generujte testy rychle, iterujte později | Nejprve plánujte, pak generujte s trasovatelností |
 | **Typy testů** | API a E2E testy | API, E2E, ATDD, NFR a další |
 | **Strategie** | Happy path + kritické hraniční případy | Prioritizace založená na riziku (P0–P3) |
@@ -95,7 +95,7 @@ TEA také podporuje prioritizaci P0–P3 založenou na riziku a volitelné integ
 
 ## Jak testování zapadá do workflow
 
-Quinn workflow Automate se objevuje ve Fázi 4 (Implementace) mapy workflow BMad Method. Je navržen ke spuštění **po dokončení celého epicu** — jakmile jsou všechny stories v epicu implementovány a zrevidovány. Typická sekvence:
+Quinn workflow Automate se objevuje ve Fázi 4 (Implementace) mapy workflow BMM. Je navržen ke spuštění **po dokončení celého epicu** — jakmile jsou všechny stories v epicu implementovány a zrevidovány. Typická sekvence:
 
 1. Pro každou story v epicu: implementace pomocí Build (`BD` / `bmad-build`), pak podle potřeby Code Review (`CR`)
 2. Po dokončení epicu: generování testů s Quinnem (`QA`) nebo TEA workflow Automate

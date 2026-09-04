@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Mọi bản cài BMad đều bao gồm **module lõi** — một tập nhỏ các skill hoạt động xuyên suốt mọi dự án, mọi module và mọi giai đoạn. Trang này bao quát 7 skill lõi đó: 4 công cụ nhân lõi cùng 3 **skill tư duy** (brainstorming, forge idea, party mode).
+Mọi bản cài Continuous Agile đều bao gồm **module lõi** — một tập nhỏ các skill hoạt động xuyên suốt mọi dự án, mọi module và mọi giai đoạn. Trang này bao quát 7 skill lõi đó: 4 công cụ nhân lõi cùng 3 **skill tư duy** (brainstorming, forge idea, party mode).
 
 :::tip[Lối đi nhanh]
 Chạy bất kỳ công cụ nào bằng cách gõ tên skill của nó, ví dụ `bmad-help`, trong IDE của bạn. Không cần mở phiên agent trước.
@@ -20,7 +20,7 @@ Chạy bất kỳ công cụ nào bằng cách gõ tên skill của nó, ví d�
 | [`bmad-help`](#bmad-help)                                 | Nhận hướng dẫn có ngữ cảnh về việc nên làm gì tiếp theo                                                 |
 | [`bmad-advanced-elicitation`](#bmad-advanced-elicitation) | Đẩy đầu ra của LLM qua các vòng tinh luyện lặp                                                          |
 | [`bmad-review`](#bmad-review)                             | Review đa lăng kính — hoài nghi, ca biên, lỗ hổng kiểm chứng cho code; cấu trúc và câu chữ cho tài liệu |
-| [`bmad-customize`](#bmad-customize)                       | Tạo và kiểm tra các tùy biến BMad                                                                       |
+| [`bmad-customize`](#bmad-customize)                       | Tạo và kiểm tra các tùy biến Continuous Agile                                                           |
 
 **Skill tư duy:**
 
@@ -41,7 +41,7 @@ Chạy bất kỳ công cụ nào bằng cách gõ tên skill của nó, ví d�
 **Dùng khi:**
 
 - Bạn vừa hoàn tất một quy trình và muốn biết tiếp theo là gì
-- Bạn mới làm quen với BMad và cần định hướng
+- Bạn mới làm quen với Continuous Agile và cần định hướng
 - Bạn đang mắc kẹt và muốn lời khuyên có ngữ cảnh
 - Bạn vừa cài module mới và muốn xem có gì khả dụng
 
@@ -58,7 +58,7 @@ Chạy bất kỳ công cụ nào bằng cách gõ tên skill của nó, ví d�
 
 ## bmad-advanced-elicitation
 
-**Đẩy LLM xem xét lại, tinh luyện và cải thiện đầu ra gần nhất của nó.** Đây là điểm dừng tinh luyện dùng chung của BMad: các skill khác gọi nó tại các điểm nghỉ tự nhiên, và bạn có thể gọi trực tiếp lên bất kỳ nội dung nào gần đây trong cuộc hội thoại.
+**Đẩy LLM xem xét lại, tinh luyện và cải thiện đầu ra gần nhất của nó.** Đây là điểm dừng tinh luyện dùng chung của Continuous Agile: các skill khác gọi nó tại các điểm nghỉ tự nhiên, và bạn có thể gọi trực tiếp lên bất kỳ nội dung nào gần đây trong cuộc hội thoại.
 
 **Dùng khi:**
 
@@ -123,7 +123,7 @@ Tập lăng kính không cố định: một override trong `customize.toml` có
 
 ## bmad-customize
 
-**Tạo và kiểm tra các tùy biến.** Giúp bạn thay đổi hành vi của một agent hoặc workflow BMad đã cài mà không phải tự viết TOML.
+**Tạo và kiểm tra các tùy biến.** Giúp bạn thay đổi hành vi của một agent hoặc workflow đã cài mà không phải tự viết TOML.
 
 **Dùng khi:**
 
@@ -133,14 +133,14 @@ Tập lăng kính không cố định: một override trong `customize.toml` có
 
 **Cách hoạt động:**
 
-1. Quét các skill BMad đã cài để tìm các bề mặt có thể tùy biến
+1. Quét các skill đã cài để tìm các bề mặt có thể tùy biến
 2. Chọn phạm vi phù hợp cho thay đổi bạn yêu cầu
 3. Ghi các file override dưới `_bmad/custom/`
 4. Kiểm tra cấu hình sau khi hợp nhất
 
 **Đầu vào:** Mô tả bằng ngôn ngữ tự nhiên về tùy biến bạn muốn
 
-**Đầu ra:** Các file override TOML dưới `_bmad/custom/`. Xem hướng dẫn chi tiết tại [Cách tùy biến BMad](../how-to/customize-bmad.md)
+**Đầu ra:** Các file override TOML dưới `_bmad/custom/`. Xem hướng dẫn chi tiết tại [Cách tùy biến Continuous Agile](../how-to/customize-bmad.md)
 
 ## Các skill tư duy
 
@@ -195,7 +195,7 @@ Ba skill dưới đây hoàn thiện module lõi — những công cụ tư duy 
 
 ### bmad-party-mode
 
-**Điều phối thảo luận nhóm nhiều agent.** Công cụ này nạp toàn bộ agent BMad đã cài và tạo một cuộc trao đổi tự nhiên, nơi mỗi agent đóng góp từ góc nhìn chuyên môn và cá tính riêng.
+**Điều phối thảo luận nhóm nhiều agent.** Công cụ này nạp toàn bộ agent đã cài và tạo một cuộc trao đổi tự nhiên, nơi mỗi agent đóng góp từ góc nhìn chuyên môn và cá tính riêng.
 
 **Dùng khi:**
 

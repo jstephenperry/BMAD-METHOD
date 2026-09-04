@@ -1,9 +1,9 @@
 ---
 title: 'Utiliser les Web Bundles'
-description: Installer un web bundle BMad comme Google Gemini Gem ou ChatGPT Custom GPT
+description: Installer un web bundle Continuous Agile comme Google Gemini Gem ou ChatGPT Custom GPT
 ---
 
-Les web bundles s’installent depuis **[bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/)**.
+Les web bundles s’installent depuis **[bmadcode.com/web-bundles](https://bmadcode.com/web-bundles/)**, la bibliothèque publiée par BMad Code, LLC.
 
 ## Pourquoi une seule porte d’entrée
 
@@ -28,7 +28,7 @@ Le fichier `INSTRUCTIONS.md` de chaque bundle (dans le ZIP) inclut un **exemple 
 
 ## Ce que vous obtenez
 
-- Un Gem ou Custom GPT réutilisable dédié à une capacité de planification BMad.
+- Un Gem ou Custom GPT réutilisable dédié à une capacité de planification de Continuous Agile.
 - Des artefacts finalisés (briefs, PRD, rapports de recherche, spécifications UX) prêts à déposer dans votre IDE pour l’implémentation.
 - Les conversations de planification se déroulent sur votre abonnement LLM web existant au lieu de consommer des tokens IDE facturés.
 
@@ -38,4 +38,4 @@ Les LLM web abandonnent parfois le persona au cours de longues sessions. Si le m
 
 ## Créer le vôtre
 
-Pour transformer un skill BMad existant en web bundle, utilisez le skill utilitaire `bmad-os-skill-to-bundle` disponible sur [bmad-utility-skills](https://github.com/bmad-code-org/bmad-utility-skills). Il produit les fichiers du bundle en reprenant le persona hérité de l’agent d’origine et un exemple de persona alternatif. Soumettez votre bundle à la bibliothèque en ouvrant une PR sur [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) qui ajoute le répertoire du bundle et une entrée dans `web-bundles/bundles.json`.
+Pour transformer un skill Continuous Agile existant en web bundle, utilisez le skill utilitaire `bmad-os-skill-to-bundle` disponible sur [bmad-utility-skills](https://github.com/bmad-code-org/bmad-utility-skills). Il produit les fichiers du bundle en reprenant le persona hérité de l’agent d’origine et un exemple de persona alternatif. Soumettez votre bundle à la bibliothèque en ouvrant une PR sur [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) qui ajoute le répertoire du bundle et une entrée dans `web-bundles/bundles.json`.

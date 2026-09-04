@@ -7,7 +7,7 @@ sidebar:
 
 ## Các Agent Mặc Định
 
-Trang này liệt kê các agent mặc định của BMM (bộ Agile suite) được cài cùng với BMad Method, bao gồm skill ID, trigger menu và workflow chính của chúng. Mỗi agent được gọi dưới dạng một skill.
+Trang này liệt kê các agent mặc định của BMM (bộ Agile suite) được cài cùng với Continuous Agile, bao gồm skill ID, trigger menu và workflow chính của chúng. Mỗi agent được gọi dưới dạng một skill.
 
 ## Ghi Chú
 

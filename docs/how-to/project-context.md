@@ -5,11 +5,11 @@ sidebar:
   order: 8
 ---
 
-Use `bmad-project-context` to set up a repository so AI agents work well in it — for a new project or an existing codebase, with or without a BMad install. The output is a small verified block in your `AGENTS.md`.
+Use `bmad-project-context` to set up a repository so AI agents work well in it — for a new project or an existing codebase, with or without a Continuous Agile install. The output is a small verified block in your `AGENTS.md`.
 
 :::note[Prerequisites]
 
-- BMad Method installed — or nothing at all: the skill also runs standalone in any repo
+- Continuous Agile installed — or nothing at all: the skill also runs standalone in any repo
   :::
 
 ## When to use this
