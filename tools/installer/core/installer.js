@@ -452,7 +452,8 @@ class Installer {
   /**
    * Remove skill directories from _bmad/ after IDE installation.
    * Skills are self-contained in IDE directories, so _bmad/ only needs
-   * module-level files (module-help.csv, _config/, etc.).
+   * module-level files (module-help.csv, _config/, etc.). Per-module
+   * config.yaml is no longer among them: config resolves from _bmad/config.toml.
    * Also cleans up skill dirs left by older installer versions.
    * @param {string} bmadDir - BMAD installation directory
    */

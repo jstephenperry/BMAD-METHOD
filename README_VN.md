@@ -9,7 +9,6 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
 [![Python Version](https://img.shields.io/badge/python-%3E%3D3.10-blue?logo=python&logoColor=white)](https://www.python.org)
 [![uv](https://img.shields.io/badge/uv-package%20manager-blueviolet?logo=uv)](https://docs.astral.sh/uv/)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?logo=discord&logoColor=white)](https://discord.gg/gk8jAdXWmj)
 
 [English](README.md) | [简体中文](README_CN.md) | Tiếng Việt
 
@@ -77,11 +76,11 @@ BMad Method có thể được mở rộng bằng các mô-đun chính thức ch
 
 ## Cộng đồng
 
-- [Discord](https://discord.gg/gk8jAdXWmj) - Nhận trợ giúp, chia sẻ ý tưởng, cộng tác
+- [GitHub Discussions](https://github.com/jstephenperry/continuous-agile/discussions) - Nhận trợ giúp, chia sẻ ý tưởng, cộng tác
 - [YouTube](https://youtube.com/@BMadCode) - Video hướng dẫn, master class và nhiều nội dung khác
 - [X / Twitter](https://x.com/BMadCode)
 - [Website](https://bmadcode.com)
-- [GitHub Issues](https://github.com/bmad-code-org/BMAD-METHOD/issues) - Báo lỗi và yêu cầu tính năng
+- [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues) - Báo lỗi và yêu cầu tính năng
 - [Discussions](https://github.com/bmad-code-org/BMAD-METHOD/discussions) - Trao đổi cộng đồng
 
 ## Hỗ trợ BMad

@@ -1,5 +1,5 @@
 name: Bug Report
-description: File a bug report to help us improve BMad Method
+description: File a bug report to help us improve Continuous Agile
 title: "[BUG] "
 labels: bug
 assignees: []
@@ -62,7 +62,7 @@ body:
       label: Which module is this for?
       description: Select the BMad module this issue relates to
       options:
-        - BMad Method (BMM) - Core Framework
+        - Continuous Agile (BMM) - Core Framework
         - BMad Builder (BMB) - Agent Builder Tool
         - Test Architect (TEA) - Test Strategy Module
         - Game Dev Studio (BMGD) - Game Development Module

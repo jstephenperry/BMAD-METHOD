@@ -1,6 +1,6 @@
 # Test Suite
 
-Tests for the BMAD-METHOD tooling infrastructure.
+Tests for the Continuous Agile tooling infrastructure.
 
 ## Quick Start
 

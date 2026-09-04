@@ -7,7 +7,6 @@
 [![Version](https://img.shields.io/npm/v/bmad-method?color=blue&label=version)](https://www.npmjs.com/package/bmad-method)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?logo=discord&logoColor=white)](https://discord.gg/gk8jAdXWmj)
 
 **Agile Ai Driven Development（敏捷 AI 驱动开发）** —— Ai Driven Development（AiDD）关注的不只是代码，还包括做什么、如何组织，以及在认知变化时如何调整。BMad Method 是实践 AiDD 的敏捷方式：决策保持显式，上下文持续传递，流程随工作量自动调整。同一套方法既适用于周末原型，也适用于有多年历史的系统。
 
@@ -73,9 +72,9 @@ BMad 可通过官方模块扩展到不同专业场景。你可以在安装时选
 
 ## 社区
 
-- [Discord](https://discord.gg/gk8jAdXWmj) — 获取帮助、分享想法、协作
+- [GitHub Discussions](https://github.com/jstephenperry/continuous-agile/discussions) — 获取帮助、分享想法、协作
 - [在 YouTube 上订阅](https://www.youtube.com/@BMadCode) — 教程、大师课和播客（2025 年 2 月推出）
-- [GitHub Issues](https://github.com/bmad-code-org/BMAD-METHOD/issues) — 错误报告和功能请求
+- [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues) — 错误报告和功能请求
 - [讨论](https://github.com/bmad-code-org/BMAD-METHOD/discussions) — 社区对话
 
 ## 支持 BMad

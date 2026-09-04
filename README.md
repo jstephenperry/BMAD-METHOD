@@ -20,7 +20,7 @@ _Start anywhere. Use Continuous Agile end to end, or carry its briefs, specifica
 **Prerequisites:** [Node.js](https://nodejs.org) 20.12+, [Python](https://www.python.org) 3.10+, and [uv](https://docs.astral.sh/uv/)
 
 ```bash
-npx bmad-method install
+npx continuous-agile install
 ```
 
 Open your project in your AI coding tool, invoke `bmad-build` with what you want to change, and keep making the decisions that matter. Run `bmad-help` whenever you want guidance on what comes next or what is optional.
@@ -53,32 +53,29 @@ Install the core method, or add modules for specialized work. The add-on modules
 | **Continuous Agile** (this repository) | Plan and deliver software, from new prototypes to established codebases |
 | **[BMad Builder](https://github.com/bmad-code-org/bmad-builder)** | Skill, workflow, and agent builder |
 | **[BMad Creative Intelligence Suite](https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite)** | Creative thinking partners for innovation, design thinking, and storytelling |
-| **[BMad Test Architect](https://github.com/bmad-code-org/bmad-method-test-architecture-enterprise)** | Enterprise testing add-on for BMad Method |
+| **[BMad Test Architect](https://github.com/bmad-code-org/bmad-method-test-architecture-enterprise)** | Enterprise testing add-on |
 | **[BMad Loop](https://github.com/bmad-code-org/bmad-loop)** | Builds, verifies, and retros a whole epic unattended |
 | **[BMad Game Dev Studio](https://github.com/bmad-code-org/bmad-module-game-dev-studio)** | Ideate, design, and build games in any framework, including Unity, Unreal, Godot, and Phaser |
 
 ## Plan on the Web
 
-[Web bundles](https://bmadcode.com/web-bundles/) package selected BMad workflows as Google Gemini Gems and ChatGPT Custom GPTs. Use them for planning in your existing web subscription, then bring the resulting artifacts into your AI coding tool for implementation.
+The bundles under [`web-bundles/`](web-bundles/) package selected planning workflows as Google Gemini Gems and ChatGPT Custom GPTs. Use them for planning in your existing web subscription, then bring the resulting artifacts into your AI coding tool for implementation.
 
 ## Documentation
 
-- **[Getting Started](https://docs.bmad-method.org/tutorials/getting-started/)** — Install BMad and build a small project.
-- **[Workflow Map](https://docs.bmad-method.org/reference/workflow-map/)** — Understand the available paths and outputs.
-- **[Established Projects](https://docs.bmad-method.org/how-to/established-projects/)** — Add BMad to an existing codebase.
-- **[Upgrade to V6](https://docs.bmad-method.org/how-to/upgrade-to-v6/)** — Migrate from an earlier version.
+- **[Getting Started](docs/tutorials/getting-started.md)** — Install Continuous Agile and build a small project.
+- **[Workflow Map](docs/reference/workflow-map.md)** — Understand the available paths and outputs.
+- **[Established Projects](docs/how-to/established-projects.md)** — Add Continuous Agile to an existing codebase.
+- **[Upgrade to V6](docs/how-to/upgrade-to-v6.md)** — Migrate from an earlier version.
 
 ## Community
 
-- [Discord](https://discord.gg/gk8jAdXWmj) — Get help, share ideas, and collaborate.
-- [YouTube](https://youtube.com/@BMadCode) — Watch tutorials and master classes.
-- [GitHub Issues](https://github.com/bmad-code-org/BMAD-METHOD/issues) — Report bugs and request features.
-- [GitHub Discussions](https://github.com/bmad-code-org/BMAD-METHOD/discussions) — Join longer community conversations.
-- [BMad Code](https://bmadcode.com) — Explore the wider ecosystem.
+- [GitHub Issues](https://github.com/jstephenperry/continuous-agile/issues) — Report bugs and request features.
+- [GitHub Discussions](https://github.com/jstephenperry/continuous-agile/discussions) — Join longer conversations.
 
 ## Support and Contributing
 
-BMad is free for everyone and always will be. Star the repository, [buy me a coffee](https://buymeacoffee.com/bmad), or email <contact@bmadcode.com> for corporate sponsorship.
+Continuous Agile is free and open source.
 
 Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
@@ -88,4 +85,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 **BMad** and **BMAD-METHOD** are trademarks of BMad Code, LLC. See [TRADEMARK.md](TRADEMARK.md) for details.
 
-If you would like to contribute, join us in the discord and read [CONTRIBUTORS.md](CONTRIBUTORS.md) first.
+If you would like to contribute, read [CONTRIBUTING.md](CONTRIBUTING.md) and [CONTRIBUTORS.md](CONTRIBUTORS.md) first.

@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Help us improve the BMad Method documentation!
+        Help us improve the Continuous Agile documentation!
 
   - type: dropdown
     id: doc-type

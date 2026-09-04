@@ -121,3 +121,9 @@ jobs:
 
       - name: Validate skills
         run: npm run validate:skills
+
+      - name: Skill frontmatter tests
+        run: npm run test:skills
+
+      - name: Config regime guard
+        run: npm run test:config-regime

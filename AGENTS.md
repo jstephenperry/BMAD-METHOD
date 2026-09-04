@@ -1,4 +1,4 @@
-# BMAD-METHOD
+# Continuous Agile
 
 Open source framework for structured, agent-assisted software delivery.
 

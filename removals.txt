@@ -81,9 +81,10 @@ bmad-shard-doc
 bmad-agent-tech-writer
 
 # Removed skills (skill consolidation)
-# bmad-check-implementation-readiness: folded into bmad-sprint-planning,
-# which now opens with a readiness gate (PASS/CONCERNS/FAIL) before
-# generating tracking. The IR agent menu trigger dispatches sprint-planning.
+# bmad-check-implementation-readiness: the readiness gate (PASS/CONCERNS/FAIL)
+# now ships as its own skill, bmad-readiness. The IR agent menu trigger
+# dispatches it directly; bmad-sprint-planning, which briefly carried the gate,
+# was removed with sprint mode.
 bmad-check-implementation-readiness
 
 # Removed skills (sprint mode retired)

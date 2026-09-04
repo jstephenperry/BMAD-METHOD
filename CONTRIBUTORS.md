@@ -1,6 +1,6 @@
 # Contributors
 
-BMad Core, BMad Method and BMad and Community BMad Modules are made possible by contributions from our community. We gratefully acknowledge everyone who has helped improve this project.
+Continuous Agile is a fork of BMAD-METHOD, which was made possible by contributions from its community. We gratefully acknowledge everyone who helped build the project this one is derived from.
 
 ## How We Credit Contributors
 
@@ -23,10 +23,10 @@ There are no minimum contribution requirements — whether it's a one-character 
 
 ## Copyright
 
-The BMad Method project is copyrighted by BMad Code, LLC. Individual contributions are licensed under the same MIT License as the project. Contributors retain authorship credit through Git history and the contributors graph.
+The upstream BMAD-METHOD project is copyrighted by BMad Code, LLC. Individual contributions are licensed under the same MIT License as the project. Contributors retain authorship credit through Git history and the contributors graph.
 
 ---
 
-**Thank you to everyone who has helped make BMad Method better!**
+**Thank you to everyone who helped make BMAD-METHOD, the project Continuous Agile builds on.**
 
 For contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
